@@ -1,18 +1,43 @@
 ---
 title:  Home Page
+layout: index
+dirty:  true
 filter:
   - erb
-  - textile
+  - haml
 ---
-h2. <%= @page.title %>
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc congue ipsum vestibulum libero. Aenean vitae justo. Nam eget tellus. Etiam convallis, est eu lobortis mattis, lectus tellus tempus felis, a ultricies erat ipsum at metus.
-
-h3. Litora Sociis
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi et risus. Aliquam nisl. Nulla facilisi. Cras accumsan vestibulum ante. Vestibulum sed tortor. Praesent tempus fringilla elit. Ut elit diam, sagittis in, nonummy in, gravida non, nunc. Ut orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Nam egestas, orci eu imperdiet malesuada, nisl purus fringilla odio, quis commodo est orci vitae justo. Aliquam placerat odio tincidunt nulla. Cras in libero. Aenean rutrum, magna non tristique posuere, erat odio eleifend nisl, non convallis est tortor blandit ligula. Nulla id augue.
-
-bq. Nullam mattis, odio ut tempus facilisis, metus nisl facilisis metus, auctor consectetuer felis ligula nec mauris. Vestibulum odio erat, fermentum at, commodo vitae, ultrices et, urna. Mauris vulputate, mi pulvinar sagittis condimentum, sem nulla aliquam velit, sed imperdiet mi purus eu magna. Nulla varius metus ut eros. Aenean aliquet magna eget orci. Class aptent taciti sociosqu ad litora.
-
-Vivamus euismod. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse vel nibh ut turpis dictum sagittis. Aliquam vel velit a elit auctor sollicitudin. Nam vel dui vel neque lacinia pretium. Quisque nunc erat, venenatis id, volutpat ut, scelerisque sed, diam. Mauris ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec mattis. Morbi dignissim sollicitudin libero. Nulla lorem.
-
+.hfeed.column.span-15.first.last
+  - recent_pages = @pages.find(:limit => 10, :in_directory => "articles", :recursive => true).sort_by{|p| p.created_at}.reverse
+  - page = recent_pages.shift # remove first page for special treatment
+  .latest
+    .hentry.entry
+      .entry-title.column.span-15.first.last
+        %h2.entry-title
+          %a{:href => page.url}= page.title   
+      .entry-summary= page.summary
+      .post-info
+        %abbr.published{:title => page.created_at.to_s}= page.created_at.strftime('%b %d, %Y')
+      - if page.excerpt
+        .entry-content= RedCloth.new(page.excerpt).to_html
+      %a.read-more{:href => page.url} Read More...
+  - unless recent_pages.empty?
+    #recent
+      %h2.recent Recent
+      - recent_pages.group_by{|p| p.created_at.strftime('%B %Y')}.each do |group, pages|
+        %h3.month= group
+        - pages.each do |page|
+          .hentry.entry
+            .entry-title.column.span-15.first.last
+              %h4.entry-title
+                %a{:href => page.url}= page.title   
+            .entry-summary= page.summary
+            / .post-info
+            /   %abbr.published{:title => page.created_at.to_s}= page.created_at.strftime('%b %d, %Y')
+  / %ul.pagination
+  /   - if @pager.prev?
+  /     %li.prev
+  /       %a{:href => "/index/#{p.prev.number == 1 ? '' : p.prev.number}.html"} &lArr;&nbsp;Newer
+  /   - if @pager.next?
+  /     %li.next
+  /       %a{:href => "/index#{p.next.number}.html"} Older&nbsp;&rArr;

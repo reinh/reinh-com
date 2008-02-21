@@ -17,12 +17,12 @@ SITE.template_dir  = 'templates'
 SITE.exclude       = %w[tmp$ bak$ ~$ CVS \.svn]
   
 SITE.page_defaults = {
-  'layout' => 'default'
+  'layout' => 'index'
 }
 
 # Items used to deploy the webiste
-SITE.host       = 'user@hostname.tld'
-SITE.remote_dir = '/not/a/valid/dir'
+SITE.host       = 'reinh@reinh.com'
+SITE.remote_dir = '/home/reinh/sites/reinh.com'
 SITE.rsync_args = %w(-av --delete)
 
 # Options passed to the 'tidy' program when the tidy filter is used
