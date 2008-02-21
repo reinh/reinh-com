@@ -21,7 +21,7 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6 { font-family: "Helvetica Neue", Arial, "Lucida Grande", sans-serif; }
-code { font:.9em "Courier New", Monaco, Courier, monospace; } 
+/*code { font:.9em "Courier New", Monaco, Courier, monospace; }*/ 
 
 img { float:left; margin:1.5em 1.5em 1.5em 0; }
 a img { border:none; }
@@ -38,7 +38,7 @@ hr {
 }
 
 blockquote {
-  margin:1.5em;
+  margin:1em;
   padding:1em;
   font-style:italic;
   font-size:.9em;
@@ -58,6 +58,20 @@ a:link, a:visited {
 a:link:after, a:visited:after {
   content: " (" attr(href) ") ";
   font-size: 90%;
+}
+
+.entry-summary {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-style: italic;
+	color: #666;
+}
+
+.nav {
+	display: none;
+}
+
+#footer {
+	display: none;
 }
 
 /* If you're having trouble printing relative links, uncomment and customize this:

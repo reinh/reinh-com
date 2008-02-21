@@ -1,0 +1,22 @@
+---
+title:      New Post
+created_at: <%= Time.now.to_y %>
+author:     Rein Henrichs
+summary:    Lorem Ipsum
+filter:
+  - haml
+---
+
+.hentry.entry
+  %h2.entry-title= @page.title
+  %ul.post-info
+    %li
+      %abbr.published{:title => @page.created_at.to_s}= @page.created_at.to_s
+    %li
+      %address.vcard.author
+        %a.url.fn{:href => "http://reinh.com"}= @page.author
+
+  .entry-summary= @page.summary
+
+  .entry-content
+    Lorem Ipsum
