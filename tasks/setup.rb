@@ -21,8 +21,8 @@ SITE.page_defaults = {
 }
 
 # Items used to deploy the webiste
-SITE.host       = 'reinh@reinh.com'
-SITE.remote_dir = '/home/reinh/sites/reinh.com'
+SITE.host       = 'www@reinh.com'
+SITE.remote_dir = '/var/www/beta.reinh.com'
 SITE.rsync_args = %w(-av --delete)
 
 # Options passed to the 'tidy' program when the tidy filter is used

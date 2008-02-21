@@ -58,14 +58,14 @@ filter:    erb
        <% recent_pages = recent_pages[1..-1] %>
        <% unless recent_pages.nil? || recent_pages.empty? %>
          <h3 id="ft-recent">Recent</h3>
+         <dl class="posts">
          <% recent_pages.group_by{|p| p.created_at.strftime('%B %Y')}.each do |group, pages| %>
-           <dl class="posts">
-             <dt><%= group %></dt>
-                <% pages.each do |page| %>
-                  <dd><a href="<%=  page.url %>"><%= page.title %></a></dd>
-                <% end %>
-           </dl>
+           <dt><%= group %></dt>
+              <% pages.each do |page| %>
+                <dd><a href="<%=  page.url %>"><%= page.title %></a></dd>
+              <% end %>
          <% end %>
+         </dl>
        <% end %>
      </div>
      </div>
