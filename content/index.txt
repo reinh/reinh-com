@@ -3,7 +3,6 @@ title:  Home Page
 layout: index
 dirty:  true
 filter:
-  - erb
   - haml
 ---
 
@@ -32,12 +31,3 @@ filter:
               %h4.entry-title
                 %a{:href => page.url}= page.title   
             .entry-summary= page.summary
-            / .post-info
-            /   %abbr.published{:title => page.created_at.to_s}= page.created_at.strftime('%b %d, %Y')
-  / %ul.pagination
-  /   - if @pager.prev?
-  /     %li.prev
-  /       %a{:href => "/index/#{p.prev.number == 1 ? '' : p.prev.number}.html"} &lArr;&nbsp;Newer
-  /   - if @pager.next?
-  /     %li.next
-  /       %a{:href => "/index#{p.next.number}.html"} Older&nbsp;&rArr;
