@@ -27,7 +27,7 @@ filter:
 
       This will stop the commit if the specs don’t pass.
 
-      bq. This isn’t a replacement for a more robust CI system but it makes it a lot harder to do something stupid. Redirecting STDERR to /dev/null is optional but recommended since the STDERR output of failing specs isn’t useful. It you use Test::Unit instead of RSpec (for shame), use rake test instead. Likewise, anything that returns proper error codes (0 for success, > 0 for failure) can be used.
+      This isn’t a replacement for a more robust CI system but it makes it a lot harder to do something stupid. Redirecting STDERR to /dev/null is optional but recommended since the STDERR output of failing specs isn’t useful. It you use Test::Unit instead of RSpec (for shame), use rake test instead. Likewise, anything that returns proper error codes (0 for success, > 0 for failure) can be used.
 
       This is mainly useful if your specs take under a minute to run, otherwise it becomes tedious. If you have long-running specs, I suggest using a special task that runs an abridged set of core specs instead.
       
