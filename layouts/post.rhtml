@@ -32,7 +32,7 @@ filter:    erb
      <div class="nav">
        <ul>
         <li class="column span-2"><a href="#about">About</a></li>
-        <li class="column span-2"><a href="#recent">Recent</a></li>
+        <li class="column span-2"><a href="#recent">Recently</a></li>
         <li class="column span-2 last"><a href="#archives">Archives</a></li>
        </ul>
      </div>
@@ -57,7 +57,7 @@ filter:    erb
        <% recent_pages = @pages.find(:limit => 10, :in_directory => "articles", :recursive => true).sort_by{|p| p.created_at}.reverse %>
        <% recent_pages = recent_pages[1..-1] %>
        <% unless recent_pages.nil? || recent_pages.empty? %>
-         <h3 id="recent">Recent</h3>
+         <h3 id="recent">Recently</h3>
          <dl class="posts">
          <% recent_pages.group_by{|p| p.created_at.strftime('%B %Y')}.each do |group, pages| %>
              <dt><%= group %></dt>
