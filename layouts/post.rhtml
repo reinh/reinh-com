@@ -54,7 +54,7 @@ filter:    erb
        </ul>
      </div>
      <div class="column span-7 last">
-       <% recent_pages = @pages.find(:limit => 10, :in_directory => "articles", :recursive => true).sort_by{|p| p.created_at}.reverse %>
+       <% recent_pages = @pages.find(:limit => 5, :in_directory => "articles", :recursive => true).sort_by{|p| p.created_at}.reverse %>
        <% unless recent_pages.nil? || recent_pages.empty? %>
          <h3 id="recent">Recently</h3>
          <dl class="posts">
@@ -67,7 +67,18 @@ filter:    erb
          </dl>
        <% end %>
      </div>
-     </div>
+   </div>
+   <div class="column span-15 first last" style="border-top:1px solid #ddd;" id="copyright">
+     <ul class="info extra-quiet" style="padding:0;margin:0;">
+      <li style="float:left;">
+        Created with <a href="http://webby.rubyforge.org">Webby</a>     
+      </li>
+      <li style="float:right; text-align:right;">
+        All design &amp; content Copyright Rein Henrichs 2008
+      </li>
+     </ul>
+   </div>
+   
      
 </div>
 </body>

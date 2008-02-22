@@ -77,6 +77,9 @@ th,td {
  * --------------------------------------------------------------------- */
 p.quiet { color: <%= @page.color['quiet'] %>; }
 .alt    { color: <%= @page.color['alt'] %>; }
+.extra-quiet { color: #999; }
+.extra-quiet a { color:  #666 !important;}
+.extra-quiet a:hover { color: <%= @page.color['link-hover'] %> !important; }
 
 #header {
 	padding: 0 0 1em;
