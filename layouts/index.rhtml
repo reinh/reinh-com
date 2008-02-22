@@ -43,9 +43,9 @@ filter:    erb
    </div>
 
    <div class="column span-15 first last" id="footer">
-     <div class="column span-5 append-3 first">
+     <div class="panel column first" id="about">
       
-       <h3 id="about">About</h3>
+       <h3>About</h3>
        <p>
          Rein Henrichs has been working with rails since 2005 and is now heavily involved in the Merb, DataMapper, and RSpec communities.
        </p>
@@ -53,7 +53,21 @@ filter:    erb
          <li><a href="http://twitter.com/reinh">Twitter Me</a></li>
        </ul>
      </div>
-     <div class="column span-7 last">
+     <div class="panel column plain">
+      <h3>People I Read</h3>
+      <ul class="no-bullet">
+        <li>
+          <a href="http://www.codefluency.com">Bruce Williams</a>
+        </li>
+        <li>
+          <a href="http://blog.evanweaver.com/" title="home :: snax">Evan Weaver</a>
+        </li>
+        <li>
+          <a href="http://ozmm.org/" title="ones zeros majors and minors">Chris Wanstrath</a>
+        </li>
+      </ul>
+     </div>
+     <div class="panel column last plain">
        <% recent_pages = @pages.find(:limit => 5, :in_directory => "articles", :recursive => true).sort_by{|p| p.created_at}.reverse %>
        <% unless recent_pages.nil? || recent_pages.empty? %>
          <h3 id=" <%= 'footer-' if @page.title == "Home" %>recent">Recently</h3>
@@ -68,7 +82,7 @@ filter:    erb
        <% end %>
      </div>
    </div>
-   <div class="column span-15 first last" style="border-top:1px solid #ddd;" id="copyright">
+   <div class="column span-15 first last" id="copyright">
      <ul class="info extra-quiet" style="padding:0;margin:0;">
       <li style="float:left;">
         Created with <a href="http://webby.rubyforge.org">Webby</a>     

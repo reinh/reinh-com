@@ -19,7 +19,8 @@ color:
 body {
   font-family: Verdana, "Bitstream Vera Sans", sans-serif;
   font-size: 12px;
-	margin-top:  0;
+	margin:  0;
+	padding:  0;
 }
 
 .container {
@@ -62,6 +63,16 @@ hr {
   color:      <%= @page.color['highlight'] %>;
 }
 
+ul.no-bullet {
+	list-style: none;
+	margin-left: 0;
+}
+
+ul.no-bullet li {
+	margin-left:  none;
+	padding-left:  none;
+}
+
 /* Tables
  * --------------------------------------------------------------------- */
 table {
@@ -80,6 +91,9 @@ p.quiet { color: <%= @page.color['quiet'] %>; }
 .extra-quiet { color: #999; }
 .extra-quiet a { color:  #666 !important;}
 .extra-quiet a:hover { color: <%= @page.color['link-hover'] %> !important; }
+.plain a, a.plain {
+	text-decoration: none;
+}
 
 #header {
 	padding: 0 0 1em;
@@ -140,17 +154,41 @@ ul.info li {
 dl.posts { margin: 0 0 1em 0; }
 
 dl.posts dt {
-	margin-top:  .25em;
+	margin-top:  1em;
+	line-height:  1.5;
+	/*margin-bottom:  .5em;*/
+}
+
+dl.posts dd {
+	margin-left:  0;
+	margin-bottom:  .5em;
+	line-height:  1.5;
+	/*font-size: .9em;*/
 }
 
 #footer {
-	border-top:  3px solid <%= @page.color['border'] %>;
-	padding: 2em 0 0;
+	/*border-top:  3px solid <%= @page.color['border'] %>;*/
 	margin:  2em 0 0;
 }
 
 #footer p {
 	margin-bottom:  .5em;
+}
+
+#footer .panel {
+	width:  180px;
+	margin-right:  20px;
+	border-top:  3px solid <%= @page.color['border'] %>;
+	padding-top:  1em;
+}
+
+#footer .panel.last {
+	width:  190px;
+	margin-right: 0;
+}
+
+#copyright {
+	margin-top:  2em;
 }
 	
 /* Entries
