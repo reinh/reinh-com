@@ -23,7 +23,7 @@ filter:    erb
 </head>
 <body>
 
-<div class="container" id="home">
+<div class="container" <%= 'id="home"' if @page.title == "Home" %>>
   
    <div class="column span-15 first last" id="header">
      <h1 class="title column span-8 first">
@@ -56,7 +56,7 @@ filter:    erb
      <div class="column span-7 last">
        <% recent_pages = @pages.find(:limit => 5, :in_directory => "articles", :recursive => true).sort_by{|p| p.created_at}.reverse %>
        <% unless recent_pages.nil? || recent_pages.empty? %>
-         <h3 id="ft-recent">Recently</h3>
+         <h3 id=" <%= 'footer-' if @page.title == "Home" %>recent">Recently</h3>
          <dl class="posts">
          <% recent_pages.group_by{|p| p.created_at.strftime('%B %Y')}.each do |group, pages| %>
            <dt><%= group %></dt>

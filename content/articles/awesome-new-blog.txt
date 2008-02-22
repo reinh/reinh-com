@@ -6,16 +6,7 @@ summary:    Wherein our hero introduces you to a totally radical new <a href="ht
 excerpt:    <p>Rodrigo Kochenburger has (finally) started a <a href="http://blog.divoxx.com/">blog</a>. Rodrigo is an experienced Rails developer from Brazil &mdash; and a friend of mine &mdash; and I&#8217;m looking forward to a bunch of interesting and informative posts from him in the near future. Congrats on the new blog, Rodrigo. It&#8217;s about time.</p>
 layout:     post
 destination: 2007/12/03/awesome-new-blog
-filter:
-  - haml
 ---
 
-.hentry.entry
-  .entry-title.column.span-15.first.last
-    %h2.entry-title= @page.title   
-  .entry-summary= @page.summary
-  .post-info
-    %abbr.published{:title => @page.created_at.to_s}= @page.created_at.strftime('%b %d, %Y')
-  .entry-content
-    :plain
-      <p>Rodrigo Kochenburger has (finally) started a <a href="http://blog.divoxx.com/">blog</a>. Rodrigo is an experienced Rails developer from Brazil &mdash; and a friend of mine &mdash; and I&#8217;m looking forward to a bunch of interesting and informative posts from him in the near future. Congrats on the new blog, Rodrigo. It&#8217;s about time.</p>
+<p>Rodrigo Kochenburger has (finally) started a <a href="http://blog.divoxx.com/">blog</a>. Rodrigo is an experienced Rails developer from Brazil &mdash; and a friend of mine &mdash; and I&#8217;m looking forward to a bunch of interesting and informative posts from him in the near future. Congrats on the new blog, Rodrigo. It&#8217;s about time.</p>
+        

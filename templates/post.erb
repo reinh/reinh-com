@@ -6,15 +6,7 @@ summary:    SUMMARY
 layout:     post
 destination: <%= Time.now.strftime('%Y/%m/%d') + "/" + "TITLE" %>
 filter:
-  - haml
+  - markdown
 ---
 
-.hentry.entry
-  .entry-title.column.span-15.first.last
-    %h2.entry-title= @page.title   
-  .entry-summary= @page.summary
-  .post-info
-    %abbr.published{:title => @page.created_at.to_s}= @page.created_at.strftime('%b %d, %Y')
-  .entry-content
-    :textile
-      STUFF
+STUFF

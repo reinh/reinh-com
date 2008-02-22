@@ -5,39 +5,27 @@ author:     Rein Henrichs
 summary:    Wherein our hero introduces a new and most excellent AutoComplete Plugin for <a href="jquery.org">jQuery</a>
 layout:     post
 destination: 2008/02/21/new-jquery-autocomplete-plugin
-filter:
-  - haml
 ---
 
-.hentry.entry
-  .entry-title.column.span-15.first.last
-    %h2.entry-title= @page.title   
-  .entry-summary= @page.summary
-  .post-info
-    %abbr.published{:title => @page.created_at.to_s}= @page.created_at.strftime('%b %d, %Y')
-  .entry-content
-    :plain
-      <p>There's a new jQuery AutoComplete plugin on the block. It's fast, it's small, and it's simple to use. Prepare yourselves for a healthy dose of awesome. Get the skinny at <a href="http://plugins.jquery.com/project/jq-autocomplete" title="jQuery AutoComplete | jQuery Plugins">http://plugins.jquery.com/project/jq-autocomplete</a> or grab it now at <code>git clone git://reinh.com/jq_autocomplete</code> if you're lazy.</p>
+<p>There's a new jQuery AutoComplete plugin on the block. It's fast, it's small, and it's simple to use. Prepare yourselves for a healthy dose of awesome. Get the skinny at <a href="http://plugins.jquery.com/project/jq-autocomplete" title="jQuery AutoComplete | jQuery Plugins">http://plugins.jquery.com/project/jq-autocomplete</a> or grab it now at <code>git clone git://reinh.com/jq_autocomplete</code> if you're lazy.</p>
 
-      <p class="update"><strong>Update Too Too</strong> Version 1.0.1 officially released at <a href="http://plugins.jquery.com/project/jq-autocomplete" title="jQuery AutoComplete | jQuery Plugins">http://plugins.jquery.com/project/jq-autocomplete</a>. Get on it.</p>
+<p><em>Update Too Too:</em> Version 1.0.1 officially released at <a href="http://plugins.jquery.com/project/jq-autocomplete" title="jQuery AutoComplete | jQuery Plugins">http://plugins.jquery.com/project/jq-autocomplete</a>. Get on it.</p>
 
-      <p class="update"><strong>Update Too:</strong> There's a z-index type bug with scroll bars in FireFox 2.0. Unfortunately, as far as I'm aware, this is a bug in FireFox 2 itself. FireFox 3 beta, for instance, is happy. My suggestion: Try not to put your auto-completing boxes on top of an element with scroll bars. Please let us know if you know of a solution for this.</p>
+<p><em>Update Too:</em> There's a z-index type bug with scroll bars in FireFox 2.0. Unfortunately, as far as I'm aware, this is a bug in FireFox 2 itself. FireFox 3 beta, for instance, is happy. My suggestion: Try not to put your auto-completing boxes on top of an element with scroll bars. Please let us know if you know of a solution for this.</p>
 
-      <p class="update"><strong>Update:</strong> The <a href="http://errtheblog.com/" title="err.the_blog">Err The Blog boys</a> are using it on their new and awesome site <a href="http://famspam.com/" title="FamSpam &mdash; Family Email, Photo Gallery, and Archive">FamSpam</a>. Well done fellas.</p>
+<p><em>Update:</em> The <a href="http://errtheblog.com/" title="err.the_blog">Err The Blog boys</a> are using it on their new and awesome site <a href="http://famspam.com/" title="FamSpam &mdash; Family Email, Photo Gallery, and Archive">FamSpam</a>. Well done fellas.</p>
 
-      <p>There are a number of AutoComplete plugins in the jQuery universe. Why, then, do we need another? The answer for me was simple: The existing plugins all fit into at least one (and often most) of the following categories: undocumented, complicated, poorly coded, unnecessarily large, and/or inadequate for my needs. So <a href="http://yehudakatz.com/" title="Katz Got Your Tongue?">Yehuda Katz</a> (author of <a href="http://www.manning.com/bibeault/" title="Manning: jQuery in Action">jQuery In Action</a>) and I decided to write a new one.</p>
+<p>There are a number of AutoComplete plugins in the jQuery universe. Why, then, do we need another? The answer for me was simple: The existing plugins all fit into at least one (and often most) of the following categories: undocumented, complicated, poorly coded, unnecessarily large, and/or inadequate for my needs. So <a href="http://yehudakatz.com/" title="Katz Got Your Tongue?">Yehuda Katz</a> (author of <a href="http://www.manning.com/bibeault/" title="Manning: jQuery in Action">jQuery In Action</a>) and I decided to write a new one.</p>
 
-      <h3>Goals:</h3>
+<h3>Goals:</h3>
 
-      <ul class="inline">
-        <li>Simple API</li>
-        <li>JSON dataset</li>
-        <li>Local or Ajax remote data</li>
-        <li>Customizable list item display, input matching and input return value
-        <li>Custom events to allow customization (think callbacks)</li>
+<ul>
+    <li>Simple API</li>
+    <li>JSON dataset</li>
+    <li>Local or Ajax remote data</li>
+    <li>Customizable list item display, input matching and input return value
+    <li>Custom events to allow customization (think callbacks)</li>
+    <li>Under 150 LOC</li>
+</ul>
 
-        <li>Under 150 LOC</li>
-      </ul>
-
-      <p>That's right, a fully featured AutoComplete plugin in under a hundred fifty lines of code. Most of the existing plugins were in the 700 LOC range. Yikes. So, without further ado, how about some examples? Or, if you're an impatient person, you can get the latest source at <code>git clone git://reinh.com/jq_autocomplete</code> right now. (tarball of the 1.0 release will be up shortly).</p>
-      
+<p>That's right, a fully featured AutoComplete plugin in under a hundred fifty lines of code. Most of the existing plugins were in the 700 LOC range. Yikes. So, without further ado, how about some examples? Or, if you're an impatient person, you can get the latest source at <code>git clone git://reinh.com/jq_autocomplete</code> right now. (tarball of the 1.0 release will be up shortly).</p>
