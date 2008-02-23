@@ -216,10 +216,6 @@ h2 {
 	font: bold 3em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
 
-.entry-title {
-    background: #FFFFCC;
-}
-
 .entry-title a {
     color: <%= @page.color['header'] %>;
     background: #FFFFCC;
