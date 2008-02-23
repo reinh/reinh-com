@@ -105,11 +105,14 @@ p.quiet { color: <%= @page.color['quiet'] %>; }
 
 #header h1.title {
   margin: 0;
+  padding-top: 15px;
   letter-spacing: -1px;
 	font: bold 1.5em "Helvetica Neue", Helvetica, Arial, sans-serif;
 	display:  block;
 }
+
 h1.title a { color:  #666; }
+h1.title a:hover { color: <%= @page.color['header'] %>;}
 #header h1.title a { text-decoration: none;}
 #header h1.title a small { color:  #aaa;}
 
@@ -129,6 +132,7 @@ h1.title a { color:  #666; }
 }
 
 .nav ul li a {
+	padding-top: 13px;
 	border-top:  4px solid <%= @page.color['border'] %>;
 	display:  block;
 	color: #999;
@@ -137,8 +141,8 @@ h1.title a { color:  #666; }
 }
 
 .nav a:hover {
-	border-top: 4px solid <%= @page.color['quiet'] %>;
-	color: <%= @page.color['quiet'] %>;
+	border-top: 4px solid <%= @page.color['header'] %>;
+	color: <%= @page.color['header'] %>;
 }
 
 address {margin-top: 0;}
