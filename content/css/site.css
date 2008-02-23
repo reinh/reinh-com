@@ -95,8 +95,20 @@ p.quiet { color: <%= @page.color['quiet'] %>; }
 	text-decoration: none;
 }
 
+.top-link {
+	font-size: .9em;
+	position: absolute;
+	right: 0;
+	top: 1em;
+}
+
+#recent .top-link {
+	top: 0;
+}
+
 .section {
 	margin: 0 0 3em;
+	position: relative;
 }
 
 #header {
@@ -189,9 +201,7 @@ dl.posts dd {
 	margin-right: 0;
 }
 
-#copyright {
-	margin-top:  2em;
-}
+#copyright {}
 	
 /* Entries
  * --------------------------------------------------------------------- */
@@ -312,4 +322,3 @@ div.entry-content p {
 }
 
 /* EOF */
-  

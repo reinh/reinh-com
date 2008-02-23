@@ -29,4 +29,5 @@ filter:
           .title-summary
             %h4.entry-title
               %a{:href => page.url}= page.title   
-            %p.entry-summary= page.summary        
+            %p.entry-summary= page.summary
+      %a.extra-quiet.plain.top-link{:href => '#header'} [top]
