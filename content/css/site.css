@@ -236,7 +236,7 @@ h2 {
 }
 
 .post-info abbr {
-	color:  <%= @page.color['border'] %>;
+	color:  #999;
 	border-bottom: 0;
 }
 
