@@ -55,17 +55,7 @@ filter:    erb
      </div>
      <div class="panel column plain">
       <h3>People I Read</h3>
-      <ul class="no-bullet">
-        <li>
-          <a href="http://www.codefluency.com">Bruce Williams</a>
-        </li>
-        <li>
-          <a href="http://blog.evanweaver.com/" title="home :: snax">Evan Weaver</a>
-        </li>
-        <li>
-          <a href="http://ozmm.org/" title="ones zeros majors and minors">Chris Wanstrath</a>
-        </li>
-      </ul>
+      <%= BlogRoll.to_html %>
      </div>
      <div class="panel column last plain">
        <% recent_pages = @pages.find(:limit => 5, :in_directory => "articles", :recursive => true).sort_by{|p| p.created_at}.reverse %>
