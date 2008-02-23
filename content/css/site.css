@@ -216,7 +216,19 @@ h2 {
 	font: bold 3em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
 
-.entry-title a {text-decoration: none;}
+.entry-title {
+    background: #FFFFCC;
+}
+
+.entry-title a {
+    color: <%= @page.color['header'] %>;
+    background: #FFFFCC;
+	text-decoration: none;
+}
+.entry-title a:hover {
+    color: <%= @page.color['header'] %>;
+    background: #FFFFCC;
+}
 
 .post-info {
 	line-height: 1;
@@ -276,6 +288,14 @@ div.entry-content p {
 	font-weight:  bold;
 	margin-bottom:  0;
 	padding-bottom: 0;
+}
+
+.post-list .title-summary .entry-title a {
+    background:  transparent;
+}
+
+.post-list .title-summary .entry-title a:hover {
+    background:  #FFFFCC;
 }
 
 .post-list .entry-summary {
