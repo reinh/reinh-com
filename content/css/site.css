@@ -132,7 +132,7 @@ h1.title a:hover { color: <%= @page.color['header'] %>;}
 }
 
 .nav ul li a {
-	padding-top: 13px;
+	padding-top: 14px;
 	border-top:  4px solid <%= @page.color['border'] %>;
 	display:  block;
 	color: #999;
@@ -172,8 +172,6 @@ dl.posts dd {
 	/*font-size: .9em;*/
 }
 
-#footer {
-}
 
 #footer p {
 	margin-bottom:  .5em;
@@ -183,6 +181,7 @@ dl.posts dd {
 	width:  180px;
 	margin-right:  20px;
 	border-top:  3px solid <%= @page.color['border'] %>;
+	padding-top:  1.5em;
 }
 
 #footer .panel.last {
