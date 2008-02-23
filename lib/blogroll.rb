@@ -12,7 +12,7 @@ module BlogRoll
     ret =  ""
     ret << "<ul class='no-bullet'>\n"
     sort_by{|k,v| k.split.last}.each do |blogger, info|
-      ret << "  <li><a href='#{info['url']}' title='#{info['title']}'>#{blogger}</li>\n"
+      ret << "  <li><a href='#{info['url']}' title='#{info['title']}'>#{blogger}</a></li>\n"
     end
     ret << "</ul>\n"
     ret
