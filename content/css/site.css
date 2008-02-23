@@ -257,27 +257,27 @@ div.entry-content p {
 	margin-right: 0;
 }
 
-#recent h3.month {
+.post-list h3.month {
 	font-size: 2em;
 	margin: .75em 0 .25em;
 	color:  #999;
 }
 
-#recent .entry-title {
+.post-list .entry-title {
 	font-size:  1.2em;
 	font-weight:  bold;
 	margin-bottom:  0;
 	padding-bottom: 0;
 }
 
-#recent .entry-summary {
+.post-list .entry-summary {
 	font-size:  1em;
 	/*border-bottom: 	1px solid <%= @page.color['border'] %>;*/
 	margin-bottom: 	1em;
 	padding:	0;
 }
 
-#recent .post-info {
+.post-list .post-info {
 	font-size: .8em;
 }
 

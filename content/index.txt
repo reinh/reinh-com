@@ -21,7 +21,7 @@ filter:
         .entry-content= RedCloth.new(page.excerpt).to_html
       %a.read-more{:href => page.url} Read More...
   - unless recent_pages.empty?
-    #recent
+    #recent.post-list
       %h2.recent Recently
       - recent_pages.group_by{|p| p.created_at.strftime('%B %Y')}.each do |group, pages|
         %h3.month= group
