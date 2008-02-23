@@ -198,7 +198,7 @@ dl.posts dd {
 
 .title-summary {
 	font-size:  1em;
-	margin: 0 0 1.5em;
+	margin: 0 0 1em;
 }
 
 .post-list .title-summary {
@@ -228,6 +228,7 @@ h2 {
 }
 
 .post-info abbr {
+	color:  <%= @page.color['border'] %>;
 	border-bottom: 0;
 }
 
@@ -264,8 +265,8 @@ div.entry-content p {
 }
 
 .post-list h3.month {
-	font-size: 2em;
-	margin: 0 0 .5em;
+	/*font-size: 1.25em;*/
+	margin: 1em 0 .25em;
 	color:  #999;
 }
 
@@ -277,7 +278,9 @@ div.entry-content p {
 }
 
 .post-list .entry-summary {
-	font-size:  2.25em;
+	font-family: "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+	font-style: normal;
+	font-size:  2.2em;
 	padding:	0;
 	margin:		0;
 }
