@@ -2,14 +2,14 @@
 extension: html
 filter:    erb
 layout:    index
+dirty:     true
 ---
-<div class='hentry entry'>
-  <div class='entry-title column span-15 first last'>
+
+<div class='hentry entry column span-15 first last'>
+  <div class='title-summary'>
     <h2 class='entry-title'><%= @page.title %></h2>
-  </div>
-  <div class='entry-summary'>
-    <%= @page.summary %>
-  </div>
+    <p class="entry-summary"><%= @page.summary %></p>
+  </div>    
   <div class='post-info'>
     <abbr class='published' title='<%= @page.created_at.to_s %>'><%=  @page.created_at.strftime('%b %d, %Y') %></abbr>
   </div>

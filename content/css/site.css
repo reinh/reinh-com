@@ -95,8 +95,11 @@ p.quiet { color: <%= @page.color['quiet'] %>; }
 	text-decoration: none;
 }
 
+.section {
+	margin: 0 0 3em;
+}
+
 #header {
-	padding: 0 0 1em;
 	font-family: "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
 }
 
@@ -108,7 +111,6 @@ p.quiet { color: <%= @page.color['quiet'] %>; }
 }
 h1.title a { color:  #666; }
 #header h1.title a { text-decoration: none;}
-/*#header h1.title a:hover { text-decoration: underline;}*/
 #header h1.title a small { color:  #aaa;}
 
 .nav ul {
@@ -167,8 +169,6 @@ dl.posts dd {
 }
 
 #footer {
-	/*border-top:  3px solid <%= @page.color['border'] %>;*/
-	margin:  2em 0 0;
 }
 
 #footer p {
@@ -179,7 +179,6 @@ dl.posts dd {
 	width:  180px;
 	margin-right:  20px;
 	border-top:  3px solid <%= @page.color['border'] %>;
-	padding-top:  1.5em;
 }
 
 #footer .panel.last {
@@ -194,13 +193,22 @@ dl.posts dd {
 /* Entries
  * --------------------------------------------------------------------- */
 
-div.entry-title {
-	position: relative;
+.title-summary {
+	font-size:  1em;
+	margin: 0 0 2em;
 }
 
-h2.recent, h2.entry-title {
+.post-list .title-summary {
+	font-size:  .5em;
+}
+
+.post-list .title-summary h4.entry-title {
+	font-size:  3em;
+}
+
+h2 {
 	margin: 0;
-	margin-bottom:  .2em;
+	margin-bottom:  .75em;
 	color: <%= @page.color['header'] %>;
 	font: bold 3em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
@@ -208,11 +216,9 @@ h2.recent, h2.entry-title {
 .entry-title a {text-decoration: none;}
 
 .post-info {
-	
-	color:  <%= @page.color['quiet'] %>;
 	line-height: 1;
 	text-align: 	right;
-	margin: 	0 0 2em;
+	padding-bottom:  .2em;
 	font-style: italic;
 	font-family: Georgia, "Times New Roman", Times, serif;
 	border-bottom: 	1px solid <%= @page.color['border'] %>;
@@ -222,21 +228,18 @@ h2.recent, h2.entry-title {
 	border-bottom: 0;
 }
 
-div.entry-summary {
-	font: 	italic 1.5em/1.5 Georgia, "Times New Roman", Times, serif;
+p.entry-summary {
+	font: 	italic 1.75em/1.5 Georgia, "Times New Roman", Times, serif;
 	color:  <%= @page.color['quiet'] %>;
 	text-align:	justify;
-
 	padding: 0;
 	margin: 0;
-
-	clear: both;
 }
 
-div.entry-summary a {color: #666;}
-div.entry-summary a:hover {color: #111;}
+.entry-summary a {color: #666;}
+.entry-summary a:hover {color: #111;}
 div.entry-content {
-	clear: both;
+	margin-top:  1em;
 }
 
 div.entry-content p {
@@ -245,7 +248,7 @@ div.entry-content p {
 
 .latest {
 	padding-bottom:	3em;
-	margin-bottom: 	2em;
+	margin-bottom: 	2.5em;
 	border-bottom:  3px solid <%= @page.color['border'] %>
 }
 
@@ -259,7 +262,7 @@ div.entry-content p {
 
 .post-list h3.month {
 	font-size: 2em;
-	margin: .75em 0 .25em;
+	margin: 0 0 .5em;
 	color:  #999;
 }
 
@@ -271,10 +274,8 @@ div.entry-content p {
 }
 
 .post-list .entry-summary {
-	font-size:  1em;
-	/*border-bottom: 	1px solid <%= @page.color['border'] %>;*/
-	margin-bottom: 	1em;
 	padding:	0;
+	margin:		0;
 }
 
 .post-list .post-info {

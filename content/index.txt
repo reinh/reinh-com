@@ -9,25 +9,24 @@ filter:
 .hfeed.column.span-15.first.last
   - recent_pages = @pages.find(:limit => 10, :in_directory => "articles", :recursive => true).sort_by{|p| p.created_at}.reverse
   - page = recent_pages.shift # remove first page for special treatment
-  .latest
+  .latest.section
     .hentry.entry
-      .entry-title.column.span-15.first.last
+      .title-summary
         %h2.entry-title
           %a{:href => page.url}= page.title   
-      .entry-summary= page.summary
+        %p.entry-summary= page.summary        
       .post-info
         %abbr.published{:title => page.created_at.to_s}= page.created_at.strftime('%b %d, %Y')
       - if page.excerpt
         .entry-content= RedCloth.new(page.excerpt).to_html
       %a.read-more{:href => page.url} Read More...
   - unless recent_pages.empty?
-    #recent.post-list
+    #recent.post-list.section
       %h2.recent Recently
       - recent_pages.group_by{|p| p.created_at.strftime('%B %Y')}.each do |group, pages|
         %h3.month= group
         - pages.each do |page|
-          .hentry.entry
-            .entry-title.column.span-15.first.last
-              %h4.entry-title
-                %a{:href => page.url}= page.title   
-            .entry-summary= page.summary
+          .title-summary
+            %h4.entry-title
+              %a{:href => page.url}= page.title   
+            %p.entry-summary= page.summary        
