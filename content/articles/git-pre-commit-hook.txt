@@ -3,7 +3,7 @@ title:      Simple Git Continuous Integration
 created_at: 2008-02-21 15:16:28.038512 -06:00
 author:     Rein Henrichs
 summary:    Wherein our hero demonstrates a simple way git can help you keep your build from breaking.
-excerpt:    Preventing your developers (and yourself) from breaking the build is as simple as putting this in your .git/hooks/pre-commit and making it executable (@chmod +x .git/hooks/pre-commit@.
+excerpt:    Preventing your developers (and yourself) from breaking the build is as simple as putting this in your .git/hooks/pre-commit and making it executable (@chmod +x .git/hooks/pre-commit@).
 layout:     post
 destination: 2008/02/21/simple-git-continuous-integration
 filter:
