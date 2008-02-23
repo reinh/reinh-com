@@ -179,7 +179,7 @@ dl.posts dd {
 	width:  180px;
 	margin-right:  20px;
 	border-top:  3px solid <%= @page.color['border'] %>;
-	padding-top:  1em;
+	padding-top:  1.5em;
 }
 
 #footer .panel.last {
@@ -244,7 +244,7 @@ div.entry-content p {
 }
 
 .latest {
-	padding-bottom:	1em;
+	padding-bottom:	3em;
 	margin-bottom: 	2em;
 	border-bottom:  3px solid <%= @page.color['border'] %>
 }
