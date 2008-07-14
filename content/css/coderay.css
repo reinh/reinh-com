@@ -1,8 +1,6 @@
 .CodeRay {
-  padding: 0.5em;
+  padding: 0.5em 0;
   margin-bottom: 1.3em;
-  background-color: #eee;
-  border: 1px solid #aaa;
   font: 1.1em Monaco, 'Courier New', 'Terminal', monospace;
   color: #100;
 }

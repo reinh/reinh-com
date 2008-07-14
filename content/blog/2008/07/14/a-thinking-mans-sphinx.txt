@@ -1,0 +1,70 @@
+--- 
+title:      A Thinking Man's Sphinx
+created_at: 2008-07-14 12:21:05.990162 -04:00
+layout:     post
+summary:    Wherein our hero ponders the ineffable questions of life, the universe and full text search to see if he might not be able to eff them after all.
+#excerpt:    We've recently switched a number of projects to "ThinkingSphinx":http://ts.freelancing-gods.com/ here at "Hashrocket":http://www.hashrocket.com. These projects were originally using "acts_as_solr":http://acts-as-solr.rubyforge.org/ or "UltraSphinx":http://blog.evanweaver.com/files/doc/fauna/ultrasphinx/files/README.html.
+filter:
+  - erb
+  - textile
+--- 
+
+We've recently switched a number of projects to "ThinkingSphinx":http://ts.freelancing-gods.com/ here at "Hashrocket":http://www.hashrocket.com. These projects were originally using SOLR or "UltraSphinx":http://blog.evanweaver.com/files/doc/fauna/ultrasphinx/files/README.html.
+
+h3. ThinkingSphinx And UltraSphinx
+
+ThinkingSphinx and UltraSphinx have some similarities: They both use Sphinx (obviously) and they're both based on the underlying Ruby API for Sphinx, "Riddle":http://riddle.freelancing-gods.com/. The similarities pretty much end there; the differences are far more interesting.
+
+h4. Basic Sphinx Configuration
+
+UltraSphinx generates the sphinx.conf file from a base configuration file. This base file uses the sphinx configuration syntax, passing it through Eruby for some DRYness. A base file can be specified per-environment. It puts all of its configuration information in @RAILS_ROOT/config/ultrasphinx@. This provides fine-grained - if tediously verbose - control over the multitude of Sphinx configuration options.
+
+ThinkingSphinx uses a YAML configuration file that it locates at @RAILS_ROOT/config/sphinx.yml@. It accepts a YAML hash of configuration settings. These settings allow you to specify most of the basic Sphinx configuration options with ease but you may be out of luck if the option you need isn't available.
+
+h4. Sphinx Index Configuration
+
+UltraSphinx uses a declarative @is_indexed@ statement that feels vaguely similar in style to an association or named scope declaration. The canonical usage example given in the "README":http://blog.evanweaver.com/files/doc/fauna/ultrasphinx/files/README.html is
+
+<% coderay( :lang => "ruby") do -%>
+class Post
+  is_indexed :fields => ['created_at', 'title', 'body']
+end
+<% end %>
+
+This seems simple enough but take a look at what happens for a non-trivial index configuration:
+
+<% coderay( :lang => "ruby") do -%>
+class Post
+  is_indexed :conditions => "posts.state == 'published'",
+             :fields     => [ {:field => 'title', :sortable => true},
+                              {:field => 'body'},
+                              {:field => 'cached_tag_list'}],
+             :include    => [ {:association_name => "blog",
+                               :field => "title",
+                               :as => "blog",
+                               :sortable => true},
+                              {:association_name => "blog",
+                               :field => "description",
+                               :as => "blog_description_"},
+                              {:association_name => "category",
+                               :field => "title",
+                               :as => "category",
+                               :sortable => true}]
+end
+<% end %>
+
+This is about as pretty as it's going to get, and that's not very pretty. It's a crazy hash of arrays of hashes and it's full of fail.
+
+ThinkingSphinx uses a @define_index@ block to allow the index configuration options to be stated declaratively. The canonical example from UltraSphinx would look like this in ThinkingSphinx:
+
+<% coderay( :lang => "ruby") do -%>
+class Post
+  define_index do
+    indexes created_at
+    indexes title
+    indexes body
+  end
+end
+<% end %>
+
+The first thing you may notice is that it's three lines instead of one.
