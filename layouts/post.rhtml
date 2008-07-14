@@ -1,0 +1,19 @@
+---
+extension: html
+filter:    erb
+layout:    index
+dirty:     true
+---
+
+<div class='section hentry entry column span-15 first last'>
+  <div class='title-summary'>
+    <h2 class='entry-title'><a href="<%= @page.url %>"><%= @page.title %></a></h2>
+    <p class="entry-summary"><%= @page.summary %></p>
+  </div>    
+  <div class='post-info'>
+    <abbr class='published' title='<%= @page.created_at.to_s %>'><%=  @page.created_at.strftime('%b %d, %Y') %></abbr>
+  </div>
+  <div class='entry-content'>
+    <%= @content %>
+  </div>
+</div>

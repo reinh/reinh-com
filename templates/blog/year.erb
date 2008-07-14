@@ -1,0 +1,18 @@
+---
+title:      <%= title %>
+created_at: <%= Time.now.to_y %>
+layout:     index
+filter:     haml
+dirty:      true
+---
+- articles = @pages.find(:all, :in_directory => @page.dir, :recursive => true, :sort_by => "created_at", :reverse => true){|p| p.path !~ /index\.txt$/}
+- articles.delete(@page)
+.post-list.section
+  %h2.recent= h(@page.title)
+  - articles.group_by{|p| p.created_at.strftime('%B')}.each do |month, pages|
+    %h3.month= month
+    - pages.each do |page|
+      .title-summary
+        %h4.entry-title
+          %a{:href => page.url}= page.title   
+        %p.entry-summary= page.summary

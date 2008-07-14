@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>ReinH &mdash; To Design A Blog (act 2)</title>
+   <meta name="author" content="Rein Henrichs" />
+   
+   <!-- jQuery JavaScript Framework -->
+   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.pack.js"></script>
+   
+   <!-- Facebox jQuery Plugin -->
+   <script src="/javascript/jquery.dimensions.min.js" type="text/javascript"></script>
+   <script src="/javascript/jquery.center.js" type="text/javascript"></script>
+   <script src="/javascript/jquery.facebox.js" type="text/javascript"></script>
+   <link href="/css/facebox.css" media="screen" rel="stylesheet" type="text/css" />
+
+   <!-- Blueprint CSS Framework -->
+   <link rel="stylesheet" href="/css/blueprint/screen.css" type="text/css" media="screen, projection" />
+   <link rel="stylesheet" href="/css/blueprint/print.css" type="text/css" media="print" />
+
+   <!-- CodeRay syntax highlighting CSS -->
+   <link rel="stylesheet" href="/css/coderay.css" type="text/css" />
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/css/site.css" type="text/css" media="screen, projection" />
+   
+    <!-- OpenID -->
+   <link rel="openid.server" href="http://www.myopenid.com/server" />
+   <link rel="openid.delegate" href="http://ReinH.myopenid.com/" />
+   <meta http-equiv="X-XRDS-Location" content="http://www.myopenid.com/xrds?username=ReinH.myopenid.com" />
+   
+   <script type="text/javascript" charset="utf-8">
+     $(document).ready(function() {
+       $('a.fig').facebox();
+       $('a.fig').hover(function() {
+         $('#' + $(this).attr('title') + ' a').addClass('hover');
+       }, function() {
+         $('#' + $(this).attr('title') + ' a').removeClass('hover');
+       });
+     });
+   </script>
+</head>
+<body>
+
+<div class="container" >
+  
+   <div class="column span-15 first last section" id="header">
+     <h1 class="title column span-4 first">
+       <a href="/">ReinH<small>.com</small></a>
+     </h1>
+     <div class="nav">
+       <ul>
+        <li class="column span-2 append-1"><a href="#about" onClick='document.getElementById("about").setAttribute("style", "background:#FFFFDD")'>About</a></li>
+        <li class="column span-2 append-1"><a href="/#recent">Recently</a></li>
+        <li class="column span-2 last "><a href="/blog/archive">Archive</a></li>
+       </ul>
+     </div>
+   </div>
+
+   <div class="column span-15 first last">
+      
+<div class='section hentry entry column span-15 first last'>
+  <div class='title-summary'>
+    <h2 class='entry-title'><a href="/blog/2008/02/26/to-design-a-blog-2.html">To Design A Blog (act 2)</a></h2>
+    <p class="entry-summary">Wherein we rejoin our hero as he battles the evil villains Layout and Typography. Will he emerge victorious?</p>
+  </div>    
+  <div class='post-info'>
+    <abbr class='published' title='Tue Feb 26 21:28:16 -0500 2008'>Feb 26, 2008</abbr>
+  </div>
+  <div class='entry-content'>
+    <div class="img " id="figure-1-1">
+    <a class="fig" href="http://reinh.com/images/ReinH-02.png">
+      <img src="http://reinh.com/images/thumbs/ReinH-02.png" alt="Figure 1.1" />
+    </a>
+    <p>Figure 1.1</p>
+  </div>
+  
+
+
+	<p>In our <a href="http://reinh.com/2008/02/25/to-design-a-blog-1.html">first installment</a>, the typography and layout of the blog were mostly decided. With this ground work in place, it&#8217;s time to start focusing on the details. But first, it&#8217;s time to give our eyes and brain a chance to relax and reset. Staring at the same design for hours tends to give you tunnel-vision and we want to be able to look at the site afresh.</p>
+
+
+	<p>Now that we&#8217;re ready to continue, the most obvious issue is the arrangement of the sections in the footer. The rest of the design follows a strict grid system but the haphazard placement of the bottom columns is jarring to the eye and the whitespace between them is also problematic. <a href="/images/ReinH-02.png" class="fig" title="figure-1-1">(Fig. 1.1)</a>.</p>
+
+
+
+  <div class="img " id="figure-1-2">
+    <a class="fig" href="http://reinh.com/images/ReinH-03.png">
+      <img src="http://reinh.com/images/thumbs/ReinH-03.png" alt="Figure 1.2" />
+    </a>
+    <p>Figure 1.2</p>
+  </div>
+  
+
+
+	<p>A third column is added and the columns are properly aligned with the grid layout once again <a href="/images/ReinH-03.png" class="fig" title="figure-1-2">(Fig. 1.2)</a>. Great success! The remaining changes are all relatively minor and mainly involve tweaks to font size, color, and spacing. Bonus points if you can spot them.</p>
+
+
+	<p>Now then: Welcome to the new blog! Enjoy your stay.</p>
+  </div>
+</div>
+   </div>
+
+   <div class="column span-15 first last section" id="footer">
+     <div class="panel column first">
+       <div id="about">
+         <h3>About</h3>
+         <p>
+           Rein Henrichs has been working with Rails since 2005 and is now heavily involved in the Merb, DataMapper, and RSpec communities.
+         </p>
+         <ul class="info">
+           <li><a href="http://feeds.feedburner.com/reinh" rel="alternate" type="application/rss+xml">Subscribe</a>&nbsp;<a href="http://feeds.feedburner.com/reinh" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0;margin:0;padding:0"/></a></li>
+           <li><a href="http://twitter.com/reinh">Twitter Me</a></li>
+         </ul>
+         <a class="extra-quiet plain top-link" href='#header' onClick='document.getElementById("about").setAttribute("style", "background:#FFFFFF")'>[top]</a>
+       </div>
+     </div>
+     <div class="panel column plain">
+      <h3>People I Read</h3>
+      <ul class='no-bullet'>
+  <li><a href='http://slash7.com/' title='Slash 7 with Amy Hoy'>Amy Hoy</a></li>
+  <li><a href='http://www.zachinglis.com' title='ZachInglis.com'>Zach Inglis</a></li>
+  <li><a href='http://www.tpope.net/' title='tpope.net | I wish that you were x squared and I was 2x'>Tim Pope</a></li>
+  <li><a href='http://ozmm.org/' title='ones zeros majors and minors'>Chris Wanstrath</a></li>
+  <li><a href='http://blog.evanweaver.com/' title='home :: snax'>Evan Weaver</a></li>
+  <li><a href='http://drnicwilliams.com/' title='Dr Nic'>Dr Nic Williams</a></li>
+  <li><a href='http://www.codefluency.com' title='Codefluency: Home Page'>Bruce Williams</a></li>
+</ul>
+
+     </div>
+     <div class="panel column last plain">
+       
+       
+         <h3 id="footer-recent">Recently</h3>
+         <dl class="posts">
+         
+           <dt>July 2008</dt>
+              
+                <dd><a href="/blog/2008/07/11/90-percent-of-all-awesome-people-use-webby.html">90% of All Awesome People Use Webby!</a></dd>
+              
+         
+           <dt>February 2008</dt>
+              
+                <dd><a href="/blog/2008/02/25/to-design-a-blog.html">To Design A Blog (act 1)</a></dd>
+              
+                <dd><a href="/blog/2008/02/26/to-design-a-blog-2.html">To Design A Blog (act 2)</a></dd>
+              
+                <dd><a href="/blog/2008/02/21/git-pre-commit-hook.html">Simple Git Continuous Integration</a></dd>
+              
+                <dd><a href="/blog/2008/02/19/git-it-got-it-good.html">Git It, Got It? Good!</a></dd>
+              
+         
+         </dl>
+       
+     </div>
+     <!-- <a class='extra-quiet plain top-link' href='#header'>[top]</a> -->
+   </div>
+   <div class="column span-15 first last" id="copyright">
+     <ul class="info extra-quiet" style="padding:0;margin:0;">
+      <li style="float:left;">
+        Created with <a href="http://webby.rubyforge.org">Webby</a>     
+      </li>
+      <li style="float:right; text-align:right;">
+        All design &amp; content Copyright Rein Henrichs 2008
+      </li>
+     </ul>
+   </div>
+     
+</div>
+<script type="text/javascript" charset="utf-8">
+  if (window.location.hash == "#about") {document.getElementById("about").setAttribute('style', 'background:#FFFFDD')};
+</script>
+</body>
+</html>

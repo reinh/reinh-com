@@ -1,0 +1,17 @@
+---
+title:      REST & Rails
+created_at: 2007-11-13 11:29:16.729769 -06:00
+author:     Rein Henrichs
+summary:    Wherein our hero exposes his bleeding heart, REST presentation slides
+excerpt:    'I am giving a presentation on Rails, REST, and the Resource Oriented Architecture today entitled "REST & Rails: Web Services for the Rails World". Check out <a href="http://assets.reinh.com/talks/REST-and-Rails.pdf" title="Rest &amp; Rails PDF">the slides</a>.'
+layout:     post
+destination: 2007/11/12/rest-and-rails
+filter:
+  - textile
+---
+
+I am giving a presentation on Rails, REST, and the Resource Oriented Architecture today entitled "REST & Rails: Web Services for the Rails World". Check out "the slides":http://assets.reinh.com/talks/REST-and-Rails.pdf.
+
+<notextile>
+    <a href="http://assets.reinh.com/talks/REST-and-Rails.pdf" title="REST &amp; Rails"><img src="http://assets.reinh.com/images/REST-and-Rails.gif" title="REST &amp; Rails"/></a>
+</notextile>

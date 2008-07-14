@@ -1,0 +1,125 @@
+---
+extension: html
+filter:
+  - erb
+---
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>ReinH &mdash; <%= @page.title %></title>
+   <meta name="author" content="<%= @page.author %>" />
+   
+   <!-- jQuery JavaScript Framework -->
+   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.pack.js"></script>
+   
+   <!-- Facebox jQuery Plugin -->
+   <script src="/javascript/jquery.dimensions.min.js" type="text/javascript"></script>
+   <script src="/javascript/jquery.center.js" type="text/javascript"></script>
+   <script src="/javascript/jquery.facebox.js" type="text/javascript"></script>
+   <link href="/css/facebox.css" media="screen" rel="stylesheet" type="text/css" />
+
+   <!-- Blueprint CSS Framework -->
+   <link rel="stylesheet" href="/css/blueprint/screen.css" type="text/css" media="screen, projection" />
+   <link rel="stylesheet" href="/css/blueprint/print.css" type="text/css" media="print" />
+
+   <!-- CodeRay syntax highlighting CSS -->
+   <link rel="stylesheet" href="/css/coderay.css" type="text/css" />
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/css/site.css" type="text/css" media="screen, projection" />
+   
+    <!-- OpenID -->
+   <link rel="openid.server" href="http://www.myopenid.com/server" />
+   <link rel="openid.delegate" href="http://ReinH.myopenid.com/" />
+   <meta http-equiv="X-XRDS-Location" content="http://www.myopenid.com/xrds?username=ReinH.myopenid.com" />
+   
+   <script type="text/javascript" charset="utf-8">
+     $(document).ready(function() {
+       $('a.fig').facebox();
+       $('a.fig').hover(function() {
+         $('#' + $(this).attr('title') + ' a').addClass('hover');
+       }, function() {
+         $('#' + $(this).attr('title') + ' a').removeClass('hover');
+       });
+     });
+   </script>
+</head>
+<body>
+
+<div class="container" <%= 'id="home"' if @page.title == "Home" %>>
+  
+   <div class="column span-15 first last section" id="header">
+     <h1 class="title column span-4 first">
+       <a href="/">ReinH<small>.com</small></a>
+     </h1>
+     <div class="nav">
+       <ul>
+        <li class="column span-2 append-1"><a href="#about" onClick='document.getElementById("about").setAttribute("style", "background:#FFFFDD")'>About</a></li>
+        <li class="column span-2 append-1"><a href="/#recent">Recently</a></li>
+        <li class="column span-2 last <%= "active" if @page.title == "Archive" %>"><a href="/blog/archive">Archive</a></li>
+       </ul>
+     </div>
+   </div>
+
+   <div class="column span-15 first last">
+      <%= @content %>
+   </div>
+
+   <div class="column span-15 first last section" id="footer">
+     <div class="panel column first">
+       <div id="about">
+         <h3>About</h3>
+         <p>
+           Rein Henrichs has been working with Rails since 2005 and is now heavily involved in the Merb, DataMapper, and RSpec communities.
+         </p>
+         <ul class="info">
+           <li><a href="http://feeds.feedburner.com/reinh" rel="alternate" type="application/rss+xml">Subscribe</a>&nbsp;<a href="http://feeds.feedburner.com/reinh" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0;margin:0;padding:0"/></a></li>
+           <li><a href="http://twitter.com/reinh">Twitter Me</a></li>
+         </ul>
+         <a class="extra-quiet plain top-link" href='#header' onClick='document.getElementById("about").setAttribute("style", "background:#FFFFFF")'>[top]</a>
+       </div>
+     </div>
+     <div class="panel column plain">
+      <h3>People I Read</h3>
+      <%= BlogRoll.to_html %>
+     </div>
+     <div class="panel column last plain">
+       <% recent_pages = @pages.find(:limit => 5,
+                                     :in_directory => "blog",
+                                     :recursive => true,
+                                     :sort_by => 'mtime',
+                                     :reverse => true){|p| p.path !~ /\/index\.txt$/} %>
+       <% unless recent_pages.nil? || recent_pages.empty? %>
+         <h3 id="footer-recent">Recently</h3>
+         <dl class="posts">
+         <% recent_pages.group_by{|p| p.created_at.strftime('%B %Y')}.each do |group, pages| %>
+           <dt><%= group %></dt>
+              <% pages.each do |page| %>
+                <dd><a href="<%=  page.url %>"><%= page.title %></a></dd>
+              <% end %>
+         <% end %>
+         </dl>
+       <% end %>
+     </div>
+     <!-- <a class='extra-quiet plain top-link' href='#header'>[top]</a> -->
+   </div>
+   <div class="column span-15 first last" id="copyright">
+     <ul class="info extra-quiet" style="padding:0;margin:0;">
+      <li style="float:left;">
+        Created with <a href="http://webby.rubyforge.org">Webby</a>     
+      </li>
+      <li style="float:right; text-align:right;">
+        All design &amp; content Copyright Rein Henrichs 2008
+      </li>
+     </ul>
+   </div>
+     
+</div>
+<script type="text/javascript" charset="utf-8">
+  if (window.location.hash == "#about") {document.getElementById("about").setAttribute('style', 'background:#FFFFDD')};
+</script>
+</body>
+</html>

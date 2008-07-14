@@ -1,0 +1,19 @@
+---
+title:      Archive
+created_at: 2008-07-11 16:56:58.326307 -04:00
+layout:     index
+filter:     haml
+dirty:      true
+---
+- articles = @pages.find(:all, :in_directory => 'blog', :recursive => true, :sort_by => "created_at", :reverse => true){|p| p.path !~ /index\.txt$/}
+- articles.delete(@page)
+- articles.group_by{|a| a.created_at.strftime('%Y')}.each do |year, articles|
+  .post-list.section
+    %h2.recent= year
+    - articles.group_by{|p| p.created_at.strftime('%B')}.each do |month, pages|
+      %h3.month= month
+      - pages.each do |page|
+        .title-summary
+          %h4.entry-title
+            %a{:href => page.url}= page.title   
+          %p.entry-summary= page.summary

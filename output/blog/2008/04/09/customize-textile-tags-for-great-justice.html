@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>ReinH &mdash; Custom Textile Tags For Great Justice</title>
+   <meta name="author" content="Rein Henrichs" />
+   
+   <!-- jQuery JavaScript Framework -->
+   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.pack.js"></script>
+   
+   <!-- Facebox jQuery Plugin -->
+   <script src="/javascript/jquery.dimensions.min.js" type="text/javascript"></script>
+   <script src="/javascript/jquery.center.js" type="text/javascript"></script>
+   <script src="/javascript/jquery.facebox.js" type="text/javascript"></script>
+   <link href="/css/facebox.css" media="screen" rel="stylesheet" type="text/css" />
+
+   <!-- Blueprint CSS Framework -->
+   <link rel="stylesheet" href="/css/blueprint/screen.css" type="text/css" media="screen, projection" />
+   <link rel="stylesheet" href="/css/blueprint/print.css" type="text/css" media="print" />
+
+   <!-- CodeRay syntax highlighting CSS -->
+   <link rel="stylesheet" href="/css/coderay.css" type="text/css" />
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/css/site.css" type="text/css" media="screen, projection" />
+   
+    <!-- OpenID -->
+   <link rel="openid.server" href="http://www.myopenid.com/server" />
+   <link rel="openid.delegate" href="http://ReinH.myopenid.com/" />
+   <meta http-equiv="X-XRDS-Location" content="http://www.myopenid.com/xrds?username=ReinH.myopenid.com" />
+   
+   <script type="text/javascript" charset="utf-8">
+     $(document).ready(function() {
+       $('a.fig').facebox();
+       $('a.fig').hover(function() {
+         $('#' + $(this).attr('title') + ' a').addClass('hover');
+       }, function() {
+         $('#' + $(this).attr('title') + ' a').removeClass('hover');
+       });
+     });
+   </script>
+</head>
+<body>
+
+<div class="container" >
+  
+   <div class="column span-15 first last section" id="header">
+     <h1 class="title column span-4 first">
+       <a href="/">ReinH<small>.com</small></a>
+     </h1>
+     <div class="nav">
+       <ul>
+        <li class="column span-2 append-1"><a href="#about" onClick='document.getElementById("about").setAttribute("style", "background:#FFFFDD")'>About</a></li>
+        <li class="column span-2 append-1"><a href="/#recent">Recently</a></li>
+        <li class="column span-2 last "><a href="/blog/archive">Archive</a></li>
+       </ul>
+     </div>
+   </div>
+
+   <div class="column span-15 first last">
+      
+<div class='section hentry entry column span-15 first last'>
+  <div class='title-summary'>
+    <h2 class='entry-title'><a href="/blog/2008/04/09/customize-textile-tags-for-great-justice.html">Custom Textile Tags For Great Justice</a></h2>
+    <p class="entry-summary">Wherein our hero recounts the tale of the custom textile tag that saved the world. Or at least saved our humble hero some typing.</p>
+  </div>    
+  <div class='post-info'>
+    <abbr class='published' title='Wed Apr 09 20:56:01 -0400 2008'>Apr 09, 2008</abbr>
+  </div>
+  <div class='entry-content'>
+    <div class="img " id="figure-1-1">
+    <a class="fig" href="http://reinh.com/images/elem-typo-style.png">
+      <img src="http://reinh.com/images/thumbs/elem-typo-style.png" alt="Figure 1.1" />
+    </a>
+    <p>Figure 1.1</p>
+  </div>
+  
+
+
+	<p>Taking some inspiration (and code) from the quirky but lovable _why&#8217;s original post on <a href="http://redhanded.hobix.com/inspect/usingRedcloth3.html">adding yer custom blocks</a> to RedCloth and the inimitable Geoff Grosenbach&#8217;s foray into the world of <a href="http://nubyonrails.com/articles/about-this-blog-custom-textile" title="About This Blog: Custom Textile | Ruby on Rails for Newbies">custom textile figure tags</a>, we&#8217;ve build a custom tag (or prefix) for this blog&#8217;s own figures, like <a href="/images/elem-typo-style.png" class="fig" title="figure-1-1">(Fig. 1.1)</a> there on the right.</p>
+
+
+	<p>RedCloth&#8217;s textile implementation uses some simple metaprogramming to create its own tags, which allows you to (more or less) easily create new tags to suit your own needs. The basic formula is: write a <code>textile_#{ tag }</code> method, where <code>tag</code> is the name of the tag you want to create. This method takes four arguments, tag, atts, cite and content, which are parsed from the textile by the RedCloth engine.</p>
+
+
+	<p>For our purposes, we&#8217;re only concerned with content and atts, so I&#8217;ll leave the rest as an exercise for the gentle reader. The html we&#8217;re trying to create looks like this:</p>
+
+
+<pre><code>&lt;div class=&quot;img&quot; id=&quot;figure-1-1&quot;&gt;
+  &lt;a class=&quot;fig&quot; href=&quot;/images/image.jpb&quot;&gt;
+    &lt;img src=&quot;/images/thumbs/image.jpg&quot; alt=&quot;Figure 1.1&quot; /&gt;
+  &lt;/a&gt;
+  &lt;p&gt;Figure 1.1&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+
+	<p>The tag we want to use to create it looks like this:</p>
+
+
+<pre><code>fig. 1.1 | image.jpg</code></pre>
+
+
+	<p>That&#8217;s quite a bit shorter and more elegant. Jumping right in to the good stuff, the method definition for our new tag looks like this:</p>
+
+
+<pre><code>def textile_fig(tag, atts, cite, content)
+  span_class = &quot;img &quot;
+  if atts =~ /class=&quot;([^\&quot;]+)&quot;/
+    span_class += $1
+  end
+  (figure_number, img_url) = content.split(&quot;|&quot;).map { |w| w.strip }
+  figure_name = &quot;Figure #{figure_number}&quot;
+  figure_id = &quot;figure-#{figure_number}&quot;.tr(&quot;.&quot;, &quot;-&quot;)
+
+  %{
+  &lt;div class=&quot;#{span_class}&quot; id=&quot;#{figure_id}&quot;&gt;
+    &lt;a class=&quot;fig&quot; href=&quot;/images/#{img_url}&quot;&gt;
+      &lt;img src=&quot;/images/thumbs/#{img_url}&quot; alt=&quot;#{figure_name}&quot; /&gt;
+    &lt;/a&gt;
+    &lt;p&gt;#{figure_name}&lt;/p&gt;
+  &lt;/div&gt;
+  }
+end</code></pre>
+
+
+	<p>Let&#8217;s break that down.</p>
+
+
+<pre><code>span_class = &quot;img &quot;
+if atts =~ /class=&quot;([^\&quot;]+)&quot;/
+  span_class += $1
+end</code></pre>
+
+
+	<p>This adds any classes in atts (in the form of <code>class="foo"</code>) to the base class, img.</p>
+
+
+<pre><code>(figure_number, img_url) = content.split(&quot;|&quot;).map { |w| w.strip }
+figure_name = &quot;Figure #{figure_number}&quot;
+figure_id = &quot;figure-#{figure_number}&quot;.tr(&quot;.&quot;, &quot;-&quot;)</code></pre>
+
+
+	<p>This breaks &#8220;fig 1.1 | image.jpg&#8221; down into two parts by splitting on the &#8221;|&#8221; and then normalizes them a bit to be used later.</p>
+
+
+	<p>Finally, the relevant parts are jammed into the html prototype and spit back as the method&#8217;s return value for insertion into your textile document (and for great justice, of course).</p>
+
+
+
+  <div class="img " id="figure-1-2">
+    <a class="fig" href="http://reinh.com/images/ReinH-07.png">
+      <img src="http://reinh.com/images/thumbs/ReinH-07.png" alt="Figure 1.2" />
+    </a>
+    <p>Figure 1.2</p>
+  </div>
+  
+
+
+	<p>A later post might show the way <code>__END__</code>, <code>DATA</code> and <code>if __FILE__ == $PROGRAM_NAME</code> were used with the TextMate Ruby Bundle&#8217;s &#x2318;R command to preview the output of the textile tag as it was being written for a faster workflow or the jQuery used to activate the thumbnail&#8217;s hover effect while an inline link like <a href="/images/ReinH-07.png" class="fig" title="figure-1-2">(Fig. 1.2)</a> is hovered. But I wouldn&#8217;t hold your breath.</p>
+  </div>
+</div>
+   </div>
+
+   <div class="column span-15 first last section" id="footer">
+     <div class="panel column first">
+       <div id="about">
+         <h3>About</h3>
+         <p>
+           Rein Henrichs has been working with Rails since 2005 and is now heavily involved in the Merb, DataMapper, and RSpec communities.
+         </p>
+         <ul class="info">
+           <li><a href="http://feeds.feedburner.com/reinh" rel="alternate" type="application/rss+xml">Subscribe</a>&nbsp;<a href="http://feeds.feedburner.com/reinh" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0;margin:0;padding:0"/></a></li>
+           <li><a href="http://twitter.com/reinh">Twitter Me</a></li>
+         </ul>
+         <a class="extra-quiet plain top-link" href='#header' onClick='document.getElementById("about").setAttribute("style", "background:#FFFFFF")'>[top]</a>
+       </div>
+     </div>
+     <div class="panel column plain">
+      <h3>People I Read</h3>
+      <ul class='no-bullet'>
+  <li><a href='http://slash7.com/' title='Slash 7 with Amy Hoy'>Amy Hoy</a></li>
+  <li><a href='http://www.zachinglis.com' title='ZachInglis.com'>Zach Inglis</a></li>
+  <li><a href='http://www.tpope.net/' title='tpope.net | I wish that you were x squared and I was 2x'>Tim Pope</a></li>
+  <li><a href='http://ozmm.org/' title='ones zeros majors and minors'>Chris Wanstrath</a></li>
+  <li><a href='http://blog.evanweaver.com/' title='home :: snax'>Evan Weaver</a></li>
+  <li><a href='http://drnicwilliams.com/' title='Dr Nic'>Dr Nic Williams</a></li>
+  <li><a href='http://www.codefluency.com' title='Codefluency: Home Page'>Bruce Williams</a></li>
+</ul>
+
+     </div>
+     <div class="panel column last plain">
+       
+       
+         <h3 id="footer-recent">Recently</h3>
+         <dl class="posts">
+         
+           <dt>July 2008</dt>
+              
+                <dd><a href="/blog/2008/07/11/90-percent-of-all-awesome-people-use-webby.html">90% of All Awesome People Use Webby!</a></dd>
+              
+         
+           <dt>February 2008</dt>
+              
+                <dd><a href="/blog/2008/02/25/to-design-a-blog.html">To Design A Blog (act 1)</a></dd>
+              
+                <dd><a href="/blog/2008/02/26/to-design-a-blog-2.html">To Design A Blog (act 2)</a></dd>
+              
+                <dd><a href="/blog/2008/02/21/git-pre-commit-hook.html">Simple Git Continuous Integration</a></dd>
+              
+                <dd><a href="/blog/2008/02/19/git-it-got-it-good.html">Git It, Got It? Good!</a></dd>
+              
+         
+         </dl>
+       
+     </div>
+     <!-- <a class='extra-quiet plain top-link' href='#header'>[top]</a> -->
+   </div>
+   <div class="column span-15 first last" id="copyright">
+     <ul class="info extra-quiet" style="padding:0;margin:0;">
+      <li style="float:left;">
+        Created with <a href="http://webby.rubyforge.org">Webby</a>     
+      </li>
+      <li style="float:right; text-align:right;">
+        All design &amp; content Copyright Rein Henrichs 2008
+      </li>
+     </ul>
+   </div>
+     
+</div>
+<script type="text/javascript" charset="utf-8">
+  if (window.location.hash == "#about") {document.getElementById("about").setAttribute('style', 'background:#FFFFDD')};
+</script>
+</body>
+</html>

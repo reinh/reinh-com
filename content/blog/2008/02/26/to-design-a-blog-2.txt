@@ -1,0 +1,22 @@
+---
+title:      To Design A Blog (act 2)
+created_at: 2008-02-26 20:28:16.916531 -06:00
+author:     Rein Henrichs
+summary:    Wherein we rejoin our hero as he battles the evil villains Layout and Typography. Will he emerge victorious?
+excerpt:    In our "first installment":http://reinh.com/2008/02/25/to-design-a-blog-1.html, the typography and layout of the blog were mostly decided. With this ground work in place, it's time to start focusing on the details. But first, it's time to give our eyes and brain a chance to relax and reset. Staring at the same design for hours tends to give you tunnel-vision and we want to be able to look at the site afresh.
+layout:     post
+filter:
+  - textile
+---
+
+fig. 1.1 | ReinH-02.png
+
+In our "first installment":http://reinh.com/2008/02/25/to-design-a-blog-1.html, the typography and layout of the blog were mostly decided. With this ground work in place, it's time to start focusing on the details. But first, it's time to give our eyes and brain a chance to relax and reset. Staring at the same design for hours tends to give you tunnel-vision and we want to be able to look at the site afresh.
+
+Now that we're ready to continue, the most obvious issue is the arrangement of the sections in the footer. The rest of the design follows a strict grid system but the haphazard placement of the bottom columns is jarring to the eye and the whitespace between them is also problematic. "(fig)(Fig. 1.1)(figure-1-1)":/images/ReinH-02.png.
+
+fig. 1.2 | ReinH-03.png
+
+A third column is added and the columns are properly aligned with the grid layout once again "(fig)(Fig. 1.2)(figure-1-2)":/images/ReinH-03.png. Great success! The remaining changes are all relatively minor and mainly involve tweaks to font size, color, and spacing. Bonus points if you can spot them.
+
+Now then: Welcome to the new blog! Enjoy your stay.

@@ -1,0 +1,9 @@
+---
+title:      Git It, Got It? Good!
+created_at: 2008-02-19 16:07:08.186057 -06:00
+author:     Rein Henrichs
+summary:    Wherein our hero explains git in one (slightly verbose) slide.
+layout:     post
+---
+
+<p>Last week, I gave a presentation on the <a href="http://git.or.cz">git</a> version control system. Apparently it went pretty well. The <a href="http://assets.reinh.com/talks/GIT.pdf">slides are available</a> for those who are interested.</p>

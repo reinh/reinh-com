@@ -1,0 +1,71 @@
+---
+title:      "Custom Textile Tags For Great Justice"
+created_at: 2008-04-09 20:56:01.062536 -04:00
+author:     Rein Henrichs
+summary:    Wherein our hero recounts the tale of the custom textile tag that saved the world. Or at least saved our humble hero some typing.
+excerpt:    'Taking some inspiration (and code) from the quirky but lovable _why&#8217;s original post on <a href="http://redhanded.hobix.com/inspect/usingRedcloth3.html">adding yer custom blocks</a> to RedCloth and the inimitable Geoff Grosenbach&#8217;s foray into the world of <a href="http://nubyonrails.com/articles/about-this-blog-custom-textile" title="About This Blog: Custom Textile | Ruby on Rails for Newbies">custom textile figure tags</a>, we&#8217;ve build a custom tag (or prefix) for this blog&#8217;s own figures.'
+layout:     post
+filter:
+  - textile
+---
+
+fig. 1.1 | elem-typo-style.png
+
+Taking some inspiration (and code) from the quirky but lovable _why's original post on "adding yer custom blocks":http://redhanded.hobix.com/inspect/usingRedcloth3.html to RedCloth and the inimitable Geoff Grosenbach's foray into the world of "custom textile figure tags(About This Blog: Custom Textile | Ruby on Rails for Newbies)":http://nubyonrails.com/articles/about-this-blog-custom-textile, we've build a custom tag (or prefix) for this blog's own figures, like "(fig)(Fig. 1.1)(figure-1-1)":/images/elem-typo-style.png there on the right.
+
+RedCloth's textile implementation uses some simple metaprogramming to create its own tags, which allows you to (more or less) easily create new tags to suit your own needs. The basic formula is: write a @textile_#{ tag }@ method, where @tag@ is the name of the tag you want to create. This method takes four arguments, tag, atts, cite and content, which are parsed from the textile by the RedCloth engine.
+
+For our purposes, we're only concerned with content and atts, so I'll leave the rest as an exercise for the gentle reader. The html we're trying to create looks like this:
+
+code. <notextile>&lt;div class=&quot;img&quot; id=&quot;figure-1-1&quot;&gt;
+  &lt;a class=&quot;fig&quot; href=&quot;/images/image.jpb&quot;&gt;
+    &lt;img src=&quot;/images/thumbs/image.jpg&quot; alt=&quot;Figure 1.1&quot; /&gt;
+  &lt;/a&gt;
+  &lt;p&gt;Figure 1.1&lt;/p&gt;
+&lt;/div&gt;</notextile>
+
+The tag we want to use to create it looks like this:
+
+code. fig. 1.1 | image.jpg
+
+That's quite a bit shorter and more elegant. Jumping right in to the good stuff, the method definition for our new tag looks like this:
+
+code. <notextile>def textile_fig(tag, atts, cite, content)
+  span_class = &quot;img &quot;
+  if atts =~ /class=&quot;([^\&quot;]+)&quot;/
+    span_class += $1
+  end
+  (figure_number, img_url) = content.split(&quot;|&quot;).map { |w| w.strip }
+  figure_name = &quot;Figure #{figure_number}&quot;
+  figure_id = &quot;figure-#{figure_number}&quot;.tr(&quot;.&quot;, &quot;-&quot;)
+
+  %{
+  &lt;div class=&quot;#{span_class}&quot; id=&quot;#{figure_id}&quot;&gt;
+    &lt;a class=&quot;fig&quot; href=&quot;/images/#{img_url}&quot;&gt;
+      &lt;img src=&quot;/images/thumbs/#{img_url}&quot; alt=&quot;#{figure_name}&quot; /&gt;
+    &lt;/a&gt;
+    &lt;p&gt;#{figure_name}&lt;/p&gt;
+  &lt;/div&gt;
+  }
+end</notextile>
+
+Let's break that down.
+
+code. <notextile>span_class = &quot;img &quot;
+if atts =~ /class=&quot;([^\&quot;]+)&quot;/
+  span_class += $1
+end</notextile>
+
+This adds any classes in atts (in the form of @class="foo"@) to the base class, img.
+
+code. <notextile>(figure_number, img_url) = content.split(&quot;|&quot;).map { |w| w.strip }
+figure_name = &quot;Figure #{figure_number}&quot;
+figure_id = &quot;figure-#{figure_number}&quot;.tr(&quot;.&quot;, &quot;-&quot;)</notextile>
+
+This breaks "fig 1.1 | image.jpg" down into two parts by splitting on the "|" and then normalizes them a bit to be used later.
+
+Finally, the relevant parts are jammed into the html prototype and spit back as the method's return value for insertion into your textile document (and for great justice, of course).
+
+fig. 1.2 | ReinH-07.png
+
+A later post might show the way @__END__@, @DATA@ and @if __FILE__ == $PROGRAM_NAME@ were used with the TextMate Ruby Bundle's &#x2318;R command to preview the output of the textile tag as it was being written for a faster workflow or the jQuery used to activate the thumbnail's hover effect while an inline link like "(fig)(Fig. 1.2)(figure-1-2)":/images/ReinH-07.png is hovered. But I wouldn't hold your breath.
