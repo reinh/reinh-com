@@ -32,13 +32,20 @@ body {
  * --------------------------------------------------------------------- */
 h1,h2,h3,h4,h5,h6 { color: <%= @page.color['header'] %>; }
 
-h3 code {font-size: 18px; background: transparent;}
+h2 {
+	margin: 0;
+	margin-bottom:  .5em;
+	color: <%= @page.color['header'] %>;
+	font: bold 3em/1.2 "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
 
-h4 {margin-bottom: .5em; font-size: 16px;}
+h3 {font-size: 24px; background: transparent;}
+
+h4 {margin-bottom: .5em; font-size: 18px; font-weight:bold;}
 
 /* Text Elements
  * --------------------------------------------------------------------- */
-p { margin-bottom:  1.5em;}
+p { margin-bottom:  1.5em; line-height: 1.5; }
 
 a       { color: <%= @page.color['link'] %>; text-decoration: none;}
 a:hover { color: <%= @page.color['link-hover'] %>; text-decoration: underline;}
@@ -241,13 +248,6 @@ dl.posts dd {
 
 .post-list .title-summary h4.entry-title {
 	font-size:  3em;
-}
-
-h2 {
-	margin: 0;
-	margin-bottom:  .5em;
-	color: <%= @page.color['header'] %>;
-	font: bold 3em/1.2 "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
 
 .entry-title a {
