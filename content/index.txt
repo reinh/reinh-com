@@ -13,7 +13,7 @@ filter:
     .hentry.entry
       .title-summary
         %h2.entry-title
-          %a{:href => page.url}= page.title   
+          %a{:href => page.url}= Widont.widont page.title   
         %p.entry-summary= page.summary        
       .post-info
         %abbr.published{:title => page.created_at.to_s}= page.created_at.strftime('%b %d, %Y')
@@ -25,7 +25,7 @@ filter:
     #recent.post-list.section
       %h2.recent Recently
       - recent_pages.group_by{|p| p.created_at.strftime('%B %Y')}.each do |month, pages|
-        %h3.month= month
+        %h3.month= month.upcase
         - pages.each do |page|
           .title-summary
             %h4.entry-title

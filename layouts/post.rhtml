@@ -4,10 +4,9 @@ filter:    erb
 layout:    index
 dirty:     true
 ---
-
 <div class='section hentry entry column span-15 first last'>
   <div class='title-summary'>
-    <h2 class='entry-title'><a href="<%= @page.url %>"><%= @page.title %></a></h2>
+    <h2 class='entry-title'><a href="<%= @page.url %>"><%= Widont.widont @page.title %></a></h2>
     <p class="entry-summary"><%= @page.summary %></p>
   </div>    
   <div class='post-info'>

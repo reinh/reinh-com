@@ -6,6 +6,7 @@ summary:    Wherein our hero recounts the tale of the custom textile tag that sa
 excerpt:    'Taking some inspiration (and code) from the quirky but lovable _why&#8217;s original post on <a href="http://redhanded.hobix.com/inspect/usingRedcloth3.html">adding yer custom blocks</a> to RedCloth and the inimitable Geoff Grosenbach&#8217;s foray into the world of <a href="http://nubyonrails.com/articles/about-this-blog-custom-textile" title="About This Blog: Custom Textile | Ruby on Rails for Newbies">custom textile figure tags</a>, we&#8217;ve build a custom tag (or prefix) for this blog&#8217;s own figures.'
 layout:     post
 filter:
+  - erb
   - textile
 ---
 
@@ -17,12 +18,14 @@ RedCloth's textile implementation uses some simple metaprogramming to create its
 
 For our purposes, we're only concerned with content and atts, so I'll leave the rest as an exercise for the gentle reader. The html we're trying to create looks like this:
 
-code. <notextile>&lt;div class=&quot;img&quot; id=&quot;figure-1-1&quot;&gt;
-  &lt;a class=&quot;fig&quot; href=&quot;/images/image.jpb&quot;&gt;
-    &lt;img src=&quot;/images/thumbs/image.jpg&quot; alt=&quot;Figure 1.1&quot; /&gt;
-  &lt;/a&gt;
-  &lt;p&gt;Figure 1.1&lt;/p&gt;
-&lt;/div&gt;</notextile>
+<% coderay( :lang => "html") do -%>
+<div class="img" id="figure-1-1">
+  <a class="fig" href="/images/image.jpb">
+    <img src="/images/thumbs/image.jpg" alt="Figure 1.1" />
+  </a>
+  <p>Figure 1.1</p>
+</div>
+<% end %>
 
 The tag we want to use to create it looks like this:
 
@@ -30,37 +33,43 @@ code. fig. 1.1 | image.jpg
 
 That's quite a bit shorter and more elegant. Jumping right in to the good stuff, the method definition for our new tag looks like this:
 
-code. <notextile>def textile_fig(tag, atts, cite, content)
-  span_class = &quot;img &quot;
-  if atts =~ /class=&quot;([^\&quot;]+)&quot;/
+<% coderay( :lang => "ruby") do -%>
+def textile_fig(tag, atts, cite, content)
+  span_class = "img "
+  if atts =~ /class="([^\"]+)"/
     span_class += $1
   end
-  (figure_number, img_url) = content.split(&quot;|&quot;).map { |w| w.strip }
-  figure_name = &quot;Figure #{figure_number}&quot;
-  figure_id = &quot;figure-#{figure_number}&quot;.tr(&quot;.&quot;, &quot;-&quot;)
+  (figure_number, img_url) = content.split("|").map { |w| w.strip }
+  figure_name = "Figure #{figure_number}"
+  figure_id = "figure-#{figure_number}".tr(".", "-")
 
   %{
-  &lt;div class=&quot;#{span_class}&quot; id=&quot;#{figure_id}&quot;&gt;
-    &lt;a class=&quot;fig&quot; href=&quot;/images/#{img_url}&quot;&gt;
-      &lt;img src=&quot;/images/thumbs/#{img_url}&quot; alt=&quot;#{figure_name}&quot; /&gt;
-    &lt;/a&gt;
-    &lt;p&gt;#{figure_name}&lt;/p&gt;
-  &lt;/div&gt;
+  <div class="#{span_class}" id="#{figure_id}">
+    <a class="fig" href="/images/#{img_url}">
+      <img src="/images/thumbs/#{img_url}" alt="#{figure_name}" />
+    </a>
+    <p>#{figure_name}</p>
+  </div>
   }
-end</notextile>
+end
+<% end %>
 
 Let's break that down.
 
-code. <notextile>span_class = &quot;img &quot;
-if atts =~ /class=&quot;([^\&quot;]+)&quot;/
+<% coderay( :lang => "ruby") do -%>
+span_class = "img "
+if atts =~ /class="([^\"]+)"/
   span_class += $1
-end</notextile>
+end
+<% end %>
 
 This adds any classes in atts (in the form of @class="foo"@) to the base class, img.
 
-code. <notextile>(figure_number, img_url) = content.split(&quot;|&quot;).map { |w| w.strip }
-figure_name = &quot;Figure #{figure_number}&quot;
-figure_id = &quot;figure-#{figure_number}&quot;.tr(&quot;.&quot;, &quot;-&quot;)</notextile>
+<% coderay( :lang => "ruby") do -%>
+(figure_number, img_url) = content.split("|").map { |w| w.strip }
+figure_name = "Figure #{figure_number}"
+figure_id = "figure-#{figure_number}".tr(".", "-")
+<% end %>
 
 This breaks "fig 1.1 | image.jpg" down into two parts by splitting on the "|" and then normalizes them a bit to be used later.
 

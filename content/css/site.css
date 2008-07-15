@@ -19,33 +19,53 @@ color:
 
 body {
   font-family: Verdana, "Bitstream Vera Sans", sans-serif;
-  font-size: 12px;
-	margin:  0;
-	padding:  0;
+  font-size: 13px;
+  line-height:  18px;
+  margin:  0;
+  padding:  0;
+  color: #222;
+/*  background: url('blueprint/lib/grid.png') repeat -2px -2px;*/
 }
 
 .container {
-	width:	590px;
+  width:  590px;
 }
 
 /* Headings
  * --------------------------------------------------------------------- */
-h1,h2,h3,h4,h5,h6 { color: <%= @page.color['header'] %>; }
-
-h2 {
-	margin: 0;
-	margin-bottom:  .5em;
-	color: <%= @page.color['header'] %>;
-	font: bold 3em/1.2 "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+h1,h2,h3,h4,h5,h6 {
+  color: <%= @page.color['header'] %>;
+  font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
 
-h3 {font-size: 24px; background: transparent;}
+h2 {
+  font-size:  36px;
+  line-height:  36px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin: 0;
+  margin-bottom:  .5em;
+  color: <%= @page.color['header'] %>;
+  
+}
 
-h4 {margin-bottom: .5em; font-size: 18px; font-weight:bold;}
+h3 {
+  font-size: 24px;
+  line-height:  36px;
+  margin-bottom:  18px;
+}
+
+h4 {
+  padding:  9px 0;
+  margin:   0;
+  font-size:  18px;
+  line-height:18px;
+  font-weight:bold;
+}
 
 /* Text Elements
  * --------------------------------------------------------------------- */
-p { margin-bottom:  1.5em; line-height: 1.5; }
+p { margin-bottom:  18px; line-height: 18px; }
 
 a       { color: <%= @page.color['link'] %>; text-decoration: none;}
 a:hover { color: <%= @page.color['link-hover'] %>; text-decoration: underline;}
@@ -58,22 +78,20 @@ p.read-more a:hover { text-decoration: underline; background: #fff;}
 #footer a:hover { color:  #125AA7;}
 
 blockquote {
-	margin-left: 0;
-	padding-left:  1.5em;
-	color: <%= @page.color['blockquote'] %>;
+  margin-left: 0;
+  padding-left:  1.5em;
+  color: <%= @page.color['blockquote'] %>;
 }
 
 pre {
-	background: <%= @page.color['box-bg'] %>;
-	/*border-top: 1px dashed <%= @page.color['box-border'] %>;
-	border-bottom: 1px dashed <%= @page.color['box-border'] %>;*/
-	padding:  .3em 0;
-	margin: 0 0 2em;
+/*  background: <%= @page.color['box-bg'] %>;*/
+  padding:  .9px 0;
+  margin: 0 0 18px;
 }
 
-code {
-	background: <%= @page.color['box-bg'] %>;
-	font-size: 13px;
+pre, code, tt {
+  font-size:  13px;
+  line-height: 18px;
 }
 
 hr {
@@ -82,13 +100,13 @@ hr {
 }
 
 ul.no-bullet {
-	list-style: none;
-	margin-left: 0;
+  list-style: none;
+  margin-left: 0;
 }
 
 ul.no-bullet li {
-	margin-left:  none;
-	padding-left:  none;
+  margin-left:  none;
+  padding-left:  none;
 }
 
 /* Tables
@@ -97,7 +115,7 @@ table {
   border-top:     1px solid <%= @page.color['border'] %>;
   border-left:    1px solid <%= @page.color['border'] %>;
 }
-th,td {	
+th,td { 
   border-bottom:  1px solid <%= @page.color['border'] %>;
   border-right:   1px solid <%= @page.color['border'] %>;
 }
@@ -113,40 +131,42 @@ p.quiet { color: <%= @page.color['quiet'] %>; }
 .extra-quiet a { color:  #666 !important;}
 .extra-quiet a:hover { color: <%= @page.color['link-hover'] %> !important; }
 .plain a, a.plain {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 a.top-link {
-	font-size: .9em;
-	position: absolute;
-	right: 0;
-	top: 1em;
-	color: #999 !important;
+  font-size: .9em;
+  position: absolute;
+  right: 0;
+  top: 1em;
+  color: #999 !important;
 }
 
 a.top-link:hover {
-	color: #666 !important;
+  color: #666 !important;
 }
 
 #recent .top-link {
-	top: 0;
+  top: 0;
 }
 
 .section {
-	margin: 0 0 3em;
-	position: relative;
+  margin: 0 0 36px;
+  position: relative;
 }
 
 #header {
-	font-family: "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+  height:  36px;
 }
 
 #header h1.title {
   margin: 0;
-  padding-top: 15px;
+  padding: 0;
+  padding-top: 18px;
   letter-spacing: -1px;
-	font: bold 1.5em "Helvetica Neue", Helvetica, Arial, sans-serif;
-	display:  block;
+  font: bold 18px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display:  block;
 }
 
 h1.title a { color:  #666; }
@@ -155,77 +175,77 @@ h1.title a:hover { color: <%= @page.color['header'] %>;}
 #header h1.title a small { color:  #aaa;}
 
 .nav ul {
-	display: block;
-	float: right;
-	font-size:  1em;
-	font-weight:  bold;
-	padding: 0;
-	margin: 0;
+  display: block;
+  float: right;
+  font-size:  1em;
+  font-weight:  bold;
+  padding: 0;
+  margin: 0;
 }
 
 .nav li {
-	text-align:  right;
-	list-style:  none;
-	display:  block;
+  text-align:  right;
+  list-style:  none;
+  display:  block;
 }
 
 .nav ul li a {
-	padding-top: 14px;
-	border-top:  4px solid <%= @page.color['border'] %>;
-	display:  block;
-	color: #999;
-	text-decoration:  none;
-	/*padding-top:  .5em;*/
+  padding-top: 14px;
+  border-top:  4px solid <%= @page.color['border'] %>;
+  display:  block;
+  color: #999;
+  text-decoration:  none;
+  /*padding-top:  .5em;*/
 }
 
 .nav a:hover, .nav ul li.active a {
-	border-top: 4px solid <%= @page.color['header'] %>;
-	color: <%= @page.color['header'] %>;
-	background: #fff;
+  border-top: 4px solid <%= @page.color['header'] %>;
+  color: <%= @page.color['header'] %>;
+  background: #fff;
 }
 
 address {margin-top: 0;}
 
 
 ul.info {
-	margin-left: 0;
+  margin-left: 0;
 }
 ul.info li {
-	list-style: 	none;
-	margin-left: 	0;
-	padding-left:	0;
+  list-style:   none;
+  margin-left:  0;
+  padding-left: 0;
 }
 
 dl.posts { margin: 0 0 1em 0; }
 
 dl.posts dt {
-	margin-top:  1em;
-	line-height:  1.5;
-	/*margin-bottom:  .5em;*/
+  margin-top:  1em;
+  line-height:  1.5;
+  /*margin-bottom:  .5em;*/
 }
 
 dl.posts dd {
-	margin-left:  0;
-	margin-bottom:  .5em;
-	line-height:  1.5;
-	/*font-size: .9em;*/
+  margin-left:  0;
+  margin-bottom:  .5em;
+  line-height:  1.5;
+  /*font-size: .9em;*/
 }
 
 
 #footer p {
-	margin-bottom:  .5em;
+  margin-bottom:  .5em;
 }
 
 #footer .panel {
-	width:  180px;
-	margin-right:  20px;
-	border-top:  3px solid <%= @page.color['border'] %>;
-	padding-top:  1.5em;
+  width:  180px;
+  margin-right:  20px;
+  border-top:  3px solid <%= @page.color['border'] %>;
+  padding-top:  1.5em;
 }
 
 #footer .panel.last {
-	width:  190px;
-	margin-right: 0;
+  width:  190px;
+  margin-right: 0;
 }
 
 #about {position:relative;}
@@ -233,27 +253,26 @@ dl.posts dd {
 #about .top-link {top:0;}
 
 #copyright {}
-	
+  
 /* Entries
  * --------------------------------------------------------------------- */
 
 .title-summary {
-	font-size:  1em;
-	margin: 0 0 1em;
+  margin: 0;
 }
 
 .post-list .title-summary {
-	font-size:  .5em;
+  font-size:  .5em;
 }
 
 .post-list .title-summary h4.entry-title {
-	font-size:  3em;
+  font-size:  3em;
 }
 
 .entry-title a {
     color: <%= @page.color['header'] %>;
     background: <%= @page.color['bg-hilight'] %>;
-	text-decoration: none;
+  text-decoration: none;
 }
 .entry-title a:hover {
     color: <%= @page.color['header'] %>;
@@ -261,51 +280,59 @@ dl.posts dd {
 }
 
 .post-info {
-	line-height: 1;
-	text-align: 	right;
-	padding-bottom:  .2em;
-	margin-bottom: 2em;
-	font-style: italic;
-	font-family: Georgia, "Times New Roman", Times, serif;
+  line-height: 18px;
+  text-align:   right;
+  font-style: italic;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin-bottom:  18px;
 }
 
 .post-info abbr {
-	color:  #999;
-	border-bottom: 0;
+  color:  #999;
+  border-bottom: 0;
 }
 
 p.entry-summary {
-	font: 	italic 1.75em/1.5 Georgia, "Times New Roman", Times, serif;
-	color:  <%= @page.color['quiet'] %>;
-	text-align:	justify;
-	padding: 0;
-	margin: 0;
+  font:   italic 22px/36px Georgia, "Times New Roman", Times, serif;
+  color:  <%= @page.color['quiet'] %>;
+  text-align: justify;
+  padding: 0;
+  margin: 0;
 }
 
 .entry-summary a {color: #666; text-decoration: underline;}
 .entry-summary a:hover {color: #333;}
 div.entry-content {
-	margin-top:  1em;
-}
-
-.entry-content h3 {
-    margin-top: 2em;
-}
-
-.entry-content h4 {
-    font-size: 16px;
+  margin-top:  1em;
 }
 
 .entry-content p, .entry-content ul {
-	font-size:  1.1em;
+  font-size:  13px;
+  line-height: 18px;
     width: 450px;
     margin-right: 0;
 }
 
-.entry-content ul {
+.entry-content ul, .entry-content ol {
     list-style-position: outside;
     margin-left:0;
     padding-left:0;
+}
+
+.entry-content ol li {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 18px;
+  color:  <%= @page.color['quiet'] %>;  
+}
+
+.entry-content ol li p {
+  font-family: Verdana, "Bitstream Vera Sans", sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  line-height: 18px;
+  color: #222;
 }
 
 .entry-content .img {
@@ -340,37 +367,40 @@ div.entry-content {
     width:100%;
     color: #999;
     text-align:center;
-	font: 	italic 1em/1.2 Georgia, "Times New Roman", Times, serif;
+  font:   italic 1em/1.2 Georgia, "Times New Roman", Times, serif;
 }
 
 .entry-content .img.no-border img {border:0;}
 
 .latest {
-	padding-bottom:	2em;
-	margin-bottom: 	3em;
+  padding-bottom: 2em;
+  margin-bottom:  3em;
   border-bottom:  3px solid <%= @page.color['border'] %>
 }
 
 .latest .entry-content {
-	margin-bottom:  1em;
+  margin-bottom:  1em;
 }
 
 .latest .entry-content p {
-	margin-right: 0;
-	width: 100%;
+  margin-right: 0;
+  width: 100%;
 }
 
 .post-list h3.month {
-	/*font-size: 1.25em;*/
-	margin: 1em 0 .25em;
-	color:  #999;
+  font-size: 22px;
+  text-transform:  capitalize;
+  line-height: 18px;
+  margin: 18px 0 0;
+  color:  #666;
 }
 
 .post-list .entry-title {
-	font-size:  1.2em;
-	font-weight:  bold;
-	margin-bottom:  0;
-	padding-bottom: 0;
+  font-size:  16px;
+  line-height: 18px;
+  font-weight:  bold;
+  margin-bottom:  0;
+  padding-bottom: 0;
 }
 
 .post-list .title-summary .entry-title a {
@@ -382,20 +412,21 @@ div.entry-content {
 }
 
 .post-list .entry-summary {
-	font-family: "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
-	font-style: normal;
-	font-size:  2.2em;
-	padding:	0;
-	margin:		0;
+  font-family: "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+  font-style: normal;
+  line-height: 18px;
+  font-size:  2.2em;
+  padding:  6px 0 12px;
+  margin:   0;
 }
 
 .post-list .post-info {
-	font-size: .8em;
+  font-size: .8em;
 }
 
 #home h1 {
-	font-size:  3em;
-	font-weight:  bold;
+  font-size:  3em;
+  font-weight:  bold;
 }
 
 /* EOF */

@@ -87,22 +87,20 @@ filter:
       <%= BlogRoll.to_html %>
      </div>
      <div class="panel column last plain">
-       <% recent_pages = @pages.find(:limit => 5,
+       <% recent_pages = @pages.find(:all,
                                      :in_directory => "blog",
                                      :recursive => true,
-                                     :sort_by => 'mtime',
-                                     :reverse => true){|p| p.path !~ /\/index\.txt$/} %>
-       <% unless recent_pages.nil? || recent_pages.empty? %>
-         <h3 id="footer-recent">Recently</h3>
-         <dl class="posts">
-         <% recent_pages.group_by{|p| p.created_at.strftime('%B %Y')}.each do |group, pages| %>
-           <dt><%= group %></dt>
-              <% pages.each do |page| %>
-                <dd><a href="<%=  page.url %>"><%= page.title %></a></dd>
-              <% end %>
-         <% end %>
-         </dl>
+                                     :sort_by => 'created_at',
+                                     :reverse => true){|p| p.path !~ /\/index\.txt$/}.first(5) %>
+       <h3 id="footer-recent">Recently</h3>
+       <dl class="posts">
+       <% recent_pages.group_by{|p| p.created_at.strftime('%B %Y')}.each do |group, pages| %>
+         <dt><%= group %></dt>
+            <% pages.each do |page| %>
+              <dd><a href="<%=  page.url %>"><%= page.title %></a></dd>
+            <% end %>
        <% end %>
+       </dl>
      </div>
      <!-- <a class='extra-quiet plain top-link' href='#header'>[top]</a> -->
    </div>
