@@ -10,7 +10,7 @@ dirty:     true
     <p class="entry-summary"><%= @page.summary %></p>
   </div>    
   <div class='post-info'>
-    <abbr class='published' title='<%= @page.created_at.to_s %>'><%=  @page.created_at.strftime('%b %d, %Y') %></abbr>
+    <abbr class='published' title='<%= @page.created_at.to_s %>'><%=  @page.created_at.strftime('%B %d, %Y') %></abbr>
   </div>
   <div class='entry-content'>
     <%= @content %>

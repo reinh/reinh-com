@@ -94,8 +94,8 @@ filter:
                                      :reverse => true){|p| p.path !~ /\/index\.txt$/}.first(5) %>
        <h3 id="footer-recent">Recently</h3>
        <dl class="posts">
-       <% recent_pages.group_by{|p| p.created_at.strftime('%B %Y')}.each do |group, pages| %>
-         <dt><%= group %></dt>
+       <% recent_pages.group_by{|p| p.created_at.strftime('%B<strong>%y</strong>').upcase}.each do |group, pages| %>
+         <dt class="month"><%= group %></dt>
             <% pages.each do |page| %>
               <dd><a href="<%=  page.url %>"><%= page.title %></a></dd>
             <% end %>

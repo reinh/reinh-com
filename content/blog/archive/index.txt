@@ -10,10 +10,11 @@ dirty:      true
 - articles.group_by{|a| a.created_at.strftime('%Y')}.each do |year, articles|
   .post-list.section
     %h2.recent= year
-    - articles.group_by{|p| p.created_at.strftime('%B')}.each do |month, pages|
-      %h3.month= month.upcase
-      - pages.each do |page|
-        .title-summary
-          %h4.entry-title
-            %a{:href => page.url}= page.title   
-          %p.entry-summary= page.summary
+    - articles.group_by{|p| p.created_at.strftime('%B<strong>%y</strong>')}.each do |month, pages|
+      .group
+        %h3.month= month.upcase
+        - pages.each do |page|
+          .title-summary
+            %h4.entry-title
+              %a{:href => page.url}= page.title   
+            %p.entry-summary= page.summary

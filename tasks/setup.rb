@@ -1,5 +1,3 @@
-# $Id$
-
 begin
   require 'webby'
 rescue LoadError

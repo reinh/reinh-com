@@ -9,7 +9,7 @@ filter:
   - textile
 ---
 
-_NB:_ This has been cross-posted on "my company blog":http://hashrocket.com
+_NB:_ This has been cross-posted on my "company blog":http://hashrocket.com.
 
 We've recently switched a number of projects to "ThinkingSphinx":http://ts.freelancing-gods.com/ here at "Hashrocket":http://www.hashrocket.com. These projects were originally using SOLR or "UltraSphinx":http://blog.evanweaver.com/files/doc/fauna/ultrasphinx/files/README.html. Today, we'll explore the differences between UltraSphinx and ThinkingSphinx and why we chose to switch.
 
@@ -94,7 +94,7 @@ h4. ThinkingSphinx
 
 Let's look at that same example translated to ThinkingSphinx.
 
-<% coderay( :lang => "ruby") do %>
+<% coderay( :lang => "ruby") do -%>
 class Post < ActiveRecord::Base
   belongs_to :blog
   belongs_to :category
@@ -124,7 +124,7 @@ h3. Deployment and Configuration Management
 
 Both UltraSphinx and ThinkingSphinx are pretty simple to deploy. You should symlink your configuration file from a shared location into your app's path after deployment, just as you probably do for your @database.yml@ file. You will probably want to run the configuration task after you update the code. Here, for instance, is a Capistrano task to run your ThinkingSphinx configuration task:
 
-<% coderay( :lang => "ruby") do %>
+<% coderay( :lang => "ruby") do -%>
 namespace :sphinx do
   desc "Generate the ThinkingSphinx configuration file"
     task :configure do
@@ -136,7 +136,7 @@ end
 
 You'll want to have this task run after each deployment:
 
-<% coderay( :lang => "ruby") do %>
+<% coderay( :lang => "ruby") do -%>
 after "deploy:update_code", "sphinx:configure"
 <% end %>
 
