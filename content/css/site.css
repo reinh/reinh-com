@@ -18,12 +18,12 @@ color:
 ---
 
 body {
-  font-family: Verdana, "Bitstream Vera Sans", sans-serif;
-  font-size: 12px;
+  font-family:  Verdana, "Bitstream Vera Sans", sans-serif;
+  font-size:    12px;
   line-height:  18px;
-  margin:  0;
-  padding:  0;
-  color: #222;
+  margin:       0;
+  padding:      0;
+  color:        #222;
 /*  background: url('blueprint/lib/grid.png') repeat 12px 0px;*/
 }
 
@@ -35,31 +35,31 @@ body {
  * --------------------------------------------------------------------- */
 h1,h2,h3,h4,h5,h6 {
   letter-spacing: -1px;
-  color: <%= @page.color['header'] %>;
-  font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  color:          <%= @page.color['header'] %>;
+  font-family:    "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
 
 h2 {
-  font-size:  36px;
-  line-height:  36px;
-  font-weight: bold;
-  margin: 0;
+  font-size:      36px;
+  line-height:    36px;
+  font-weight:    bold;
+  margin:         0;
   margin-bottom:  .5em;
-  color: <%= @page.color['header'] %>;
+  color:          <%= @page.color['header'] %>;
 }
 
 h3 {
-  font-size: 22px;
-  line-height:  36px;
+  font-size:      22px;
+  line-height:    36px;
   margin-bottom:  18px;
 }
 
 h4 {
-  padding:  9px 0;
-  margin:   0;
-  font-size:  18px;
-  line-height:18px;
-  font-weight:bold;
+  padding:      9px 0;
+  margin:       0;
+  font-size:    18px;
+  line-height:  18px;
+  font-weight:  bold;
 }
 
 /* Text Elements
@@ -74,19 +74,19 @@ p.read-more a { text-align: center; color: <%= @page.color['link-hover'] %>; fon
 p.read-more a:hover { text-decoration: underline;}
 
 blockquote {
-  margin-left: 0;
-  padding-left:  1.5em;
-  color: <%= @page.color['blockquote'] %>;
+  margin-left:  0;
+  padding-left: 1.5em;
+  color:        <%= @page.color['blockquote'] %>;
 }
 
 pre {
   padding:  .9px 0;
-  margin: 0 0 18px;
+  margin:   0 0 18px;
 }
 
 pre, code, tt {
-  font-size:  12px;
-  line-height: 18px;
+  font-size:    12px;
+  line-height:  18px;
 }
 
 hr {
@@ -97,13 +97,13 @@ hr {
 ul, ol {margin-bottom: 18px;}
 
 ul.no-bullet {
-  list-style: none;
-  margin-left: 0;
+  list-style:   none;
+  margin-left:  0;
 }
 
 ul.no-bullet li {
   margin-left:  none;
-  padding-left:  none;
+  padding-left: none;
 }
 
 em {
@@ -136,11 +136,11 @@ p.quiet { color: <%= @page.color['quiet'] %>; }
 }
 
 a.top-link {
-  font-size: .9em;
-  position: absolute;
-  right: 0;
-  top: 1em;
-  color: #999 !important;
+  font-size:  .9em;
+  position:   absolute;
+  right:      0;
+  top:        1em;
+  color:      #999 !important;
 }
 
 a.top-link:hover {
@@ -152,21 +152,21 @@ a.top-link:hover {
 }
 
 .section {
-  margin: 0 0 36px;
+  margin:   0 0 36px;
   position: relative;
 }
 
 #header {
-  font-family: "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
-  height:  36px;
+  font-family:  "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+  height:       36px;
 }
 
 #header h1.title {
-  margin: 0;
-  padding: 0;
-  padding-top: 18px;
-  font: bold 18px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
-  display:  block;
+  margin:       0;
+  padding:      0;
+  padding-top:  18px;
+  font:         bold 18px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display:      block;
 }
 
 h1.title a { color:  #666; }
@@ -175,32 +175,32 @@ h1.title a:hover { color: <%= @page.color['header'] %>;}
 #header h1.title a small { color:  #aaa;}
 
 .nav ul {
-  display: block;
-  float: right;
-  font-size:  1em;
+  display:      block;
+  float:        right;
+  font-size:    1em;
   font-weight:  bold;
-  padding: 0;
-  margin: 0;
+  padding:      0;
+  margin:       0;
 }
 
 .nav li {
-  text-align:  right;
-  list-style:  none;
-  display:  block;
+  text-align: right;
+  list-style: none;
+  display:    block;
 }
 
 .nav ul li a {
-  padding-top: 14px;
-  border-top:  4px solid <%= @page.color['border'] %>;
-  display:  block;
-  color: #999;
+  padding-top:      14px;
+  border-top:       4px solid <%= @page.color['border'] %>;
+  display:          block;
+  color:            #999;
   text-decoration:  none;
   /*padding-top:  .5em;*/
 }
 
 .nav a:hover, .nav ul li.active a {
   border-top: 4px solid <%= @page.color['header'] %>;
-  color: <%= @page.color['header'] %>;
+  color:      <%= @page.color['header'] %>;
   background: #fff;
 }
 
@@ -219,14 +219,14 @@ ul.info li {
 dl.posts { margin: 0 0 18px 0;}
 
 dl.posts dt {
-  font-weight: normal;
-  font-size: 18px;
-  margin-top:  18px;
+  font-weight:  normal;
+  font-size:    18px;
+  margin-top:   18px;
   line-height:  18px;
 }
 
 dl.posts dd {
-  margin:  0;
+  margin:       0;
   line-height:  18px;
 }
 
@@ -240,12 +240,12 @@ dl.posts dd {
 }
 
 #footer .panel {
-  width:  180px;
-  margin-right:  20px;
+  width:        180px;
+  margin-right: 20px;
 }
 
 #footer .panel.last {
-  width:  190px;
+  width:        190px;
   margin-right: 0;
 }
 
