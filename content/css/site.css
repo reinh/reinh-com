@@ -89,10 +89,16 @@ pre, code, tt {
   line-height:  18px;
 }
 
+sup {
+  line-height: 1px;
+}
+
 hr {
   background: <%= @page.color['highlight'] %>;
   color:      <%= @page.color['highlight'] %>;
 }
+
+dl {margin-bottom: 18px;}
 
 ul, ol {margin-bottom: 18px;}
 
