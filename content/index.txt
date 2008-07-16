@@ -16,7 +16,7 @@ filter:
           %a{:href => page.url}= Widont.widont page.title   
         %p.entry-summary= page.summary        
       .post-info
-        %abbr.published{:title => page.created_at.to_s}= page.created_at.strftime('%B %d, %Y')
+        %abbr.published{:title => page.created_at.to_s}== Posted #{page.created_at.strftime('%B %d, %Y')}
       - if page.excerpt
         .entry-content= RedCloth.new(page.excerpt).to_html
       %p.read-more

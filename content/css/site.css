@@ -19,12 +19,12 @@ color:
 
 body {
   font-family: Verdana, "Bitstream Vera Sans", sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   line-height:  18px;
   margin:  0;
   padding:  0;
   color: #222;
-  background: url('blueprint/lib/grid.png') repeat 12px 0px;
+/*  background: url('blueprint/lib/grid.png') repeat 12px 0px;*/
 }
 
 .container {
@@ -34,6 +34,7 @@ body {
 /* Headings
  * --------------------------------------------------------------------- */
 h1,h2,h3,h4,h5,h6 {
+  letter-spacing: -1px;
   color: <%= @page.color['header'] %>;
   font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
@@ -42,14 +43,13 @@ h2 {
   font-size:  36px;
   line-height:  36px;
   font-weight: bold;
-  letter-spacing: -1px;
   margin: 0;
   margin-bottom:  .5em;
   color: <%= @page.color['header'] %>;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 22px;
   line-height:  36px;
   margin-bottom:  18px;
 }
@@ -85,7 +85,7 @@ pre {
 }
 
 pre, code, tt {
-  font-size:  13px;
+  font-size:  12px;
   line-height: 18px;
 }
 
@@ -93,6 +93,8 @@ hr {
   background: <%= @page.color['highlight'] %>;
   color:      <%= @page.color['highlight'] %>;
 }
+
+ul, ol {margin-bottom: 18px;}
 
 ul.no-bullet {
   list-style: none;
@@ -163,7 +165,6 @@ a.top-link:hover {
   margin: 0;
   padding: 0;
   padding-top: 18px;
-  letter-spacing: -1px;
   font: bold 18px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
   display:  block;
 }
@@ -219,7 +220,7 @@ dl.posts { margin: 0 0 18px 0;}
 
 dl.posts dt {
   font-weight: normal;
-  font-size: 16px;
+  font-size: 18px;
   margin-top:  18px;
   line-height:  18px;
 }
@@ -236,7 +237,6 @@ dl.posts dd {
 #footer a:hover { color:  #125AA7;}
 
 #footer p {
-  margin-bottom:  .5em;
 }
 
 #footer .panel {
@@ -265,7 +265,7 @@ a.top-link {top:0;}
 }
 
 .entry-title a {
-    color: <%= @page.color['header'] %>;
+  color: <%= @page.color['header'] %>;
   text-decoration: none;
 }
 .entry-title a:hover {
@@ -287,7 +287,7 @@ a.top-link {top:0;}
 }
 
 p.entry-summary {
-  font:   italic 22px/36px Georgia, "Times New Roman", Times, serif;
+  font:   italic 18px/27px Georgia, "Times New Roman", Times, serif;
   color:  <%= @page.color['quiet'] %>;
   text-align: justify;
   padding: 0;
@@ -301,16 +301,15 @@ div.entry-content {
 }
 
 .entry-content p, .entry-content ul {
-  font-size:  13px;
   line-height: 18px;
-    width: 450px;
-    margin-right: 0;
+  width: 450px;
+  margin-right: 0;
 }
 
 .entry-content ul, .entry-content ol {
-    list-style-position: outside;
-    margin-left:0;
-    padding-left:0;
+  list-style-position: outside;
+  margin-left:0;
+  padding-left:0;
 }
 
 .entry-content ol li {
@@ -323,8 +322,8 @@ div.entry-content {
 
 .entry-content ol li p {
   font-family: Verdana, "Bitstream Vera Sans", sans-serif;
-  font-size: 13px;
   font-style: normal;
+  font-size: 12px;
   line-height: 18px;
   color: #222;
 }
@@ -389,11 +388,10 @@ div.entry-content {
 
 .post-list h3.month {
   position: absolute;
-  top: -1px;
   text-align: right;
   width: 190px;
   padding-right: 10px;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 18px;
   text-transform:  uppercase;
   margin: 0 0 0 -200px;
@@ -424,7 +422,7 @@ div.entry-content {
   font-family: "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
   font-style: normal;
   line-height: 18px;
-  font-size:  14px;
+  font-size:  12px;
   padding:  3px 0 15px 0;
 /*  margin:   0 0 18px;*/
 }
