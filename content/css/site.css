@@ -24,7 +24,7 @@ body {
   margin:  0;
   padding:  0;
   color: #222;
-/*  background: url('blueprint/lib/grid.png') repeat 12px -2px;*/
+  background: url('blueprint/lib/grid.png') repeat 12px 0px;
 }
 
 .container {
@@ -46,7 +46,6 @@ h2 {
   margin: 0;
   margin-bottom:  .5em;
   color: <%= @page.color['header'] %>;
-  
 }
 
 h3 {
@@ -74,10 +73,6 @@ p.read-more { text-align: center; margin: 18px 0 0;}
 p.read-more a { text-align: center; color: <%= @page.color['link-hover'] %>; font-size: 18px;}
 p.read-more a:hover { text-decoration: underline;}
 
-#footer, #footer a { color: #444;}
-#footer h3 { color: #666;}
-#footer a:hover { color:  #125AA7;}
-
 blockquote {
   margin-left: 0;
   padding-left:  1.5em;
@@ -85,7 +80,6 @@ blockquote {
 }
 
 pre {
-/*  background: <%= @page.color['box-bg'] %>;*/
   padding:  .9px 0;
   margin: 0 0 18px;
 }
@@ -108,6 +102,10 @@ ul.no-bullet {
 ul.no-bullet li {
   margin-left:  none;
   padding-left:  none;
+}
+
+em {
+  background: #ffe;
 }
 
 /* Tables
@@ -231,6 +229,11 @@ dl.posts dd {
   line-height:  18px;
 }
 
+#footer {position:relative;}
+
+#footer, #footer a { color: #444;}
+#footer h3 { color: #777;}
+#footer a:hover { color:  #125AA7;}
 
 #footer p {
   margin-bottom:  .5em;
@@ -239,8 +242,6 @@ dl.posts dd {
 #footer .panel {
   width:  180px;
   margin-right:  20px;
-  border-top:  3px solid <%= @page.color['border'] %>;
-  padding-top:  1.5em;
 }
 
 #footer .panel.last {
@@ -248,9 +249,7 @@ dl.posts dd {
   margin-right: 0;
 }
 
-#about {position:relative;}
-
-#about .top-link {top:0;}
+a.top-link {top:0;}
 
 #copyright {}
   
@@ -390,6 +389,7 @@ div.entry-content {
 
 .post-list h3.month {
   position: absolute;
+  top: -1px;
   text-align: right;
   width: 190px;
   padding-right: 10px;

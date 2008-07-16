@@ -1,7 +1,19 @@
 
 require 'rake/contrib/sshpublisher'
 
+task :staging do
+  SITE.remote_dir = "/var/www/beta.reinh.com"
+end
+
+task :production do
+  SITE.remote_dir = "/var/www/reinh.com"
+end
+
 namespace :deploy do
+  SITE.user       = "www"
+  SITE.host       = "reinh"
+  SITE.remote_dir = "/var/www/beta.reinh.com"
+  SITE.rsync_args = %w( -av --delete )
 
   desc 'Deploy to the server using rsync'
   task :rsync do

@@ -57,7 +57,7 @@ filter:
      </h1>
      <div class="nav">
        <ul>
-        <li class="column span-2 append-1"><a href="#about" onClick='document.getElementById("about").setAttribute("style", "background:#FFFFDD")'>About</a></li>
+        <li class="column span-2 append-1"><a href="#about" onClick='document.getElementById("about").setAttribute("style", "background:#FFFFEE")'>About</a></li>
         <li class="column span-2 append-1"><a href="/#recent">Recently</a></li>
         <li class="column span-2 last <%= "active" if @page.title == "Archive" %>"><a href="/blog/archive">Archive</a></li>
        </ul>
@@ -69,6 +69,7 @@ filter:
    </div>
 
    <div class="column span-15 first last section" id="footer">
+     <a class="extra-quiet plain top-link" href='#header' onClick='document.getElementById("about").setAttribute("style", "background:#FFFFFF")'>[top]</a>
      <div class="panel column first">
        <div id="about">
          <h3>About</h3>
@@ -79,7 +80,6 @@ filter:
            <li><a href="http://feeds.feedburner.com/reinh" rel="alternate" type="application/rss+xml">Subscribe</a>&nbsp;<a href="http://feeds.feedburner.com/reinh" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0;margin:0;padding:0"/></a></li>
            <li><a href="http://twitter.com/reinh">Twitter Me</a></li>
          </ul>
-         <a class="extra-quiet plain top-link" href='#header' onClick='document.getElementById("about").setAttribute("style", "background:#FFFFFF")'>[top]</a>
        </div>
      </div>
      <div class="panel column plain">

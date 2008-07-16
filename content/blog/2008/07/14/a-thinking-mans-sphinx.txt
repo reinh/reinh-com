@@ -9,7 +9,7 @@ filter:
   - textile
 ---
 
-_NB:_ This has been cross-posted on my "company blog":http://hashrocket.com.
+_NB:_ This has been cross-posted on the "Hashrocket blog":http://hashrocket.com.
 
 We've recently switched a number of projects to "ThinkingSphinx":http://ts.freelancing-gods.com/ here at "Hashrocket":http://www.hashrocket.com. These projects were originally using SOLR or "UltraSphinx":http://blog.evanweaver.com/files/doc/fauna/ultrasphinx/files/README.html. Today, we'll explore the differences between UltraSphinx and ThinkingSphinx and why we chose to switch.
 
@@ -33,7 +33,7 @@ Let's start with a basic example of a sphinx index declaration. Keep in mind tha
 
 h4. UltraSphinx
 
-UltraSphinx uses a declarative @is_indexed@ statement in the model that feels vaguely similar in style to an association or named scope declaration. This is the usage example given in the "README":http://blog.evanweaver.com/files/doc/fauna/ultrasphinx/files/README.html:
+UltraSphinx uses a declarative @is_indexed@ statement in the model that feels vaguely similar in style to an association or named scope declaration. This is the usage example given in the&nbsp;"README":http://blog.evanweaver.com/files/doc/fauna/ultrasphinx/files/README.html:
 
 <% coderay( :lang => "ruby") do -%>
 class Post
