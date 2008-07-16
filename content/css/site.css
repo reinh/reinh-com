@@ -12,7 +12,7 @@ color:
   box-bg:      "#EEF3FE"
   box-border:  "#B7CDF1"
   highlight:   "#B7CDF1"
-  bg-hilight:  "#FFFFEE"
+  bg-hilight:  "#FFFFDD"
   quiet:       "#999"
   alt:         "#999"
 ---
@@ -24,7 +24,7 @@ body {
   margin:       0;
   padding:      0;
   color:        #222;
-/*  background: url('blueprint/lib/grid.png') repeat 12px 0px;*/
+/*  background: url('blueprint/lib/grid.png') repeat top right;*/
 }
 
 .container {
@@ -107,7 +107,8 @@ ul.no-bullet li {
 }
 
 em {
-  background: #ffe;
+  font-style: normal;
+  background: #FFFFDD;
 }
 
 /* Tables
@@ -233,7 +234,7 @@ dl.posts dd {
 #footer {position:relative;}
 
 #footer, #footer a { color: #444;}
-#footer h3 { color: #777;}
+#footer h3 { color: #999;}
 #footer a:hover { color:  #125AA7;}
 
 #footer p {
@@ -338,7 +339,7 @@ div.entry-content {
 .entry-content .img img {
     width:100px;
     display:block;
-/*    border: 10px solid #FFFFEE;*/
+/*    border: 10px solid #FFFFDD;*/
     margin-bottom:0;
     margin-left: auto;
     margin-right: 0;
@@ -370,7 +371,7 @@ div.entry-content {
   margin-right: -40px;
   margin-top: -18px;
   padding: 36px 40px;
-  background: #ffe;
+  background: #FFFFDD;
 }
 
 .latest .entry-content {

@@ -9,11 +9,9 @@ filter:
   - textile
 ---
 
-_NB:_ This has been cross-posted on the "Hashrocket blog":http://hashrocket.com.
-
 We've recently switched a number of projects to "ThinkingSphinx":http://ts.freelancing-gods.com/ here at "Hashrocket":http://www.hashrocket.com. These projects were originally using SOLR or "UltraSphinx":http://blog.evanweaver.com/files/doc/fauna/ultrasphinx/files/README.html. Today, we'll explore the differences between UltraSphinx and ThinkingSphinx and why we chose to switch.
 
-UltraSphinx is written by "Evan Weaver":http://blog.evanweaver.com/. ThinkingSphinx is written by "Pat Allen":http://blog.evanweaver.com/. They have some similarities: both use Sphinx (obviously); both are based on the underlying Ruby API for Sphinx, "Riddle":http://riddle.freelancing-gods.com/ (also by Pat Allen); both have excellent documentation and well-written tutorials. The similarities pretty much end there, however, and the differences are far more interesting.
+UltraSphinx is written by "Evan Weaver":http://blog.evanweaver.com/. ThinkingSphinx is written by "Pat Allan":http://blog.evanweaver.com/. They have some similarities: both use Sphinx (obviously); both are based on the underlying Ruby API for Sphinx, "Riddle":http://riddle.freelancing-gods.com/ (also by Pat Allan); both have excellent documentation and well-written tutorials. The similarities pretty much end there, however, and the differences are far more interesting.
 
 h3. Basic Sphinx Configuration
 
@@ -80,7 +78,7 @@ class Post < ActiveRecord::Base
                               :sortable         =>  true},
                              {:association_name => "blog",
                               :field            => "description",
-                              :as               => "blog_description_"},
+                              :as               => "blog_description"},
                              {:association_name => "category",
                               :field            => "title",
                               :as               => "category",
@@ -118,7 +116,7 @@ Notice that the declarations use methods rather than symbols. ThinkingSphinx use
 
 h3. Sphinx Rake Tasks
 
-Both UltraSphinx and ThinkingSphinx provide a number of rake tasks for common sphinx tasks such as generating the configuration file; generating the index; and starting, stopping, and restarting the searchd daemon. ThinkingSphinx provides abbreviations for the more common task, such as @ts:in@ for @thinking_sphinx:index@. Their rake tasks are otherwise essentially equivalent.
+Both UltraSphinx and ThinkingSphinx provide a number of rake tasks for common sphinx tasks such as generating the configuration file; generating the index; and starting, stopping, and restarting the searchd daemon. Both provide abbreviations for the more common task, such as @ts:in@ for @thinking_sphinx:index@ or @us:conf@ for @ultrasphinx:configure@.
 
 h3. Deployment and Configuration Management
 
@@ -140,7 +138,7 @@ You'll want to have this task run after each deployment:
 after "deploy:update_code", "sphinx:configure"
 <% end %>
 
-You can create other tasks relatively easily for reindexing and managing the searchd daemon. I found a good guide to "deploying a rails app with ThinkingSphinx":http://www.updrift.com/article/deploying-a-rails-app-with-thinking-sphinx linked from Pat Allen's blog. I found a useful set of "UltraSphinx capistrano tasks":http://github.com/ruberion/ruberion_server_tools/tree/master/recipes/tasks/ultrasphinx.rb in Ruberion's server tools plugin on Github. If you chose to host with "EngineYard":http://www.engineyard.com/, they can manage either configuration for you with their pre-baked builds and deploy tasks.
+You can create other tasks relatively easily for reindexing and managing the searchd daemon. I found a good guide to "deploying a rails app with ThinkingSphinx":http://www.updrift.com/article/deploying-a-rails-app-with-thinking-sphinx linked from Pat Allan's blog. I found a useful set of "UltraSphinx capistrano tasks":http://github.com/ruberion/ruberion_server_tools/tree/master/recipes/tasks/ultrasphinx.rb in Ruberion's server tools plugin on Github. If you chose to host with "EngineYard":http://www.engineyard.com/, they can manage either configuration for you with their pre-baked builds and deploy tasks.
 
 h3. Real World Experience
 
@@ -149,9 +147,20 @@ We ran into a number of issues when setting up UltraSphinx:
 # <p>UltraSphinx loads your models without loading the full rails environment. This means that if
   your models depend on any of your lib files or any gems frozen in vendor/gems, you will have to
   require all of these files explicitly in each model. This is a pain.</p>
-# <p>The fundamentally sound design and code of UltraSphinx is somewhat undermined by poorly
-  implemented exception handling. This means that most of the time things work swimmingly; but when
-  they fail you're really sunk! The errors that you receive are sometimes useless in diagnosing the
-  actual problem.</p>
+# <p>The fundamentally sound design and code of UltraSphinx are somewhat undermined by poorly
+  implemented exception handling. This means that while most of the time things work swimmingly,
+  when they fail you're really sunk! The errors that you receive are often useless in diagnosing
+  the actual problem.</p>
 # <p>We had bugs in our index that only existed on our staging and production slices. These caused
-  page counts to be incorrect and nil records to be returned in certain cases.</p>
+  page counts to be incorrect and nil records to be returned in certain cases. In certain cases it
+  also caused 5xx errors.</p>
+  
+h4. Moving To ThinkingSphinx
+
+After another Hashrocket team had success moving their project from SOLR to ThinkingSphinx, I decided to move our project as well. Moving to ThinkingSphinx proved to be a relatively painless experience. The process was essentially five-fold:
+
+# <p>Uninstall UltraSphinx and install ThinkingSphinx.</p>
+# <p>Translate your @is_indexed@ declaration into a @define_index@ block and change your search actions to use the ThinkingSphinx API.</p>
+# <p>Rewrite your deployment tasks to run the ThinkingSphinx rake tasks.</p>
+# <p>Stop searchd and then run your new configure, index and startd start tasks.</p>
+# <p>PROFIT!</p>
