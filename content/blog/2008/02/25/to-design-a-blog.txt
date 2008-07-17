@@ -2,7 +2,7 @@
 title:      To Design A Blog (act 1)
 created_at: 2008-02-25 14:22:24.645738 -06:00
 author:     Rein Henrichs
-summary:    Wherein our hero discusses the redesign of your favorite blog, complete with pretty pictures. A play in two acts.
+summary:    Wherein our hero discusses the redesign of your favorite blog, complete with pretty pictures. A play in two&nbsp;acts.
 excerpt:    Your blog's role as personal soapbox is obvious; its role in establishing identity is often overlooked. As a designer, your blog speaks volumes not only by what it says, but also by how it says it. If you can't design your own blog &ndash; they will say &ndash; how can you design anything else? It was with this in mind that I set out to redesign my own blog.
 layout:     post
 filter:
