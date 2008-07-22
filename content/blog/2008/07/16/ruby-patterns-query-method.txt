@@ -2,7 +2,7 @@
 title:      'Ruby Patterns: Query Method'
 created_at: 2008-07-16 16:33:57.327430 -04:00
 layout:     post
-summary:    Wherein our hero describes a particularly useful pattern that well help you keep your objects polite, well-behaved and properly encapsulated. What a beautiful specimen!
+summary:    Wherein our hero describes a particularly useful pattern that will help you keep your objects polite, well-behaved and properly encapsulated. What a beautiful specimen!
 excerpt:    What are patterns? Patterns are learnable and reusable answers to common programming questions. They are decisions made in response to a number of different concerns (or tensions). A well written pattern resolves each of the tensions harmoniously and provides a set of repeatable steps for its reapplication.
 filter:
   - erb
@@ -11,7 +11,7 @@ filter:
 
 What are patterns? Patterns are learnable and reusable answers to common programming questions. They are decisions made in response to a number of different concerns (or tensions). A well written pattern resolves each of the tensions harmoniously and provides a set of repeatable steps for its reapplication.
 
-Let's look at an situation where various tensions pull us towards the need to make a harmonious design decision and attempt to derive a pattern for future use. As we do so, we will try to keep in mind the tensions at play and come up with steps that can be used to reapply the pattern in the&nbsp;future.
+Let's look at a situation where various tensions pull us towards the need to make a harmonious design decision and attempt to derive a pattern for future use. As we do so, we will try to keep in mind the tensions at play and come up with steps that can be used to reapply the pattern in the&nbsp;future.
 
 The Query Method pattern answers a particularly common question, "How can I ask an object for information about itself?" The tensions at play include a desire to maintain proper encapsulation, a desire to keep code DRY(Don't Repeat Yourself) and a desire to maintain or improve the readability of the resulting&nbsp;solution. 
 
@@ -47,7 +47,7 @@ h4. Don't Repeat Yourself
 
 This code seems simple enough. It does one thing and appears to do it efficiently. There is no violation of DRY yet, but it isn't to difficult to imagine other situations where we might need to know if a post is recent.
 
-Let's say we are generating an HTML page and we want to apply a special class to recent posts. We will need to duplicate this logic inside that method as well. Now, what if we later decide that we want posts in the last three days instead? Now we have to find each instance of this code fragment so that we can change it&nbsp;appropriately. 
+Let's say we are generating an HTML page and we want to apply a special class to recent posts. We will need to duplicate this logic inside that method as well. What if we later decide that we want posts in the last three days instead of two? Now we have to find each instance of this code fragment so that we can change it&nbsp;appropriately. 
 
 What a pain! Clearly this code is not DRY and its maintainability is compromised as a result. This is the second tension.
 
@@ -81,7 +81,7 @@ h4. Readability
 
 Patterns can often be improved by the inclusion of smaller, more granular patterns. In this case, the readability can be improved by providing the method with an Intention Revealing Selector. An intention revealing selector is, as the name suggests, one that informs to the user of the intention of the method rather than its implementation.
 
-Our current selector - and the code it is based on - informs the user of the method's implementation. It answers the "how" question. An Intention Revealing Selector answers the more useful "why" question as in: why does this method exist, why would I want to use it?
+Our current selector - and the code it is based on - informs the user of the method's implementation. It answers the "how" question. An Intention Revealing Selector answers the more useful "why" question, as in: why does this method exist, why would I want to use it?
 
 So: why does this method exist? It exists so that the post can be asked if it is recent or not. An intention revealing name for this selector would use the word "recent" to answer the "why" question.
 
@@ -103,7 +103,7 @@ Thus, we can formulate the Query Method Pattern as such:
 
 <h3 id="bottom">Formulating The Query Method Pattern</h3>
 
-When you want to an object about itself in a way that is properly encapsulated, DRY and more readable, follow these steps:
+When you want to query an object about itself in a way that is properly encapsulated, DRY and more readable, follow these steps:
 
 <dl>
   <dt>Query Method</dt>
