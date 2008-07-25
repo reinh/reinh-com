@@ -11,7 +11,7 @@ filter:
 
 We've recently switched a number of projects to "ThinkingSphinx":http://ts.freelancing-gods.com/ here at "Hashrocket":http://www.hashrocket.com. These projects were originally using SOLR or "UltraSphinx":http://blog.evanweaver.com/files/doc/fauna/ultrasphinx/files/README.html. Today, we'll explore the differences between UltraSphinx and ThinkingSphinx and why we chose to switch.
 
-UltraSphinx is written by "Evan Weaver":http://blog.evanweaver.com/. ThinkingSphinx is written by "Pat Allan":http://blog.evanweaver.com/. They have some similarities: both use Sphinx (obviously); both are based on the underlying Ruby API for Sphinx, "Riddle":http://riddle.freelancing-gods.com/ (also by Pat Allan); both have excellent documentation and well-written tutorials. The similarities pretty much end there, however, and the differences are far more interesting.
+UltraSphinx is written by "Evan Weaver":http://blog.evanweaver.com/. ThinkingSphinx is written by "Pat Allan":http://freelancing-gods.com/. They have some similarities: both use Sphinx (obviously); both are based on the underlying Ruby API for Sphinx, "Riddle":http://riddle.freelancing-gods.com/ (also by Pat Allan); both have excellent documentation and well-written tutorials. The similarities pretty much end there, however, and the differences are far more interesting.
 
 h3. Basic Sphinx Configuration
 
