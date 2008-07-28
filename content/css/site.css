@@ -490,10 +490,7 @@ div.entry-content {
   text-align: right !important;
   width: 190px;
   padding-right: 10px;
-/*  font-size: 18px;*/
-/*  line-height: 18px;*/
-/*  text-transform:  uppercase;*/
-  margin: -2px 0 0 -200px;
+  margin: 0px 0 0 -200px;
 }
 
 #disqus_thread #dsq-content #dsq-comments .dsq-comment { border: 0;}
