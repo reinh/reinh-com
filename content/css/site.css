@@ -54,6 +54,17 @@ h3 {
   margin-bottom:  18px;
 }
 
+h3.outset {
+  position: absolute;
+  text-align: right;
+  width: 190px;
+  padding-right: 10px;
+  font-size: 18px;
+  line-height: 18px;
+  text-transform:  uppercase;
+  margin: 0 0 0 -200px;
+}
+
 h4 {
   padding:      9px 0;
   margin:       0;
@@ -66,11 +77,27 @@ h4 {
  * --------------------------------------------------------------------- */
 p { margin-bottom:  18px; line-height: 18px; }
 
-a       { color: <%= @page.color['link'] %>; text-decoration: none;}
-a:hover { color: <%= @page.color['link-hover'] %>; text-decoration: underline;}
+a {
+  color: #222;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+}
 
+a:hover {
+  color: <%= @page.color['link-hover'] %>;
+/*  border-bottom: 0px solid #125AA7;*/
+}
+
+acronym, abbr {
+  border-bottom: 1px dotted #ccc;
+}
+
+
+/*a       { color: <%= @page.color['link'] %>; text-decoration: none;}
+a:hover { color: <%= @page.color['link-hover'] %>; text-decoration: underline;}
+*/
 p.read-more { text-align: center; margin: 18px 0 0;}
-p.read-more a { text-align: center; color: <%= @page.color['link-hover'] %>; font-size: 18px;}
+p.read-more a { text-align: center; color: <%= @page.color['link-hover'] %>; font-size: 18px; border: 0;}
 p.read-more a:hover { text-decoration: underline;}
 
 blockquote {
@@ -143,11 +170,12 @@ p.quiet { color: <%= @page.color['quiet'] %>; }
 }
 
 a.top-link {
-  font-size:  .9em;
+  font-size: .9em;
   position:   absolute;
   right:      0;
   top:        1em;
   color:      #999 !important;
+  border:     0;
 }
 
 a.top-link:hover {
@@ -176,10 +204,9 @@ a.top-link:hover {
   display:      block;
 }
 
-h1.title a { color:  #666; }
+h1.title a { color:  #666; border: 0; text-decoration: none; }
 h1.title a:hover { color: <%= @page.color['header'] %>;}
-#header h1.title a { text-decoration: none;}
-#header h1.title a small { color:  #aaa;}
+h1.title a small { color:  #aaa;}
 
 .nav ul {
   display:      block;
@@ -199,6 +226,7 @@ h1.title a:hover { color: <%= @page.color['header'] %>;}
 .nav ul li a {
   padding-top:      14px;
   border-top:       4px solid <%= @page.color['border'] %>;
+  border-bottom:           0;
   display:          block;
   color:            #999;
   text-decoration:  none;
@@ -246,6 +274,8 @@ dl.posts dd {
 #footer p {
 }
 
+/*#footer p a { color:  #125AA7;}*/
+
 #footer .panel {
   width:        180px;
   margin-right: 20px;
@@ -274,6 +304,7 @@ a.top-link {top:0;}
 .entry-title a {
   color: <%= @page.color['header'] %>;
   text-decoration: none;
+  border: 0;
 }
 .entry-title a:hover {
     color: <%= @page.color['header'] %>;
@@ -442,5 +473,54 @@ div.entry-content {
   font-size:  3em;
   font-weight:  bold;
 }
+
+/* Disqus Hackery
+ * --------------------------------------------------------------------- */
+
+.dsq-by {display:none;}
+#disqus_thread #dsq-content h3 {
+  font-weight: normal !important;
+  margin: 0 0 18px 0 !important;
+}
+#dsq-content #dsq-options-toggle { display: none; }
+#dsq-content #dsq-comments .dsq-comment-rate { display: none; }
+
+#disqus_thread #dsq-content #dsq-comments .dsq-comment-header {
+  position: absolute;
+  text-align: right !important;
+  width: 190px;
+  padding-right: 10px;
+/*  font-size: 18px;*/
+/*  line-height: 18px;*/
+/*  text-transform:  uppercase;*/
+  margin: -2px 0 0 -200px;
+}
+
+#disqus_thread #dsq-content #dsq-comments .dsq-comment { border: 0;}
+#disqus_thread #dsq-content #dsq-comments .dsq-comment .dsq-comment-footer {display: none;}
+
+/* Comment Attribution */
+#disqus_thread #dsq-content #dsq-comments .dsq-comment {position: relative;}
+#disqus_thread #dsq-content #dsq-comments .dsq-comment-header cite {float: right;}
+#disqus_thread #dsq-content #dsq-comments .dsq-comment-header .icon-adjust {display:none;}
+#disqus_thread #dsq-content #dsq-comments .dsq-comment-header .dsq-header-meta {clear: right; float: right;}
+
+#disqus_thread#dsq-content #dsq-comments a.dsq-header-time {
+  color:#999;
+  margin:0;
+}
+
+#disqus_thread #dsq-content #dsq-comments .dsq-comment-header {
+  height:36px;
+  line-height:18px;
+}
+
+
+#disqus_thread #dsq-content #dsq-comments .dsq-comment-body {
+  font-size: 12px;
+  line-height: 18px;
+  margin-top: 0;
+}
+
 
 /* EOF */
