@@ -476,6 +476,7 @@ div.entry-content {
 
 /* Disqus Hackery
  * --------------------------------------------------------------------- */
+div#dsq-popup-profile {left: 0 !important;}
 
 .dsq-by {display:none;}
 #disqus_thread #dsq-content h3 {
