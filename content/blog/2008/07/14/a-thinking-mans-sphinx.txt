@@ -125,9 +125,8 @@ Both UltraSphinx and ThinkingSphinx are pretty simple to deploy. You should syml
 <% coderay( :lang => "ruby") do -%>
 namespace :sphinx do
   desc "Generate the ThinkingSphinx configuration file"
-    task :configure do
-      run "cd #{release_path} && rake thinking_sphinx:configure"
-    end
+  task :configure do
+    run "cd #{release_path} && rake thinking_sphinx:configure"
   end
 end
 <% end %>
