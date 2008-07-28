@@ -78,7 +78,7 @@ h4 {
 p { margin-bottom:  18px; line-height: 18px; }
 
 a {
-  color: #222;
+  color: inherit;
   text-decoration: none;
   border-bottom: 1px solid #ccc;
 }
@@ -332,8 +332,7 @@ p.entry-summary {
   margin: 0;
 }
 
-.entry-summary a {color: #666; text-decoration: underline;}
-.entry-summary a:hover {color: #333;}
+.entry-summary a {color: #666;}
 div.entry-content {
   margin-top:  1em;
 }
@@ -518,6 +517,10 @@ div#dsq-popup-profile {left: 0 !important;}
   font-size: 12px;
   line-height: 18px;
   margin-top: 0;
+}
+
+#disqus_thread #dsq-content #dsq-comments .dsq-comment.dsq-moderator .dsq-comment-header cite {
+	background: #FFFFDD;
 }
 
 
