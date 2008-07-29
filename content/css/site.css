@@ -144,6 +144,11 @@ em {
   background: #FFFFDD;
 }
 
+em.standard {
+  font-style: italic;
+  background: transparent;
+}
+
 /* Tables
  * --------------------------------------------------------------------- */
 table {
@@ -500,7 +505,7 @@ div#dsq-popup-profile {left: 0 !important;}
 #disqus_thread #dsq-content #dsq-comments .dsq-comment {position: relative;}
 #disqus_thread #dsq-content #dsq-comments .dsq-comment-header cite {float: right;}
 #disqus_thread #dsq-content #dsq-comments .dsq-comment-header .icon-adjust {display:none;}
-#disqus_thread #dsq-content #dsq-comments .dsq-comment-header .dsq-header-meta {clear: right; float: right;}
+#disqus_thread #dsq-content #dsq-comments .dsq-comment-header .dsq-header-meta {clear: right; float: right; color: #999;}
 
 #disqus_thread#dsq-content #dsq-comments a.dsq-header-time {
   color:#999;
