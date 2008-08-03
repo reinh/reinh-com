@@ -3,13 +3,13 @@ title:      A Thinking Man's Sphinx
 created_at: 2008-07-14 12:21:05.990162 -04:00
 layout:     post
 summary:    Wherein our hero ponders the ineffable questions of life, the universe and full text search to see if he might not be able to eff them after all.
-excerpt:    We've recently switched a number of projects to "ThinkingSphinx":http://ts.freelancing-gods.com/ here at "Hashrocket":http://www.hashrocket.com. These projects were originally using SOLR or "UltraSphinx":http://blog.evanweaver.com/files/doc/fauna/ultrasphinx/files/README.html. Today, we'll explore the differences between ThinkingSphinx and UltraSphinx and why we chose to switch.
+excerpt:    <p class="first"><span class="dropcap w">W</span>e've recently switched a number of projects to "ThinkingSphinx":http://ts.freelancing-gods.com/ here at "Hashrocket":http://www.hashrocket.com. These projects were originally using SOLR or "UltraSphinx":http://blog.evanweaver.com/files/doc/fauna/ultrasphinx/files/README.html. Today, we'll explore the differences between UltraSphinx and ThinkingSphinx and why we chose to switch.</p>
 filter:
   - erb
   - textile
 ---
 
-We've recently switched a number of projects to "ThinkingSphinx":http://ts.freelancing-gods.com/ here at "Hashrocket":http://www.hashrocket.com. These projects were originally using SOLR or "UltraSphinx":http://blog.evanweaver.com/files/doc/fauna/ultrasphinx/files/README.html. Today, we'll explore the differences between UltraSphinx and ThinkingSphinx and why we chose to switch.
+<p class="first"><span class="dropcap w">W</span>e've recently switched a number of projects to "ThinkingSphinx":http://ts.freelancing-gods.com/ here at "Hashrocket":http://www.hashrocket.com. These projects were originally using SOLR or "UltraSphinx":http://blog.evanweaver.com/files/doc/fauna/ultrasphinx/files/README.html. Today, we'll explore the differences between UltraSphinx and ThinkingSphinx and why we chose to switch.</p>
 
 UltraSphinx is written by "Evan Weaver":http://blog.evanweaver.com/. ThinkingSphinx is written by "Pat Allan":http://freelancing-gods.com/. They have some similarities: both use Sphinx (obviously); both are based on the underlying Ruby API for Sphinx, "Riddle":http://riddle.freelancing-gods.com/ (also by Pat Allan); both have excellent documentation and well-written tutorials. The similarities pretty much end there, however, and the differences are far more interesting.
 

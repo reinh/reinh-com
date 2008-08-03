@@ -26,7 +26,8 @@ filter:
       %h2.recent Recently
       - recent_pages.group_by{|p| p.created_at.strftime('%B<strong>%y</strong>').upcase}.each do |month, pages|
         .group
-          %h3.month= month
+          %h3.month
+            %span= month
           - pages.each do |page|
             .title-summary
               %h4.entry-title

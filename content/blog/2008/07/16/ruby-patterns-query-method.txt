@@ -3,13 +3,13 @@ title:      'Ruby Patterns: Query Method'
 created_at: 2008-07-16 16:33:57.327430 -04:00
 layout:     post
 summary:    Wherein our hero describes a particularly useful pattern that will help you keep your objects polite, well-behaved and properly encapsulated. What a beautiful specimen!
-excerpt:    What are patterns? Patterns are learnable and reusable answers to common programming questions. They are decisions made in response to a number of different concerns (or tensions). A well written pattern resolves each of the tensions harmoniously and provides a set of repeatable steps for its reapplication.
+excerpt:    <p class="first"><span class="dropcap w">W</span>hat are patterns? Patterns are learnable and reusable answers to common programming questions. They are decisions made in response to a number of different concerns (or tensions). A well written pattern resolves each of the tensions harmoniously and provides a set of repeatable steps for its reapplication.</p>
 filter:
   - erb
   - textile
 --- 
 
-What are patterns? Patterns are learnable and reusable answers to common programming questions. They are decisions made in response to a number of different concerns (or tensions). A well written pattern resolves each of the tensions harmoniously and provides a set of repeatable steps for its reapplication.
+<p class="first"><span class="dropcap w">W</span>hat are patterns? Patterns are learnable and reusable answers to common programming questions. They are decisions made in response to a number of different concerns (or tensions). A well written pattern resolves each of the tensions harmoniously and provides a set of repeatable steps for its reapplication.</p>
 
 Let's look at a situation where various tensions pull us towards the need to make a harmonious design decision and attempt to derive a pattern for future use. As we do so, we will try to keep in mind the tensions at play and come up with steps that can be used to reapply the pattern in the&nbsp;future.
 

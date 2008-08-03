@@ -1,25 +1,18 @@
 --- 
-title:      Now With More Commenting!
+title:   Now With More Commenting!
 created_at: 2008-07-28 14:24:58.355969 -04:00
-layout:     post
-summary:    Wherein our hero magically adds comments to your favorite blog by pulling them directly out of his, er, hat.
-excerpt:    I recently decided to add commenting to the blog again because I love my dear readers so, so much. This would be simple except that my blog doesn't have a database to store them. "Tim Pease":http://www.pea53.com (the creator of "Webby":http://webby.rubyforge.org/) pointed me to "Disqus":http://disqus.com/, a javascript-based comment system. It turns out that setting up Disqus-powered comments was a very simple and painless process that took three steps and about ten minutes.
+layout:   post
+summary:  Wherein our hero magically adds comments to your favorite blog by pulling them directly out of his, er, hat.
+excerpt:  <p class="first"><span class="dropcap i">I</span> recently decided to add commenting to the blog again because I love my dear readers so, so much. This would be simple except that my blog doesn't have a database to store them. "Tim Pease":http://www.pea53.com (the creator of "Webby":http://webby.rubyforge.org/) pointed me to "Disqus":http://disqus.com/, a javascript-based comment system. It turns out that setting up Disqus-powered comments was a very simple and painless process that took three steps and about ten minutes. Here's how it went down:</p>
+
 filter:
-  - textile
+ - textile
 --- 
 
-I recently decided to add commenting to the blog again because I love my dear readers so, so much. This would be simple except that my blog doesn't have a database to store them. "Tim Pease":http://www.pea53.com (the creator of "Webby":http://webby.rubyforge.org/) pointed me to "Disqus":http://disqus.com/, a javascript-based comment system. It turns out that setting up Disqus-powered comments was a very simple and painless process that took three steps and about ten minutes. Here's how it went down:
+<p class="first"><span class="dropcap i">I</span> recently decided to add commenting to the blog again because I love my dear readers so, so much. This would be simple except that my blog doesn't have a database to store them. "Tim Pease":http://www.pea53.com (the creator of "Webby":http://webby.rubyforge.org/) pointed me to "Disqus":http://disqus.com/, a javascript-based comment system. It turns out that setting up Disqus-powered comments was a very simple and painless process that took three steps and about ten minutes. Here's how it went down:</p>
 
-# <p>"Sign up":http://disqus.com/login/?next=/start/ for a Disqus account and 
-  add your blog. Thankfully, they ask for
-  a minimum of information up front.</p>
-# <p>Set up your blog integration. There are prebaked instructions for a
-  number of popular blogging platforms. In my case I used the custom
-  integration
-  javascript snippet.</p>
-# <p>Modify the CSS to remove unwanted elements (in my case everything but the
-  author, timestamp and text) and style the remaining elements more
-  appropriately for your site. The default comment styling does a good job of
-  inheriting from your stylesheets but there are a few things you may want to
-  change. You can see my changes at the bottom of my "site.css":http://github.com/ReinH/reinh-com/tree/new/content/css/site.css#L477
-  file.</p>
+# <p>"Sign up":http://disqus.com/login/?next=/start/ for a Disqus account and add your blog. Thankfully, they ask for a minimum of information up front.</p>
+# <p>Set up your blog integration. There are prebaked instructions for a number of popular blogging platforms. In my case I used the custom integration javascript snippet.</p>
+# <p>Modify the CSS to remove unwanted elements (in my case everything but the author, timestamp and text) and style the remaining elements more appropriately for your site.
+    
+The default comment styling does a good job of inheriting from your stylesheets but there are a few things you may want to change. You can see my changes at the bottom of my "site.css":http://github.com/ReinH/reinh-com/tree/new/content/css/site.css#L477 file.</p>

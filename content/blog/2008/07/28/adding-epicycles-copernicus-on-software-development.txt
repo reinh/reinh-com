@@ -2,17 +2,17 @@
 title:      'Adding Epicycles: Copernicus on Software Development'
 created_at: 2008-07-28 19:48:15.920282 -04:00
 layout:     post
-summary:     Wherein our hero explains what in the world Ptolemy and Copernicus have to do with the way we write software.
-excerpt:    The geocentric model of the solar system is a very old theory. First postulated by Plato and Aristotle in the 6th century BC, the idea that the Earth is at the center of the universe was later refined and standardized in Claudius Ptolemy's main astronomical book, <cite>Almagest</cite>. It is also an excellent example of a very common design failure in software development.
+summary:    Wherein our hero explains what in the world Ptolemy and Copernicus have to do with the way we write software.
+excerpt:    <p class="first"><span class="dropcap t">T</span>he geocentric model of the solar system is a very old one. First postulated by Plato and Aristotle in the 6th century BC, the idea that the Earth is at the center of the universe was later refined and standardized in Claudius Ptolemy's main astronomical book, <cite>Almagest</cite>. It is also an excellent example of a very common design failure in software development.</p>
 filter:
   - textile
 --- 
 
+<p class="first"><span class="dropcap t">T</span>he geocentric model of the solar system is a very old one. First postulated by Plato and Aristotle in the 6th century BC, the idea that the Earth is at the center of the universe was later refined and standardized in Claudius Ptolemy's main astronomical book, <cite>Almagest</cite>. It is also an excellent example of a very common design failure in software development.</p>
+
 _NB: The following contains a completely gratuitous lesson on the history of sclence. If you don't like learning things, I guess you can <a href="#loser">skip a bit</a>._
 
 h3. Ptolemy's Faulty Assumption
-
-The geocentric model of the solar system is a very old one. First postulated by Plato and Aristotle in the 6th century BC, the idea that the Earth is at the center of the universe was later refined and standardized in Claudius Ptolemy's main astronomical book, <cite>Almagest</cite>. It is also an excellent example of a very common design failure in software development.
 
 It seems like a pretty obvious idea: sun, stars, planets... everything <em class="standard">looks</em> as if it goes around the Earth. Indeed, it was almost two thousand years before Copernicus was able to provide a convincing alternative.
 
