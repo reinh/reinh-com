@@ -12,7 +12,7 @@ color:
   box-bg:      "#EEF3FE"
   box-border:  "#B7CDF1"
   highlight:   "#B7CDF1"
-  bg-hilight:  "#FFFFDD"
+  bg-hilight:  "#FFFFEE"
   quiet:       "#999"
   alt:         "#999"
 ---
@@ -24,7 +24,7 @@ body {
   margin:       0;
   padding:      0;
   color:        #222;
-/*  background: url('blueprint/lib/grid.png') repeat top right;*/
+  background: url('/images/reinh.png') no-repeat top center;
 }
 
 .container {
@@ -141,7 +141,7 @@ ul.no-bullet li {
 
 em {
   font-style: normal;
-  background: #FFFFDD;
+  background: #FFFFEE;
 }
 
 em.standard {
@@ -312,8 +312,8 @@ a.top-link {top:0;}
   border: 0;
 }
 .entry-title a:hover {
-    color: <%= @page.color['header'] %>;
-    background: <%= @page.color['bg-hilight'] %>;
+/*    color: <%= @page.color['header'] %>;*/
+/*    background: <%= @page.color['bg-hilight'] %>;*/
 }
 
 .post-info {
@@ -407,12 +407,24 @@ div.entry-content {
 
 .entry-content .img.no-border img {border:0;}
 
-.latest {
+/*.latest {
   margin-left: -40px;
   margin-right: -40px;
   margin-top: -18px;
   padding: 36px 40px;
-  background: #FFFFDD;
+  background: #FFFFEE;
+}
+*/
+
+.latest h2 {
+	padding: 40px 0 40px 30px;
+	width: 636px;
+	margin: -40px 0 -22px -30px;
+	background: url('/images/watercolor_header_bg.png') no-repeat center left;
+}
+
+.latest h2 a:hover {
+	color: #444;
 }
 
 .latest .entry-content {
@@ -432,12 +444,19 @@ div.entry-content {
   position: absolute;
   text-align: right;
   width: 190px;
-  padding-right: 10px;
+  margin-right: 10px;
   font-size: 18px;
   line-height: 18px;
   text-transform:  uppercase;
   margin: 0 0 0 -200px;
 }
+
+/*.post-list h3.month span {
+	padding: 0 2px;
+	margin: 0 -2px;
+	background: #ffe;
+}
+*/
 
 .month {color:  #999;letter-spacing: -1px;}
 .month strong {color: #d4d4d4;}
@@ -528,5 +547,80 @@ div#dsq-popup-profile {left: 0 !important;}
 	background: #FFFFDD;
 }
 
+/* DROPCAPS */
+
+p.first { text-indent: -2px;}
+
+.dropcap {
+	/* cancel negative text-indent*/
+	margin-left: 2px; 
+}
+
+.dropcap {
+	display:block;
+	overflow: visible;
+	float:left;
+	height: 84px;
+	margin: -15px 6px -15px 2px;
+	font-size:72px;
+	color:#666;
+	line-height:81px;
+/*	font-weight: bold;*/
+	font-family: Georgia, serif;
+	
+}
+
+.a {
+	width: 74px;
+	margin-left: -10px;
+	margin-right: -2px;
+	background: url('/images/dropcaps/a.png') no-repeat center center;
+	text-indent: -9999px;
+}
+
+.e {
+	width: 65px;
+	margin-left: -10px;
+	margin-right: 0px;
+	background: url('/images/dropcaps/e.png') no-repeat center center;
+	text-indent: -9999px;
+}
+
+.h {
+	width: 60px;
+	margin-left: -6px;
+	background: url('/images/dropcaps/h.png') no-repeat center center;
+	text-indent: -9999px;
+}
+
+.i {
+	width: 40px;
+	margin-left: -6px;
+	background: url('/images/dropcaps/i.png') no-repeat center center;
+	text-indent: -9999px;
+}
+
+.t {
+	width: 65px;
+	margin-left: -10px;
+	margin-right: -2px;
+	background: url('/images/dropcaps/t.png') no-repeat center center;
+	text-indent: -9999px;
+}
+
+.r {
+	width: 65px;
+	margin-left: -6px;
+	background: url('/images/dropcaps/r.png') no-repeat center center;
+	text-indent: -9999px;
+}
+
+.w {
+	width: 80px;
+	margin-left: -4px;
+	margin-right: 4px;
+	background: url('/images/dropcaps/w.png') no-repeat center center;
+	text-indent: -9999px;
+}
 
 /* EOF */

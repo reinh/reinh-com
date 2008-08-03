@@ -73,7 +73,7 @@ filter:
 
    <div class="column span-15 first last section" id="footer">
      <a class="extra-quiet plain top-link" href='#header' onClick='document.getElementById("about").setAttribute("style", "background:#FFFFFF")'>[top]</a>
-     <div class="panel column first">
+     <div class="panel column span-8 append-2 first">
        <div id="about">
          <h3>About</h3>
          <p>
@@ -87,11 +87,11 @@ filter:
          </ul>
        </div>
      </div>
-     <div class="panel column plain">
+     <div class="panel column span-4 plain">
       <h3>People I Read</h3>
       <%= BlogRoll.to_html %>
      </div>
-     <div class="panel column last plain">
+     <!-- <div class="panel column last plain">
        <% recent_pages = @pages.find(:all,
                                      :in_directory => "blog",
                                      :recursive => true,
@@ -106,7 +106,7 @@ filter:
             <% end %>
        <% end %>
        </dl>
-     </div>
+     </div> -->
      <!-- <a class='extra-quiet plain top-link' href='#header'>[top]</a> -->
    </div>
    <div class="column span-15 first last" id="copyright">
