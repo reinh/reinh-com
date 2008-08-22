@@ -174,6 +174,10 @@ p.quiet { color: <%= @page.color['quiet'] %>; }
   text-decoration: none;
 }
 
+.box {margin-top:0;}
+.left {float:left;}
+.right {float:right; margin: 0 0 18px 20px}
+
 a.top-link {
   font-size: .9em;
   position:   absolute;
@@ -344,7 +348,7 @@ div.entry-content {
 
 .entry-content p, .entry-content ul {
   line-height: 18px;
-  width: 450px;
+/*  width: 450px;*/
   margin-right: 0;
 }
 
@@ -570,7 +574,7 @@ p.first { text-indent: -2px;}
 	
 }
 
-.a {
+.dropcap.a {
 	width: 74px;
 	margin-left: -10px;
 	margin-right: -2px;
@@ -578,7 +582,7 @@ p.first { text-indent: -2px;}
 	text-indent: -9999px;
 }
 
-.e {
+.dropcap.e {
 	width: 65px;
 	margin-left: -10px;
 	margin-right: 0px;
@@ -586,21 +590,21 @@ p.first { text-indent: -2px;}
 	text-indent: -9999px;
 }
 
-.h {
+.dropcap.h {
 	width: 60px;
 	margin-left: -6px;
 	background: url('/images/dropcaps/h.png') no-repeat center center;
 	text-indent: -9999px;
 }
 
-.i {
+.dropcap.i {
 	width: 40px;
 	margin-left: -6px;
 	background: url('/images/dropcaps/i.png') no-repeat center center;
 	text-indent: -9999px;
 }
 
-.t {
+.dropcap.t {
 	width: 65px;
 	margin-left: -10px;
 	margin-right: -2px;
@@ -608,14 +612,14 @@ p.first { text-indent: -2px;}
 	text-indent: -9999px;
 }
 
-.r {
+.dropcap.r {
 	width: 65px;
 	margin-left: -6px;
 	background: url('/images/dropcaps/r.png') no-repeat center center;
 	text-indent: -9999px;
 }
 
-.w {
+.dropcap.w {
 	width: 80px;
 	margin-left: -4px;
 	margin-right: 4px;
