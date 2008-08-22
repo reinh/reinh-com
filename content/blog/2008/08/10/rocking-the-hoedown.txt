@@ -41,7 +41,7 @@ Testing is such a crucial part of my process that I was very excited to hear Ric
 
 This talk combined two of my favorite topics: testing and refactoring. Rick's war stories had some great takeaways: the importance of integration tests to characterize the behavior of the existing system, the ways in which code that is written test first differs from code that is written without tests, the utter importance of testing all the f--king time. Bryal Liles will have more to say on that last topic in a bit.
 
-I really can't say enough about Rick's talk. Hashrocket often takes on applications with little or no testing for our Rescue Missions and Rick's deliberate, careful, comprehensive methodology is an exemplar of the process we try to follow when we refactor and resuscitate our clients' code back to health. Rick could very well write the Hashrocket Rescue Mission manual.
+I really can't say enough about Rick's talk. Hashrocket often takes on applications with little or no testing for our Rescue Missions and Rick's deliberate, careful, comprehensive methodology is exactly the process we try to follow when we refactor and resuscitate our clients' code back to health. Rick could very well write the Hashrocket Rescue Mission manual.
 
 h3. MIDI Machinations and Hungry Hungry Hippos
 
