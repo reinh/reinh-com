@@ -41,11 +41,11 @@ I'd like to introduce you to the Simplified Software Process:
 
 While it may not be a very good process, it does have one thing going for it: it's *simple*. We like simple. So when we saw Rick Bradley's super simple bash scripts for automating these common git tasks, we jumped on them. These scripts are designed to work with the basic git workflow we outlined above. And they have awesome names.
 
-Here's *hack*:
+Here's "*hack*":http://gist.github.com/7641.
 
 <script src="http://gist.github.com/7641.js"></script>
 
-And *ship*:
+And "*ship*":http://gist.github.com/7642.
 
 <script src="http://gist.github.com/7642.js"></script>
 
@@ -61,9 +61,9 @@ Now our process looks like this:
 # <p><code>ship</code></p>
 # <p>Repeat.</p>
 
-We even wrote ourselves a little alias to make this even easier:
+We even wrote ourselves "*a little alias*":https://gist.github.com/7640/7ba7b542c03c8f191bf3fc07fc5af1511f2e3386 to make this even easier:
 
-<script src="http://gist.github.com/7640.js"></script>
+<script src="https://gist.github.com/7640.js"></script>
 
 Which brings the workflow down to three easy steps:
 
