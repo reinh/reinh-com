@@ -1,0 +1,74 @@
+--- 
+title:      Hack && Ship
+created_at: 2008-08-27 21:31:09.649232 -04:00
+layout:     post
+summary:    Wherein our hero shows you how the Simplified Software Process can make your git workflow totally rock.
+excerpt:    When the "OG Consulting":http://ogtastic.com/ "guys":http://b.logi.cx/ were down at "Hashrocket":http://hashrocket.com/ working on our latest 3-2-1, they introduced us to a pair of bash scripts called *hack* and *ship* that they use to streamline their everyday git workflow. They're so useful that we adopted them immediately and we've been using them religiously ever since. I estimate that these little scripts save me about an hour a day and, what's more, they make it easy to follow the *commit early, commit often* mindset that's so useful to the agile&nbsp;process.
+filter:
+  - erb
+  - textile
+--- 
+
+When the "OG Consulting":http://ogtastic.com/ "guys":http://b.logi.cx/ were down at "Hashrocket":http://hashrocket.com/ working on our latest 3-2-1, they introduced us to a pair of bash scripts called *hack* and *ship* that they use to streamline their everyday git workflow. They're so useful that we adopted them immediately and we've been using them religiously ever since. I estimate that these little scripts save me about an hour a day and, what's more, they make it easy to follow the *commit early, commit often* mindset that's so useful to the agile&nbsp;process.
+
+h3. Simple Software Process
+
+Here's our typical workflow (before hack and ship):
+
+# <p>Start a feature in "Pivotal Tracker":https://www.pivotaltracker.com</p>
+# <p>Checkout a working branch for this feature</p>
+# <p>Write a test</p>
+# <p>Write an implementation to make the test pass</p>
+# <p>Repeat 3 and 4 until the feature is complete</p>
+# <p>Commit changes to git with a "useful commit message":http://www.tpope.net/node/106</p>
+# <p>Checkout the master branch</p>
+# <p>Update the master branch</p>
+# <p>Checkout the working branch</p>
+# <p>Rebase the master branch into the working branch</p>
+# <p>Checkout the master branch</p>
+# <p>Merge the working branch into the master branch</p>
+# <p>Push the changes to the origin repository (usually on "github":https://github.com/)</p>
+# <p>Repeat.</p>
+
+This is pretty simple (if a bit longwinded). We each probably do this dozens of times a day. Could it be simpler? You bet!
+
+
+h3. Simplified Software Process
+
+I'd like to introduce you to the Simplified Software Process:
+
+!(box)/images/Process3.gif!:http://weblogs.java.net/blog/chet/archive/2008/01/crystal_methodo.html
+
+While it may not be a very good process, it does have one thing going for it: it's *simple*. We like simple. So when we saw Rick Bradley's super simple bash scripts for automating these common git tasks, we jumped on them. These scripts are designed to work with the basic git workflow we outlined above. And they have awesome names.
+
+Here's *hack*:
+
+<script src="http://gist.github.com/7641.js"></script>
+
+And *ship*:
+
+<script src="http://gist.github.com/7642.js"></script>
+
+Now our process looks like this:
+
+# <p>Start a feature in Pivotal Tracker</p>
+# <p>Checkout a working branch for this feature</p>
+# <p>Write a test</p>
+# <p>Write an implementation to make the test pass</p>
+# <p>Repeat 3 and 4 until the feature is complete</p>
+# <p>Commit changes to git with a useful commit message</p>
+# <p><code>hack</code></p>
+# <p><code>ship</code></p>
+# <p>Repeat.</p>
+
+We even wrote ourselves a little alias to make this even easier:
+
+<script src="http://gist.github.com/7640.js"></script>
+
+Which brings the workflow down to three easy steps:
+
+# <p>Test</p>
+# <p>Implement</p>
+# <p><code>ssp</code></p>
+
+Combine this with a Continuous Integration build like "cruisecontrol.rb":http://cruisecontrolrb.thoughtworks.com/ and a deployment to a staging server that takes less than a minute - we love "EngineYard":http://engineyard.com/ - and you have the perfect recipe for agile, iterative, test-driven, micro-release oriented development. I've never been happier with my development process.

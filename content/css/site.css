@@ -627,4 +627,13 @@ p.first { text-indent: -2px;}
 	text-indent: -9999px;
 }
 
+/* GIST STYLES */
+
+.gist .gist-file pre {
+  padding: 8px 9px;
+  margin:0;
+}
+
+.section .gist .gist-file {margin-bottom: 18px;}
+
 /* EOF */
