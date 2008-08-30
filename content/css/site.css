@@ -34,9 +34,12 @@ body {
 /* Headings
  * --------------------------------------------------------------------- */
 h1,h2,h3,h4,h5,h6 {
-  letter-spacing: -1px;
   color:          <%= @page.color['header'] %>;
   font-family:    "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+h1, h2 {
+  letter-spacing: -1px;
 }
 
 h2 {
@@ -127,7 +130,13 @@ hr {
 
 dl {margin-bottom: 18px;}
 
-ul, ol {margin-bottom: 18px;}
+ul, ol {
+  margin-bottom: 18px;
+  margin-left:0;
+  padding-left:0;
+}
+
+ul li ul {margin-left: 1em;}
 
 ul.no-bullet {
   list-style:   none;
@@ -175,6 +184,12 @@ p.quiet { color: <%= @page.color['quiet'] %>; }
 }
 
 .box {margin-top:0;}
+.box.negative {
+  margin-left: -1.5em;
+  margin-right: -1.5em;
+}
+
+.box h4 {padding:0; margin-bottom: 9px;}
 .left {float:left;}
 .right {float:right; margin: 0 0 18px 20px}
 
@@ -354,9 +369,11 @@ div.entry-content {
 
 .entry-content ul, .entry-content ol {
   list-style-position: outside;
-  margin-left:0;
-  padding-left:0;
+  list-style-type: disc;
 }
+
+.entry-content ul li ul {list-style-type: circle; margin-bottom:0;}
+.entry-content .box ul  {list-style-position: inside;}
 
 .entry-content ol li {
   font-family: Georgia, serif;
@@ -545,6 +562,11 @@ div#dsq-popup-profile {left: 0 !important;}
   font-size: 12px;
   line-height: 18px;
   margin-top: 0;
+}
+
+#dsq-content #dsq-comments .dsq-comment-body a {
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
 }
 
 #disqus_thread #dsq-content #dsq-comments .dsq-comment.dsq-moderator .dsq-comment-header cite {
