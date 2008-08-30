@@ -61,7 +61,7 @@ Now our process looks like this:
 # <p><code>ship</code></p>
 # <p>Repeat.</p>
 
-We even wrote ourselves "*a little alias*":https://gist.github.com/7640/7ba7b542c03c8f191bf3fc07fc5af1511f2e3386 to make this even easier:
+We even wrote ourselves "*a little alias*":http://gist.github.com/7640 to make this even easier:
 
 <script src="https://gist.github.com/7640.js"></script>
 
