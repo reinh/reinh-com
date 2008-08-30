@@ -1,0 +1,124 @@
+--- 
+title:      Incremental Stories and Micro&#8209;Releases
+created_at: 2008-08-29 17:14:23.215324 -04:00
+layout:     post
+summary:    Wherein our hero talks about his experiences writing effective stories that get features shipped leaner and sooner.
+excerpt:    <a href="http://www.amazon.com/Agile-Estimating-Planning-Robert-Martin/dp/0131479415">Agile estimating and planning</a> is difficult. One of the practices that we are learning and adopting at Hashrocket that has truly improved our ability to ship is <a href="http://www.dtsato.com/blog/2008/08/26/agile-2008-estimating-considered-wasteful-introducing-micro-releases/"><strong>micro-releases</strong></a>. The idea, championed by author Joshua Kerievsky, is that constantly planning and shipping small, feature based incremental releases within the iterative cycle drives the delivery of tangible business value. In other words, the most important stuff gets shipped sooner.
+filter:
+  - textile
+--- 
+
+"Agile estimating and planning":http://www.amazon.com/Agile-Estimating-Planning-Robert-Martin/dp/0131479415 is difficult. One of the practices that we are learning and adopting at Hashrocket that has truly improved our ability to ship is "*micro-releases*":http://www.dtsato.com/blog/2008/08/26/agile-2008-estimating-considered-wasteful-introducing-micro-releases/. The idea, championed by author Joshua Kerievsky, is that constantly planning and shipping small, feature based incremental releases within the iterative cycle drives the delivery of tangible business value. In other words, the most important stuff gets shipped sooner.
+
+Committing to micro-releases ensures that we are constantly working on delivering the highest priority features that represent real business value in an agile, incremental way. Complex stories that won't fit into a micro-release cycle are broken down into stories that deliver core value and supporting stories that can be deferred to a later iteration.
+
+h3. A Complex Story
+
+<div class='story box negative' id="story-1">
+
+<h4 class='story-title column span-14'>
+  As A User I Want To View A List Of Projects<br/>
+  %(small)So that I can find a project that interests me%
+</h4>
+
+h4(story-number alt column span-1 last){text-align:right}. #1
+
+h5(story-acceptance clear){margin-bottom:0}. Acceptance:
+
+* All projects shown in list
+* List is paginated
+* List sorts by age by default
+* List is sortable by the following criteria
+** Age
+** Owner
+* List is filterable by the following criteria
+** Status
+** Category
+
+h5(story-cost){margin-bottom:0}. Cost: 4 Points
+
+</div>
+
+This is a reasonably good story. It is clear, concise and deliverable. Its acceptance criteria are testable. It adds real business value. A short time ago ago I would have been quite happy to write stories just like this. That's not the case today.
+
+Now that our development process is becoming more geared towards focused micro-releases, the value of incremental stories is becoming exceedingly clear. Writing incremental stories allows us to break complex stories apart into a first increment focused on delivering core value and a set of secondary stories that can be added as later increments to deliver supplementary value.
+
+h3. A Simple Primary Story
+
+<div class='story box negative'>
+
+<h4 class='story-title column span-14'>
+  As A User I Want To View A List Of Projects<br/>
+  %(small)So that I can find a project that interests me%
+</h4>
+
+h4(story-number alt column span-1 last){text-align:right}. #1
+
+
+h5(story-acceptance clear){margin-bottom:0}. Acceptance:
+
+* All projects shown in list
+* List is paginated
+* List is sorted by age
+
+h5(story-cost){margin-bottom:0}. Cost: 1 Point
+
+</div>
+
+This story is smaller and simpler but it delivers most of the value of the original complex story. Users can browse a list and find projects. Additional value is certainly provided by selecting sort and filtering criteria. But that's the point: these provide *additional* value. The simple primary story is an increment that delivers on the core value behind this feature: users want to discover projects. It's the minimum functionality needed to start using the feature.
+
+h3. Some Simple Supplementary Stories
+
+<div class='story box negative'>
+
+<h4 class='story-title column span-14'>
+  As A User I Want To Sort The Project List<br/>
+  %(small)So that I can better discover projects based on certain criteria%
+</h4>
+
+h4(story-number alt column span-1 last){text-align:right}. #1.1
+
+h5(story-acceptance clear){margin-bottom:0}. Requires:
+
+* A list of projects
+
+h5(story- acceptance){margin-bottom:0}. Acceptance:
+
+* List is sortable by the following criteria
+** Age
+** Owner
+
+h5(story-cost){margin-bottom:0}. Cost: 1 Point
+
+</div>
+
+<div class='story box negative'>
+
+<h4 class='story-title column span-14'>
+  As A User I Want To Filter The Project List<br/>
+  %(small)So that I can browse only projects that match a given criterion%
+</h4>
+
+h4(story-number alt column span-1 last){text-align:right}. #1.2
+
+h5(story-requires clear){margin-bottom:0}. Requires:
+
+* A list of projects
+
+h5(story-acceptance){margin-bottom:0}. Acceptance:
+
+* List is filterable by the following criteria
+** Status
+** Category
+
+h5(story-cost){margin-bottom:0}. Cost: 2 Points
+
+</div>
+
+One interesting and important observation is that the primary story is a one point story while the secondary stories total to three points. This means that these secondary stories represent fully three fourths of the original value of the complex story. In other words, shipping on the core value of the feature becomes much, much easier once it's broken up into increments.
+
+h3. Ship Leaner Features, Sooner
+
+Breaking complex stories into simpler incremental stories becomes especially important in situations where your iterations are extremely time-sensitive. This is precisely the case in our "3-2-1 Launch":http://www.hashrocket.com/products projects. Breaking stories into increments allows us to deliver more of the application's core value sooner. It also helps clients make real-time decisions about the importance of the primary and secondary value stories separately. Once they can get their hands on the core functionality they often re-prioritize the secondary stories more effectively.
+
+In the case of this particular story, once the basic list and pagination were out there - and once project search (another core value feature) was implemented - it became clear that the secondary project listing stories only duplicated functionality. These secondary stories are cooling off in the icebox as we speak. Meanwhile, we shipped a feature four times leaner and four times sooner.
