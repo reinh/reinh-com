@@ -228,6 +228,9 @@ p.quiet         { color: <%= @page.color['quiet'] %>; }
   margin-right:   -1.5em;
 }
 
+.box.hilight {
+	background: 		<%= @page.color['bg-hilight'] %>;
+}
 
 .left {
   float:          left;
