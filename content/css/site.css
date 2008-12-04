@@ -95,10 +95,6 @@ a:hover {
   color:          <%= @page.color['link-hover'] %>;
 }
 
-a.plain {
-	border: 0;
-}
-
 acronym, abbr {
   border-bottom:  1px dotted #ccc;
 }
@@ -216,6 +212,7 @@ p.quiet         { color: <%= @page.color['quiet'] %>; }
 
 .plain a, a.plain {
   text-decoration:none;
+  border: 0;
 }
 
 .box {
