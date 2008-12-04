@@ -196,9 +196,9 @@ th,td {
  }
 
 p.caption {
-	margin: 0;
-	text-align: center;
-	color: #999;
+  margin:         0;
+  text-align:     center;
+  color:          #999;
 }
 
 .alt            { color: <%= @page.color['alt'] %>; }
@@ -212,7 +212,7 @@ p.quiet         { color: <%= @page.color['quiet'] %>; }
 
 .plain a, a.plain {
   text-decoration:none;
-  border: 0;
+  border:         0;
 }
 
 .box {
