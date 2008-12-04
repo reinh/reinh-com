@@ -95,6 +95,10 @@ a:hover {
   color:          <%= @page.color['link-hover'] %>;
 }
 
+a.plain {
+	border: 0;
+}
+
 acronym, abbr {
   border-bottom:  1px dotted #ccc;
 }
@@ -194,6 +198,12 @@ th,td {
  a.fig {
    font-style:    italic;
  }
+
+p.caption {
+	margin: 0;
+	text-align: center;
+	color: #999;
+}
 
 .alt            { color: <%= @page.color['alt'] %>; }
 p.quiet         { color: <%= @page.color['quiet'] %>; }
@@ -478,7 +488,7 @@ div.entry-content {
 
 .entry-content .img.no-border img { border:0; }
 
-.latest h2 {
+h2.entry-title {
   background:     url('/images/watercolor_header_bg.png') no-repeat center left;
   margin:         -40px 0 -22px -30px;
   padding:        40px 0 40px 30px;
