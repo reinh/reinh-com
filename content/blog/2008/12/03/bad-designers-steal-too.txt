@@ -18,8 +18,8 @@ phrase, &#8220;Good designers copy, great designers steal.&#8221; Pablo Picasso 
 h3. Exhibit A
 
 <notextile>
-<a href='/images/reinh_ripoff_01.png' class='plain facebox'>
-	<img class='bottom' src='/images/thumbs/reinh_ripoff_01.png'/>
+<a href='http://reinh.com/images/reinh_ripoff_01.png' class='plain facebox'>
+	<img class='bottom' src='http://reinh.com/images/thumbs/reinh_ripoff_01.png'/>
 	<p class='caption'>Pretty much speaks for itself, doesn't it?</p>
 </a>
 </notextile>
@@ -30,4 +30,6 @@ On a more whimsical note, I found this snippet from "his css file":http://www.wo
 
 h3. Exhibit B
 
-!/images/woobius_css.png!
+<notextile>
+<img src='http://reinh.com/images/woobius_css.png'/>
+</notextile>
