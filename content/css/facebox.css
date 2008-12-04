@@ -84,3 +84,12 @@
   background: #000;
   opacity: .9;
 }
+
+/* =CUSTOM
+* --------------------------------------------------------------------- */
+
+#jq-facebox a.close {border:0;}
+#jq-facebox a.close img.close_image,
+#jq-facebox div.image img {
+	margin:0;
+}
