@@ -13,7 +13,7 @@ filter:
    <meta name="author" content="<%= @page.author %>" />
    
    <!-- jQuery JavaScript Framework -->
-   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.pack.js"></script>
+   <script src="/javascript/jquery.js" type="text/javascript"></script>
    
    <!-- Facebox jQuery Plugin -->
    <script src="/javascript/jquery.dimensions.min.js" type="text/javascript"></script>
@@ -41,6 +41,7 @@ filter:
    
    <script type="text/javascript" charset="utf-8">
      $(document).ready(function() {
+	   $('a.facebox').facebox();
        $('a.fig').facebox();
        $('a.fig').hover(function() {
          $('#' + $(this).attr('title') + ' a').addClass('hover');
