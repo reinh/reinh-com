@@ -18,12 +18,10 @@ phrase, &#8220;Good designers copy, great designers steal.&#8221; Pablo Picasso 
 h3. Exhibit A
 
 <notextile>
-<div class='box negative clearfix'>
-	<a href='/images/reinh_ripoff_01.png' class='plain facebox'>
-		<img class='bottom' src='/images/thumbs/reinh_ripoff_01.png'/>
-		<p class='caption'>Pretty much speaks for itself, doesn't it?</p>
-	</a>
-</div>
+<a href='/images/reinh_ripoff_01.png' class='plain facebox'>
+	<img class='bottom' src='/images/thumbs/reinh_ripoff_01.png'/>
+	<p class='caption'>Pretty much speaks for itself, doesn't it?</p>
+</a>
 </notextile>
 
 The evildoer in this case is "Woobius.com":http://www.woobius.com/scribbles. I suggest that anyone with a spare minute go and leave a polite, helpful comment "here"://www.woobius.com/scribbles/posts/0004-design-stress-therapy.html#disqus_thread, possibly one that is instructive as to where exactly he can go shove his blog design.
@@ -32,8 +30,4 @@ On a more whimsical note, I found this snippet from "his css file":http://www.wo
 
 h3. Exhibit B
 
-<notextile>
-<div class='box negative clearfix'>
-	<img class='bottom' src='/images/woobius_css.png'/>
-</div>
-</notextile>
+!/images/woobius_css.png!
