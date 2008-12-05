@@ -9,11 +9,12 @@ filter:
 .hfeed.column.span-15.first.last
   - recent_pages =  @pages.find(:all, :in_directory => @page.dir, :recursive => true, :sort_by => "created_at", :reverse => true){|p| p.path !~ /\/index\.txt$/}
   - page = recent_pages.shift # remove first page for special treatment
+  - render(page) unless page.excerpt
   .latest.section
     .hentry.entry
       .title-summary
         %h2.entry-title
-          %a{:href => page.url}= Widont.widont page.title   
+          %a{:href => page.url}= Widont.widont page.title
         %p.entry-summary= page.summary        
       .post-info
         %abbr.published{:title => page.created_at.to_s}== Posted #{page.created_at.strftime('%B %d, %Y')}
