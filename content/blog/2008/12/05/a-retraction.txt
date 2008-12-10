@@ -2,7 +2,7 @@
 title:      A Retraction
 created_at: 2008-12-05 13:10:30.650018 -05:00
 layout:     post
-summary:    Wherein our hero acts in a for more heroic fashion than heretofore as regards the issue of unintentional copyright infringement
+summary:    Wherein our hero acts in a far more heroic fashion than heretofore as regards the issue of unintentional copyright infringement
 filter:
   - erb
   - textile
