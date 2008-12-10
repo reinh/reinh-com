@@ -122,6 +122,10 @@ blockquote {
   padding-left:   1.5em;
 }
 
+.CodeRay pre {
+  overflow:       visible;
+}
+
 pre {
   margin:         0 0 18px;
   padding:        .9px 0;
@@ -200,6 +204,12 @@ p.caption {
   color:          #999;
 }
 
+.note {
+  padding: 1.5em;
+  background:     <%= @page.color['bg-hilight'] %>;
+  margin:         0 -1.5em 1.5em;
+}
+
 .alt            { color: <%= @page.color['alt'] %>; }
 p.quiet         { color: <%= @page.color['quiet'] %>; }
 .extra-quiet    { color: #999; }
@@ -229,7 +239,7 @@ p.quiet         { color: <%= @page.color['quiet'] %>; }
 }
 
 .box.hilight {
-	background: 		<%= @page.color['bg-hilight'] %>;
+  background:     <%= @page.color['bg-hilight'] %>;
 }
 
 .left {
