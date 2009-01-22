@@ -13,7 +13,7 @@ filter:
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
-  <title><%= h(@page.title) %></title>
+  <title type="html"><%= h(@page.title) %></title>
   <subtitle><%= h(@page.subtitle) %></subtitle>
   <link href="http://<%= @page.site %>/feed/atom.xml" rel="self" />
   <link href="http://<%= @page.site %>/" />
@@ -31,9 +31,10 @@ filter:
     next if article == @page
   %>
   <entry>
-    <title><%=h article.title.gsub('&nbsp;', ' ') %></title>
+    <title type="html"><%=h article.title %></title>
     <link href="http://reinh.com<%= article.url %>" />
     <id>tag:<%= @page.site %>,<%= article.created_at.strftime('%Y-%m-%d') %>:<%= article.created_at.to_i %></id>
+    <published><%= article.created_at.xmlschema %></published>
     <updated><%= article.created_at.xmlschema %></updated>
     <content type="html"><%= h(article.render) %></content>
   </entry>
