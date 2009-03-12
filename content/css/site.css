@@ -170,13 +170,8 @@ ul.no-bullet li {
 }
 
 em {
-  background:     #FFFFEE;
-  font-style:     normal;
-}
-
-em.standard {
-  background:     transparent;
   font-style:     italic;
+  background:     transparent;
 }
 
 /* =Tables
@@ -425,14 +420,25 @@ div.entry-content {
   margin-top:     1em;
 }
 
-.entry-content p, .entry-content ul {
+.entry-content p, .entry-content ul, .entry-content ol {
   line-height:    18px;
   margin-right:   0;
 }
 
 .entry-content ul, .entry-content ol {
   list-style-position:  outside;
+}
+
+.entry-content ul {
   list-style-type:      disc;
+}
+
+.entry-content ol {
+/*  list-style-type:      disc;*/
+}
+
+.entry-content ol p {
+  margin-bottom:        0;
 }
 
 .entry-content ul li ul {

@@ -82,7 +82,7 @@
   left: 0;
   z-index: 99;
   background: #000;
-  opacity: .9;
+  opacity: .5;
 }
 
 /* =CUSTOM
@@ -93,3 +93,5 @@
 #jq-facebox div.image img {
 	margin:0;
 }
+
+#jq-facebox pre {padding: 9px;}
