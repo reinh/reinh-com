@@ -13,5 +13,5 @@ filter:
 I am giving a presentation on Rails, REST, and the Resource Oriented Architecture today entitled "REST & Rails: Web Services for the Rails World". Check out "the slides":http://assets.reinh.com/talks/REST-and-Rails.pdf.
 
 <notextile>
-    <a href="http://assets.reinh.com/talks/REST-and-Rails.pdf" title="REST &amp; Rails"><img src="http://assets.reinh.com/images/REST-and-Rails.gif" title="REST &amp; Rails"/></a>
+    <a href="http://assets.reinh.com/talks/REST-and-Rails.pdf" title="REST &amp; Rails"><img src="http://assets.reinh.com/images/REST-and-Rails.gif" title="REST &amp; Rails"></a>
 </notextile>

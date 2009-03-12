@@ -58,7 +58,7 @@
 	    </div> \
 	    <div class="footer"> \
 	      <a href="#" class="close"> \
-	        <img src="" title="close" class="close_image" /> \
+	        <img src="" title="close" class="close_image"> \
 	      </a> \
 	    </div> \
     </div> \
@@ -70,7 +70,7 @@
 
     $('#jq-facebox .content').empty()
     $('#jq-facebox .body').children().hide().end().
-      append('<div class="loading"><img src="'+$.facebox.settings.loading_image+'"/></div>')
+      append('<div class="loading"><img src="'+$.facebox.settings.loading_image+'"></div>')
 
     $('#jq-facebox').show().center()
 
@@ -118,7 +118,7 @@
       } else if (this.href.match(image_types)) {
         var image = new Image()
         image.onload = function() {
-          $.facebox.reveal('<div class="image"><img src="' + image.src + '" /></div>', klass)
+          $.facebox.reveal('<div class="image"><img src="' + image.src + '"></div>', klass)
         }
         image.src = this.href
 

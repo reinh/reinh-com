@@ -18,7 +18,7 @@ Let's review our first story:
 <div class='story box negative'>
 
 <h4 class='story-title column span-14'>
-  As A User I Want To View A List Of Projects<br/>
+  As A User I Want To View A List Of Projects<br>
   %(small)So that I can find a project that interests me%
 </h4>
 
@@ -40,7 +40,7 @@ At this point, let's assume that this story is on top of our current iteration. 
 <div class='story box negative'>
 
 <h4 class='story-title column span-14'>
-  As A User I Want To View A List Of Projects<br/>
+  As A User I Want To View A List Of Projects<br>
   %(small)So that I can find a project that interests me%
 </h4>
 

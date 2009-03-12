@@ -10,7 +10,7 @@ def textile_fig(tag, atts, cite, content)
   %{
   <div class="#{span_class}" id="#{figure_id}">
     <a class="fig" href="http://reinh.com/images/#{img_url}">
-      <img src="http://reinh.com/images/thumbs/#{img_url}" alt="#{figure_name}" />
+      <img src="http://reinh.com/images/thumbs/#{img_url}" alt="#{figure_name}">
     </a>
     <p>#{figure_name}</p>
   </div>

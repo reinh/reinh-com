@@ -17,7 +17,7 @@ h3. A Complex Story
 <div class='story box negative' id="story-1">
 
 <h4 class='story-title column span-14'>
-  As A User I Want To View A List Of Projects<br/>
+  As A User I Want To View A List Of Projects<br>
   %(small)So that I can find a project that interests me%
 </h4>
 
@@ -48,7 +48,7 @@ h3. A Simple Primary Story
 <div class='story box negative'>
 
 <h4 class='story-title column span-14'>
-  As A User I Want To View A List Of Projects<br/>
+  As A User I Want To View A List Of Projects<br>
   %(small)So that I can find a project that interests me%
 </h4>
 
@@ -72,7 +72,7 @@ h3. Some Simple Supplementary Stories
 <div class='story box negative'>
 
 <h4 class='story-title column span-14'>
-  As A User I Want To Sort The Project List<br/>
+  As A User I Want To Sort The Project List<br>
   %(small)So that I can better discover projects based on certain criteria%
 </h4>
 
@@ -95,7 +95,7 @@ h5(story-cost){margin-bottom:0}. Cost: 1 Point
 <div class='story box negative'>
 
 <h4 class='story-title column span-14'>
-  As A User I Want To Filter The Project List<br/>
+  As A User I Want To Filter The Project List<br>
   %(small)So that I can browse only projects that match a given criterion%
 </h4>
 
