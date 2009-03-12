@@ -57,7 +57,7 @@ p(note). *NB:* Whenever you perform a pull, merge or rebase, make sure that you 
 
 We begin with the topmost available story in "Pivotal Tracker":http://pivotaltracker.com. Let's say that it's _#3275: User Can Add A Comment To a Post_. First, check out a feature branch named with the story id and a short, descriptive title:
 
-<pre><code>git checkout -b 3275-add-commenting</pre></code>
+<pre><code>git checkout -b 3275-add-commenting</code></pre>
 
 The id allows us to easily track this branch back to the story that spawned it. The title is there to give us humans a little hint as to what's in it. Do some work on this branch, committing early and often (for instance, whenever your tests pass). Rebase against the upstream frequently to prevent your branch from diverging significantly:
 
