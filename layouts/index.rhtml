@@ -21,15 +21,19 @@ filter:
    <script src="/javascript/jquery.facebox.js" type="text/javascript"></script>
    <link href="/css/facebox.css" media="screen" rel="stylesheet" type="text/css">
 
-   <!-- Blueprint CSS Framework -->
-   <link rel="stylesheet" href="/css/blueprint/screen.css" type="text/css" media="screen, projection">
-   <link rel="stylesheet" href="/css/blueprint/print.css" type="text/css" media="print">
+	<% if Date.today.to_s == "2009-04-09" %>
+		<!-- It's CSS Naked Day! -->
+	<% else %>
+	   <!-- Blueprint CSS Framework -->
+	   <link rel="stylesheet" href="/css/blueprint/screen.css" type="text/css" media="screen, projection">
+	   <link rel="stylesheet" href="/css/blueprint/print.css" type="text/css" media="print">
 
-   <!-- CodeRay syntax highlighting CSS -->
-   <link rel="stylesheet" href="/css/coderay.css" type="text/css">
+	   <!-- CodeRay syntax highlighting CSS -->
+	   <link rel="stylesheet" href="/css/coderay.css" type="text/css">
 
-   <!-- Homepage CSS -->
-   <link rel="stylesheet" href="/css/site.css" type="text/css" media="screen, projection">
+	   <!-- Homepage CSS -->
+	   <link rel="stylesheet" href="/css/site.css" type="text/css" media="screen, projection">
+	<% end %>
    
     <!-- OpenID -->
    <link rel="openid.server" href="http://www.myopenid.com/server">
