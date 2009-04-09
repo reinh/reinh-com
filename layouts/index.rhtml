@@ -82,9 +82,12 @@ filter:
        <div id="about">
          <h3>About</h3>
          <p>
-           An avid guitarist, pianist and table tennis
-           player, Rein writes a popular Ruby blog (you're reading it)
-           and speaks frequently at Ruby conferences and user groups.
+			Rein fell in love with Ruby at first sight, captivated by the
+            beauty and elegance of the language, the simplicity of its design,
+            and the communicativeness of its syntax. He currently works at
+            Hashrocket, sharing his love of Ruby and crafting amazing websites
+            with a gaggle of awesome teammates for a flock of wonderful
+            clients. He also loves guitar, piano and kittens.
          </p>
          <ul class="info">
            <li><a href="http://feeds.feedburner.com/reinh" rel="alternate" type="application/rss+xml">Subscribe</a>&nbsp;<a href="http://feeds.feedburner.com/reinh" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0;margin:0;padding:0"></a></li>
@@ -96,23 +99,6 @@ filter:
       <h3>People I Read</h3>
       <%= BlogRoll.to_html %>
      </div>
-     <!-- <div class="panel column last plain">
-       <% recent_pages = @pages.find(:all,
-                                     :in_directory => "blog",
-                                     :recursive => true,
-                                     :sort_by => 'created_at',
-                                     :reverse => true){|p| p.path !~ /\/index\.txt$/}.first(5) %>
-       <h3 id="footer-recent">Recently</h3>
-       <dl class="posts">
-       <% recent_pages.group_by{|p| p.created_at.strftime('%B<strong>%y</strong>').upcase}.each do |group, pages| %>
-         <dt class="month"><%= group %></dt>
-            <% pages.each do |page| %>
-              <dd><a href="<%=  page.url %>"><%= page.title %></a></dd>
-            <% end %>
-       <% end %>
-       </dl>
-     </div> -->
-     <!-- <a class='extra-quiet plain top-link' href='#header'>[top]</a> -->
    </div>
    <div class="column span-15 first last" id="copyright">
      <ul class="info extra-quiet" style="padding:0;margin:0;">
