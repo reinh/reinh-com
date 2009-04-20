@@ -420,6 +420,10 @@ div.entry-content {
   margin-top:     1em;
 }
 
+.entry-content p {
+	text-align: justify;
+}
+
 .entry-content p, .entry-content ul, .entry-content ol {
   line-height:    18px;
   margin-right:   0;

@@ -1,0 +1,31 @@
+--- 
+title:      Simplify Your Dev Environment With Passenger Pane
+created_at: 2009-04-17 10:04:11.318707 -04:00
+layout:     post
+filter:
+  - erb
+  - markdown
+--- 
+
+<% @page[:excerpt] = capture_erb do %>
+On OS X? Develop web applications with Rails? Or Merb? Or Sinatra? Or any other Rack compatible framework? Want drag-and-drop and point-and-click development server management? Then you need Passenger Pane. We'll walk you through the installation process and show you how to get a simple Rack application up and running. Thanks to "Jason Noble":http://jasonnoble.org for his help getting things up and running and with this tutorial.
+<% end %>
+<%= RedCloth.new(@page.excerpt).to_html %>
+
+Passenger Pane is an OS X preference pane designed to work in concert with Phusion Passenger and your default OS X Leopard Apache2 installation. Setup is pretty simple and will probably take about 10 minutes, but there are a few gotchas to avoid. Here's what we're going to do:
+
+1. Install Phusion Passenger
+
+2. Install Passenger Pane
+
+3. Serve a "Hello World!" Rack app
+
+4. Profit!
+
+### Installing Phusion Passenger
+
+![Phusion logo](/images/phusion-logo.png)
+
+Phusion Passenger is the (not so) new hotness in the Rails deployment world. Also, [their website](http://www.modrails.com) looks fantastic. Phusion is great for serving Rails applications via Apache in production (especially in concert with Rails Enterprise Edition, which provides a 33% memory savings over standard MRI Ruby), but it's also great for simplifying your development environment.
+
+The Phusion team have done a great job on the passenger install. Here are the [official installation instructions](http://www.modrails.com/install.html). We'll repeat them here for the sake of convenience.
