@@ -12,7 +12,7 @@ color:
   box-bg:      "#EEF3FE"
   box-border:  "#B7CDF1"
   highlight:   "#B7CDF1"
-  bg-hilight:  "#FFFFEE"
+  bg-hilight:  "#FFFFDD"
   quiet:       "#999"
   alt:         "#999"
 ---
@@ -243,8 +243,41 @@ p.quiet         { color: <%= @page.color['quiet'] %>; }
 
 .right {
   float:          right;
-  margin:         0 0 18px 20px;
 }
+
+p img {
+	margin-top: 0;
+}
+
+p.center {
+	text-align: center;
+}
+
+p.center img {
+	float: none;
+	display: inline;
+}
+
+p.screenshot {
+	float: none;
+	text-align: center !important;
+	margin: 0 -100px;
+	width: 790px;
+	margin-bottom: 0;
+}
+
+p.screenshot img {;
+	display: inline;
+	float: none;
+	margin: 0 auto;
+}
+
+
+p.right img {
+  margin:         0 0 1.5em 1.5em;	
+}
+
+
 
 a.top-link {
   border:         0;
@@ -460,15 +493,28 @@ div.entry-content {
   font-size:      18px;
   font-style:     italic;
   line-height:    18px;
+  margin-bottom:  18px;
 }
 
-.entry-content ol li p {
+.entry-content ol li p, .entry-content ol li pre {
   color:          #222;
   font-family:    Verdana, "Bitstream Vera Sans", sans-serif;
   font-size:      12px;
   font-style:     normal;
   line-height:    18px;
+  margin-bottom:  1.5em;
 }
+
+.entry-content ol li pre {
+  color:          #222;
+  font-family:    Verdana, "Bitstream Vera Sans", sans-serif;
+  font-size:      12px;
+  font-style:     normal;
+  line-height:    18px;
+  margin-bottom:  1.5em;
+}
+
+
 
 .entry-content .img {
   clear:          right;

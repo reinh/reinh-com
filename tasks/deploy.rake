@@ -12,8 +12,8 @@ end
 namespace :deploy do
   SITE.user       = "www"
   SITE.host       = "reinh.com"
-  SITE.remote_dir = "/var/www/beta.reinh.com"
-  # SITE.remote_dir = "/var/www/reinh.com"
+  # SITE.remote_dir = "/var/www/beta.reinh.com"
+  SITE.remote_dir = "/var/www/reinh.com"
   SITE.rsync_args = %w( -av --delete )
 
   desc 'Deploy to the server using rsync'

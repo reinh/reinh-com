@@ -8,24 +8,94 @@ filter:
 --- 
 
 <% @page[:excerpt] = capture_erb do %>
-On OS X? Develop web applications with Rails? Or Merb? Or Sinatra? Or any other Rack compatible framework? Want drag-and-drop and point-and-click development server management? Then you need Passenger Pane. We'll walk you through the installation process and show you how to get a simple Rack application up and running. Thanks to "Jason Noble":http://jasonnoble.org for his help getting things up and running and with this tutorial.
+!http://reinh.com/images/phusion-logo.png!
+
+On OS X? Develop web applications with Rails? Or Merb? Or Sinatra? Or any other Rack compatible framework? Want drag-and-drop and point-and-click development server management? Then you need Passenger Pane. We'll walk you through the installation process and show you how to get a simple Rack application up and running. Thanks to "Jason Noble":http://jasonnoble.org for his help getting everything working.
 <% end %>
 <%= RedCloth.new(@page.excerpt).to_html %>
 
-Passenger Pane is an OS X preference pane designed to work in concert with Phusion Passenger and your default OS X Leopard Apache2 installation. Setup is pretty simple and will probably take about 10 minutes, but there are a few gotchas to avoid. Here's what we're going to do:
+Passenger Pane is an OS X preference pane designed to work in concert with Phusion Passenger and your OS X Leopard's default Apache2 installation (the same one that serves your Web Sharing). Setup is pretty simple and will probably take about 10 minutes. Here's what we're going to do:
 
 1. Install Phusion Passenger
 
 2. Install Passenger Pane
 
-3. Serve a "Hello World!" Rack app
+3. Serve a "Hello World!" Rack endpoint
 
 4. Profit!
 
-### Installing Phusion Passenger
+### Install Phusion Passenger
 
-![Phusion logo](/images/phusion-logo.png)
-
-Phusion Passenger is the (not so) new hotness in the Rails deployment world. Also, [their website](http://www.modrails.com) looks fantastic. Phusion is great for serving Rails applications via Apache in production (especially in concert with Rails Enterprise Edition, which provides a 33% memory savings over standard MRI Ruby), but it's also great for simplifying your development environment.
+[Phusion Passenger](http://www.modrails.com) is the (not so) new hotness in the Rails deployment world. Phusion is great for serving Rails applications via Apache in production (especially in concert with Rails Enterprise Edition, which provides a 33% memory savings over standard MRI Ruby), but it's also great for simplifying your development environment.
 
 The Phusion team have done a great job on the passenger install. Here are the [official installation instructions](http://www.modrails.com/install.html). We'll repeat them here for the sake of convenience.
+
+1. Open a Terminal window.
+
+2. Install the passenger gem:
+	
+		sudo gem install passenger
+
+3. Install the passenger apache2 module:
+
+		sudo passenger-install-apache2-module
+
+4. Include the module and some supporting configuration settings into an apache conf file. The code will be provided by the passenger install script.
+
+5. Finally, add a <code>Directory</code> directive to your apache2 config that allows access to the directory where your app source codes are located. You can put this at the bottom of your <code>passenger.conf</code> file (replace my source directory with yours):
+
+		<Directory /Users/reinh/code/>
+		  Order Allow,Deny
+		  Allow from all
+		</Directory>
+
+<p class="note"><strong>Note:</strong> We put the passenger apache configuration in <code>/etc/apach2/other/passenger.conf</code> (a file we created). The default apache2 <code>httpd.conf</code> imports all <code>.conf</code> files in <code>/etc/apache2/other</code>.</p>
+
+
+### Install Passenger Pane
+
+<p class="right">
+	<a href="http://www.fngtps.com/2008/06/putting-the-pane-back-into-deployment" alt="Passenger Pane">
+		<img src="http://reinh.com/images/passenger_icon.png">
+	</a>
+</p>
+
+[Passenger Pane](http://www.fngtps.com/2008/06/putting-the-pane-back-into-deployment) gives you a Preference Pane that lets you add, remove and manage apps deployed on Phusion Passenger. Drag-and-drop to serve a new app and restart with a single click &mdash; it even provides host entries for each app so you don't have to mess with virtual hosts or your hosts file. This is great for serving multiple applications simultaneously or just generally being awesome.
+
+Installation is simple. Download the preference pane from [their homepage](http://www.fngtps.com/2008/06/putting-the-pane-back-into-deployment) and double-click to install. If you installed Passenger correctly (as above), this should just work. If not, look for errors in Console.app or a helpful notice in the preference pane and ask for help on the [Passenger forums](http://groups.google.com/group/phusion-passenger) or in the <code>#passenger</code> channel on <code>irc.freenode.net</code>.
+
+After installing Passenger Pane, you will need to restart Apache. The simplest way to do this on OS X is to open the Sharing preference pane and uncheck and recheck Web Sharing.
+
+### Serve A "Hello World!" Rack Endpoint
+
+Let's test that everything is working by creating a simple [Rack](http://rack.rubyforge.org/) "Hello World!" endpoint.
+
+1. Install <code>rack</code>:
+
+		sudo gem install rack
+
+2. Create a new directory called <code>rack-hello-world</code>.
+
+3. Add a file inside it called <code>config.ru</code> with these contents:
+
+		run lambda{|env| [200, {"Content-Type" => "text/plain"}, ["Hello World!"]]}
+
+4. Create a <code>public</code> directory inside <code>rack-hello-world</code> (you'll see why later).
+
+5. Drag the <code>rack-hello-world</code> folder into your Passenger Pane panel (if you're using TextMate, you can drag it from the project panel). You will probably need to click the lock first to allow modifications.
+
+6. Browse to <code><http://rack-hello-world.local></code> and behold the awesome!
+
+7. Profit!!!
+
+If you've done this correctly, your Passenger Pane should look similar to this:
+
+<p class="screenshot">
+	<img src="http://reinh.com/images/passenger_pane.png">
+</p>
+
+Your browser should be showing you your glorious "Hello World!" homepage.
+
+Now you can drag in the app folders of any Rails, Merb, Sinatra or Ramaze applications and have them instantly served by Passenger. In fact, any Ruby web application that can run on Rack can be run in Passenger Pane. How's that for a painless local development environment?
+
+<p class="note"><strong>Note:</strong> Why (I hear you asking) did we create a public directory? The answer is that Apache expects to serve a public directory and will fail if one is not found under the root of the app you're serving. If you had not created the directory, you would have to look at your apache error log (usually located at <code>/var/log/apache2/error_log</code>) to find out what went wrong.</p>
