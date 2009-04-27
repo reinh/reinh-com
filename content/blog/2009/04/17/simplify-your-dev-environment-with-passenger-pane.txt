@@ -2,6 +2,7 @@
 title:      Simplify Your Dev Environment With Passenger Pane
 created_at: 2009-04-17 10:04:11.318707 -04:00
 layout:     post
+summary: 	Wherein our hero describes the installation of Passenger Pane and the awesomeness that therein ensues.
 filter:
   - erb
   - markdown
